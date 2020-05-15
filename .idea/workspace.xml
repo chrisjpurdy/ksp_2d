@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="ksp_2d_cw4" targetName="ksp_2d_cw4" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="027b177d-ae44-4f98-ab9d-7ce0dc930739" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectId" id="1YdpZjID9yScMAK98YxJUHO1ZVx" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/PhysUtils" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/img" />
+      <recent name="$PROJECT_DIR$/resources/stuff" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/Spacecraft" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/PhysUtils" />
+      <recent name="$PROJECT_DIR$/resources/img" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ksp_2d_cw4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ksp_2d_cw4" TARGET_NAME="ksp_2d_cw4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ksp_2d_cw4" RUN_TARGET_NAME="ksp_2d_cw4">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="027b177d-ae44-4f98-ab9d-7ce0dc930739" name="Default Changelist" comment="" />
+      <created>1583282383032</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583282383032</updated>
+      <workItem from="1583282384584" duration="350000" />
+      <workItem from="1583689221142" duration="21700000" />
+      <workItem from="1583851885832" duration="3725000" />
+      <workItem from="1583865264528" duration="1294000" />
+      <workItem from="1583925884062" duration="10397000" />
+      <workItem from="1584011778503" duration="1158000" />
+      <workItem from="1584363048003" duration="38411000" />
+      <workItem from="1584539469441" duration="33228000" />
+      <workItem from="1584696051253" duration="54569000" />
+      <workItem from="1584956934279" duration="94021000" />
+      <workItem from="1585477405398" duration="39793000" />
+      <workItem from="1585744352543" duration="1293000" />
+      <workItem from="1585827292807" duration="6851000" />
+      <workItem from="1585836394962" duration="5650000" />
+      <workItem from="1585929348529" duration="9916000" />
+      <workItem from="1586109571250" duration="21612000" />
+      <workItem from="1586258240091" duration="16452000" />
+      <workItem from="1586433567536" duration="27910000" />
+      <workItem from="1586690465562" duration="1328000" />
+      <workItem from="1586861043116" duration="9997000" />
+      <workItem from="1586879454069" duration="931000" />
+      <workItem from="1586987006556" duration="3851000" />
+      <workItem from="1587033762300" duration="15935000" />
+      <workItem from="1587299741081" duration="16294000" />
+      <workItem from="1587388234557" duration="18185000" />
+      <workItem from="1587420260371" duration="5100000" />
+      <workItem from="1587469725249" duration="38598000" />
+      <workItem from="1587599508728" duration="26411000" />
+      <workItem from="1587759679329" duration="6246000" />
+      <workItem from="1587817725197" duration="15667000" />
+      <workItem from="1587848882635" duration="40532000" />
+      <workItem from="1588106036392" duration="2601000" />
+      <workItem from="1588283397099" duration="1268000" />
+      <workItem from="1588862049854" duration="220000" />
+      <workItem from="1589388071439" duration="15743000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

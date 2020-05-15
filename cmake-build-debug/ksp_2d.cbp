@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ksp_2d"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\resources\;CMake Files\resources\PixelUIpack\;CMake Files\resources\SpaceSFX1\;CMake Files\resources\UI pack Space\;CMake Files\resources\UIpack\;CMake Files\resources\ken_fonts\;CMake Files\resources\kenney_particlePack\;CMake Files\resources\kenney_spaceShooterExtension\;CMake Files\resources\slick_arrows\;CMake Files\resources\trees_and_bushes_pack\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ksp_2d">
+				<Option output="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/build/ksp_2d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/SDL2"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ksp_2d"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ksp_2d/fast">
+				<Option output="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/build/ksp_2d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/SDL2"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 ksp_2d/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/main.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BaseEngine.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BaseEngine.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BouncingBall.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BouncingBall.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BouncingBallMain.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BouncingBallMain.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BouncingImageObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/BouncingObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/CardContainer.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/CardOrTile.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/CollisionDetection.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/CoordinateMapping.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DisplayableObject.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DisplayableObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DisplayableObjectContainer.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DragAlignment.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DragableBaseClassObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DragableImageObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DragableObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DragableToken.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DragableTokenContainer.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DraggingDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DraggingDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DrawingFilters.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DrawingSurface.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DrawingSurface.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/FilterPoints.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/FlashingDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/FlashingDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/FontManager.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/FontManager.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/Image2Old.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ImageManager.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ImageMappingDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ImageMappingDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ImageObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ImageObjectDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ImageObjectDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JasonsDemoA.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JasonsDemoA.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JasonsObjectA.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JasonsObjectA.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JasonsTileManager.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JasonsTileManager.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JigsawDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JigsawDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/JigsawPiece.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MappableImageObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MazeDemoMain.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MazeDemoMain.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MazeDemoObject.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MazeDemoObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MazeDemoTileManager.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MazeDemoTileManager.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/MovementPosition.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/Notify.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/PlayingCardsDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/PlayingCardsDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/RawImage.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/RawImage.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleFlashingDragableImageObject.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleImage.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleImage.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleTrig.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/StarfieldDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/StarfieldDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/TileManager.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/TileManager.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/TokenTray.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ZoomingDemo.cpp">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ZoomingDemo.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/header.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/templates.h">
+			<Option target="ksp_2d"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/.DS_Store">
+			<Option virtualFolder="CMake Files\resources\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/BigSpaceGun.psd">
+			<Option virtualFolder="CMake Files\resources\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/planets.jpg">
+			<Option virtualFolder="CMake Files\resources\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/recycle_items.png">
+			<Option virtualFolder="CMake Files\resources\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ui_upscaled.png">
+			<Option virtualFolder="CMake Files\resources\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/PixelUIpack/Donate.url">
+			<Option virtualFolder="CMake Files\resources\PixelUIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/PixelUIpack/Facebook.url">
+			<Option virtualFolder="CMake Files\resources\PixelUIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/PixelUIpack/License.txt">
+			<Option virtualFolder="CMake Files\resources\PixelUIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/PixelUIpack/Preview.png">
+			<Option virtualFolder="CMake Files\resources\PixelUIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/explosion1.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/explosion2.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/explosion3.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/explosion4.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/explosion5.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/explosion6.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/laser1.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/laser2.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/laser3.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/laser4.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/laser5.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/laser6.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/message1.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/sounds.txt">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/SpaceSFX1/warpout.ogg">
+			<Option virtualFolder="CMake Files\resources\SpaceSFX1\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UI pack Space/.DS_Store">
+			<Option virtualFolder="CMake Files\resources\UI pack Space\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UI pack Space/license.txt">
+			<Option virtualFolder="CMake Files\resources\UI pack Space\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UI pack Space/preview.png">
+			<Option virtualFolder="CMake Files\resources\UI pack Space\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UI pack Space/sample.png">
+			<Option virtualFolder="CMake Files\resources\UI pack Space\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UIpack/.DS_Store">
+			<Option virtualFolder="CMake Files\resources\UIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UIpack/license.txt">
+			<Option virtualFolder="CMake Files\resources\UIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UIpack/preview.png">
+			<Option virtualFolder="CMake Files\resources\UIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/UIpack/sample.png">
+			<Option virtualFolder="CMake Files\resources\UIpack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_blocks.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_future.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_future_square.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_high.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_high_square.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_mini.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_mini_square.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenpixel_square.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenvector_future.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/kenvector_future_thin.ttf">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/ken_fonts/license.txt">
+			<Option virtualFolder="CMake Files\resources\ken_fonts\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_particlePack/Kenney.url">
+			<Option virtualFolder="CMake Files\resources\kenney_particlePack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_particlePack/License.txt">
+			<Option virtualFolder="CMake Files\resources\kenney_particlePack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_particlePack/Patreon.url">
+			<Option virtualFolder="CMake Files\resources\kenney_particlePack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_particlePack/Preview.png">
+			<Option virtualFolder="CMake Files\resources\kenney_particlePack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_spaceShooterExtension/License.txt">
+			<Option virtualFolder="CMake Files\resources\kenney_spaceShooterExtension\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_spaceShooterExtension/Preview.png">
+			<Option virtualFolder="CMake Files\resources\kenney_spaceShooterExtension\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_spaceShooterExtension/Preview_KenneyNL.png">
+			<Option virtualFolder="CMake Files\resources\kenney_spaceShooterExtension\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/kenney_spaceShooterExtension/Sample.png">
+			<Option virtualFolder="CMake Files\resources\kenney_spaceShooterExtension\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/slick_arrows/slick_arrow-arrow.png">
+			<Option virtualFolder="CMake Files\resources\slick_arrows\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/slick_arrows/slick_arrow-delta.png">
+			<Option virtualFolder="CMake Files\resources\slick_arrows\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/slick_arrows/slick_arrow-triangular.png">
+			<Option virtualFolder="CMake Files\resources\slick_arrows\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/trees_and_bushes_pack/license.txt">
+			<Option virtualFolder="CMake Files\resources\trees_and_bushes_pack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/trees_and_bushes_pack/trees-and-bushes.png">
+			<Option virtualFolder="CMake Files\resources\trees_and_bushes_pack\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/trees_and_bushes_pack/trees-and-bushes.psd">
+			<Option virtualFolder="CMake Files\resources\trees_and_bushes_pack\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
