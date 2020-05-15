@@ -22,6 +22,8 @@ public:
         setTopLeftPositionOnScreen(x, y);
         tileSize = catalogueSpritesheet->getWidth()/2;
 
+        for (int i=0; i<4; i++) sideMostParts.push_back(nullptr);
+
         // TODO setup catalogue names from elsewhere, load in from a file etc?
         for(int i=0; i<5; ++i) catalogue.push_back(std::string("bodypart_") + std::to_string(i));
         for(int i=0; i<3; ++i) catalogue.push_back(std::string("noseCone_") + std::to_string(i));
@@ -136,13 +138,14 @@ public:
 
         // check if any parts in spacecraftparts are being dragged (if spacecraftparts exists)
         if (!partBeingDragged && spacecraftParts) {
-            partBeingDragged = spacecraftParts->getDraggedPart();
-            // if the first part is being lifted then delete the spacecraft parts
+            partBeingDragged = spacecraftParts->getDraggedPart(sideMostParts);
             if (partBeingDragged) {
+                // if the first part is being lifted then delete the spacecraft parts
                 if (spacecraftParts->getNumParts() == 0) {
                     partBeingDragged->isRootPart = false;
                     delete spacecraftParts;
                     spacecraftParts = nullptr;
+                    for (int i=0; i<4; i++) sideMostParts[i] = nullptr;
                 }
                 partBeingDragged->sprite->locked = false;
             }
@@ -203,6 +206,40 @@ public:
         }
     }
 
+    void offsetShip(double xOff, double yOff) {
+
+        if (!spacecraftParts) return;
+
+        for (auto part : spacecraftParts->parts) {
+            part->sprite->movePosition(-spacecraftXOff, -spacecraftYOff);
+        }
+
+        spacecraftXOff += xOff;
+        spacecraftYOff += yOff;
+
+        if (abs(spacecraftXOff) > screenCenter.x - 100) {
+            spacecraftXOff *= (screenCenter.x - 100)/abs(spacecraftXOff);
+        }
+        if (abs(spacecraftYOff) > screenCenter.y - 100) {
+            spacecraftYOff *= (screenCenter.y - 100)/abs(spacecraftYOff);
+        }
+
+        for (auto part : spacecraftParts->parts) {
+            part->sprite->movePosition(spacecraftXOff, spacecraftYOff);
+        }
+    }
+
+    void resetShipOffset() {
+        if (!spacecraftParts) return;
+
+        for (auto part : spacecraftParts->parts) {
+            part->sprite->movePosition(-spacecraftXOff, -spacecraftYOff);
+        }
+
+        spacecraftXOff = 0;
+        spacecraftYOff = 0;
+    }
+
     void virtMouseUp(int iButton, int x, int y) override {
 
         if (!isVisible()) return;
@@ -218,7 +255,10 @@ public:
             // then check if it is the first part placed down, or if there is a point on the spacecraft to snap to
             if (!spacecraftParts) {
                 //std::cout << "Making new spacecraftparts" << std::endl;
-                spacecraftParts = new SpacecraftParts(650, 100, partBeingDragged);
+                spacecraftParts = new SpacecraftParts(screenCenter.x, screenCenter.y, partBeingDragged);
+                for (int i=0; i<4; i++) {
+                    sideMostParts[i] = partBeingDragged;
+                }
                 partBeingDragged->isRootPart = true;
                 partBeingDragged->sprite->locked = true;
                 partBeingDragged = nullptr;
@@ -227,6 +267,14 @@ public:
                 if (snapPoint.first) {
                     if (spacecraftParts->connect(partBeingDragged, snapPoint.first, snapPoint.second)) {
                         // part was added to the spacecraft parts
+
+                        if (spacecraftParts->isMoreSideMost(partBeingDragged, snapPoint.second, sideMostParts)) {
+                            sideMostParts[snapPoint.second] = partBeingDragged;
+                            spacecraftParts->reposParts(partBeingDragged->sprite->getDrawWidth()/2,
+                                    partBeingDragged->sprite->getDrawHeight()/2, snapPoint.second,
+                                    sideMostParts);
+                        }
+
                         partBeingDragged->sprite->locked = true;
                         partBeingDragged = nullptr;
                     } else {
@@ -298,10 +346,19 @@ public:
         }
     }
 
-    Spacecraft* makeShip(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass,
-                                                        Vec2D *origin) {
+    Spacecraft* makeShip(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, Vec2D *origin) {
         if (!spacecraftParts) return nullptr;
-        return spacecraftParts->generateSpacecraft(pEngine, initalPos, initialVel, mass, origin);
+        // first centre spacecraft parts and the offset x by the root parts distance from the x centre
+        resetShipOffset();
+        int xOff = screenCenter.x - spacecraftParts->parts[0]->sprite->getXCentre();
+        if (abs(xOff) > 1) offsetShip(xOff, 0);
+
+        int width = (sideMostParts[RocketPart::Side::right]->sprite->getXCentre() + sideMostParts[RocketPart::Side::right]->sprite->getDrawWidth()/2)
+                    - (sideMostParts[RocketPart::Side::left]->sprite->getXCentre() - sideMostParts[RocketPart::Side::left]->sprite->getDrawWidth()/2);
+        int height = (sideMostParts[RocketPart::Side::bottom]->sprite->getYCentre() + sideMostParts[RocketPart::Side::bottom]->sprite->getDrawHeight()/2)
+                     - (sideMostParts[RocketPart::Side::top]->sprite->getYCentre() - sideMostParts[RocketPart::Side::top]->sprite->getDrawHeight()/2);
+
+        return spacecraftParts->generateSpacecraft(pEngine, initalPos, initialVel, mass, width, height, origin);
     }
 
     void draw(int iCurrentTime) {
@@ -328,6 +385,9 @@ public:
     RocketPart* partBeingDragged;
     bool deletePart;
     SpacecraftParts* spacecraftParts;
+
+    double spacecraftXOff, spacecraftYOff;
+    std::vector<RocketPart*> sideMostParts;
 
     SimpleImage* rightArrow;
     SimpleImage* leftArrow;

@@ -41,11 +41,11 @@ public:
      * @return  the newly generated spacecraft
      */
     Spacecraft* generateSpacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass,
-                                   Vec2D *origin);
+                                   int width, int height, Vec2D *origin);
 
     std::vector<RocketPart*> parts;
 
-    RocketPart* getDraggedPart();
+    RocketPart *getDraggedPart(std::vector<RocketPart *>& pVector);
 
     int getNumParts();
 
@@ -57,6 +57,14 @@ public:
      * @return          the closest snap point, and the side to snap to
      */
     std::pair<RocketPart*, RocketPart::Side> getClosestSnapTo(int x, int y, RocketPart *toSnap);
+
+    void findMostSideMost(RocketPart::Side side, std::vector<RocketPart*>& sideMostParts);
+
+    void reposParts(int xChangeAbs, int yChangeAbs, RocketPart::Side side, std::vector<RocketPart*>& sideMostParts);
+
+    bool isMoreSideMost(RocketPart *newPart, RocketPart::Side side, std::vector<RocketPart*>& sideMostParts);
+
+    void maskReposWithSide(int &x, int &y, RocketPart::Side side);
 };
 
 #endif //KSP_2D_CW4_SPACECRAFTPARTS_H

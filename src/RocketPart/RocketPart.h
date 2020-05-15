@@ -85,6 +85,8 @@ public:
     bool checkIfConnectedToRoot(RocketPart *prev);
 
     bool checkAvaliableToAttatch(RocketPart *attachee, Side fromSide);
+
+    bool isDecoupler();
 };
 
 

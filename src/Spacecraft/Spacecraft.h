@@ -17,13 +17,15 @@ class KSP2D;
 class Spacecraft : public DisplayableObject, public PhysObject {
 public:
 
-    Spacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, Vec2D *origin, std::vector<RocketPart*>& _parts);
+    Spacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, int width, int height, Vec2D *origin, std::vector<RocketPart*>& _parts);
     ~Spacecraft() override;
 
     KSP2D* getKSPEngine();
 
     double zoomAmount;
     bool isChanged;
+
+    int shipWidth, shipHeight;
 
     double thrustPercent;
     double thrustStrength;

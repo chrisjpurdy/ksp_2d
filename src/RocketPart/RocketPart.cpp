@@ -41,7 +41,7 @@ bool RocketPart::checkAvaliableToAttatch(RocketPart* attachee, Side fromSide) {
     if ((attachee->partData->anchorPoints[attacheeSnapPoint].block && partData->anchorPoints[fromSide].block) ||
         (attachee->partData->anchorPoints[attacheeSnapPoint].radial && partData->anchorPoints[fromSide].radial) ||
         (attachee->partData->anchorPoints[attacheeSnapPoint].cover && partData->anchorPoints[fromSide].cover) ||
-        (attachee->partData->anchorPoints[attacheeSnapPoint].decoupler && partData->anchorPoints[fromSide].decoupler)) {
+        (attachee->partData->anchorPoints[attacheeSnapPoint].decoupler && partData->anchorPoints[fromSide].decoupler && (attachee->isDecoupler() || isDecoupler()))) {
 
         // if the part doesn't already have a connected part at this point
         if (!partData->anchorPoints[fromSide].connectedPart) {
@@ -118,12 +118,21 @@ void RocketPart::recursivelyDelete() {
  * should be used to delete)
  */
 RocketPart::~RocketPart() {
-    for (int i = partData->gadgets->size() - 1; i >= 0; i--) {
-        delete partData->gadgets->at(i);
+    if (!partData->gadgets->empty()) {
+        for (int i = partData->gadgets->size() - 1; i >= 0; i--) {
+            delete partData->gadgets->at(i);
+        }
     }
     delete partData->gadgets;
     delete partData;
     delete sprite;
+}
+
+bool RocketPart::isDecoupler() {
+    for (auto gadget : *partData->gadgets) {
+        if (gadget->gadgetName == "decoupler") return true;
+    }
+    return false;
 }
 
 bool RocketPart::checkIfConnectedToRoot(RocketPart* prev) {

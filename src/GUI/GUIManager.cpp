@@ -82,7 +82,7 @@ void GUIManager::drawSpacecraftGUI(int time) {
         spacecraftControls->draw(time);
 }
 
-void GUIManager::setupSpacecraftControls(BasicSpacecraft *spacecraft) {
+void GUIManager::setupSpacecraftControls(Spacecraft* spacecraft) {
     spacecraftControls = new SpacecraftControls(engine, spacecraft);
 }
 

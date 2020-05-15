@@ -12,14 +12,14 @@ void Spacecraft::virtDraw() {
     if (!isVisible()) return;
 
 //    long double screenWidth = data->width / distMult;
-    long double screenWidth = 300.0 / distMult;
+    long double screenWidth = shipWidth / distMult;
 //    long double screenHeight = data->height / distMult;;
-    long double screenHeight = 300.0 / distMult;
+    long double screenHeight = shipHeight / distMult;
     setSize(screenWidth, screenHeight);
     setPosition(screenPosition.x, screenPosition.y);
 
 //    zoomAmount = screenWidth / data->width;
-    zoomAmount = screenWidth / 300.0;
+    zoomAmount = screenWidth / shipWidth;
 
     if (thrustPercent > 0) {
         isChanged = true;
@@ -45,10 +45,14 @@ void Spacecraft::virtDraw() {
         if(!isChanged) return; // don't draw if the spacecraft hasn't been modified (scaled or rotated)
 
         if (thrustPercent > 0) {
-            thrustSprite.draw(getEngine(), &surface, screenPosition.x - thrustSprite.spriteSheet.getWidth()/10.0, screenPosition.y + (300.0/2.0) - 15);
+            thrustSprite.draw(getEngine(), &surface, screenPosition.x - thrustSprite.spriteSheet.getWidth()/10.0, screenPosition.y + (shipHeight/2.0) - 15);
         }
 
-        surface.copyRectangleFrom(&partsSurface,0,0,partsSurface.getSurfaceWidth(),partsSurface.getSurfaceHeight());
+        for (auto part : parts) {
+            part->sprite->drawOnSurface(&surface);
+        }
+
+        //surface.copyRectangleFrom(&partsSurface,0,0,partsSurface.getSurfaceWidth(),partsSurface.getSurfaceHeight());
     }
         /* not big enough to show - show a marker instead */
     else {
@@ -61,10 +65,11 @@ void Spacecraft::virtDraw() {
 
 }
 
-Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, long double mass, Vec2D* origin, std::vector<RocketPart*>& _parts)
+Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, long double mass, int width, int height, Vec2D* origin, std::vector<RocketPart*>& _parts)
         : DisplayableObject(pEngine), PhysObject(origin), surface(pEngine), partsSurface(pEngine),
           spacecraftZoomFilter(nullptr, &screenPosition, &spacecraftBoundsFilter),
-          spacecraftRotateFilter(nullptr, &screenPosition, &spacecraftZoomFilter), thrustSprite("flame.png", 5, 5) {
+          spacecraftRotateFilter(nullptr, &screenPosition, &spacecraftZoomFilter),
+          thrustSprite("flame.png", 5, 5), shipWidth(width), shipHeight(height) {
 
     for (auto* part : _parts) parts.push_back(part);
     body = new PhysBody(this, mass, initalPos, initialVel);
@@ -74,11 +79,11 @@ Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& init
     screenOrientOffset = 0;
     body->mass_data.inertia = 0.5;
     body->mass_data.inverse_inertia = 1.0/body->mass_data.inertia;
-    // TODO setup the ships physics object so that it is properly to scale with the system (is currently 300m tall or something stupid)
+    // TODO setup the ships physics object so that it is properly to scale with the system? (is currently 300m tall or something stupid)
 //    Vec2D tl(initalPos.x - data->width/4.0, initalPos.y - data->height/2.0);
-    Vec2D tl(initalPos.x - 300.0/4.0, initalPos.y - 300.0/2.0);
+    Vec2D tl(initalPos.x - width/2.0, initalPos.y - height/2.0);
 //    Vec2D bl(initalPos.x - data->width/4.0, initalPos.y + data->height/2.0);
-    Vec2D bl(initalPos.x - 300.0/4.0, initalPos.y + 300.0/2.0);
+    Vec2D bl(initalPos.x - width/2.0, initalPos.y + height/2.0);
     shape = new OBB(tl, bl, body->position, body->orientMatrix);
 
     zoomAmount = 0;
@@ -124,7 +129,7 @@ bool Spacecraft::isOnScreen(Vec2D& screenPos, long double screenWidth, long doub
 }
 
 void Spacecraft::rotate(double angle, long double timeMod) {
-    body->applyRotation(angle);
+    body->applyRotation(angle * timeMod);
     updateScreenOrient();
     //std::cout << "Body orient: " << body->orient << ", screen orient: " << screenOrient << std::endl;
     isChanged = true;

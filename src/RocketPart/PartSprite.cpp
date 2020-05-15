@@ -23,10 +23,11 @@ void PartSprite::virtDraw() {
 }
 
 void PartSprite::drawOnSurface(DrawingSurface* surface) {
-    image.renderImageBlit(getEngine(), surface,
+    image.renderImageWithMask(surface, 0,0, m_iCurrentScreenX, m_iCurrentScreenY, data->width, data->height, 0x000000);
+    /*image.renderImageBlit(getEngine(), surface,
                           m_iCurrentScreenX, m_iCurrentScreenY,
                           data->width, data->height, 0, 0,
-                          data->width, data->height);
+                          data->width, data->height);*/
 }
 
 void PartSprite::virtMouseDown(int iButton, int iX, int iY) {
@@ -57,4 +58,8 @@ bool PartSprite::isBeingDragged() {
 
 PartSprite::~PartSprite() {
     getEngine()->removeDisplayableObject(this);
+}
+
+void PartSprite::movePosition(int x, int y) {
+    setPosition(m_iCurrentScreenX + x, m_iCurrentScreenY + y);
 }

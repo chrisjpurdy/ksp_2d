@@ -91,13 +91,14 @@ void KSP2D::addNewSpacecraft() {
 
     if (playerSpacecraft) return;
 
-    Spacecraft* newSpacecraft = GUIManager::get()->closeBuilder(this, planets[1]->getPositionOnSurface(1.56835, 30),
+    playerSpacecraft = GUIManager::get()->closeBuilder(this, planets[1]->getPositionOnSurface(1.56835, 30),
             planets[1]->body->velocity, 10000, orbitViewCentre);
-    if (!newSpacecraft) {
+    if (!playerSpacecraft) {
         GUIManager::get()->fadeTextAlert("Please create a valid craft");
         return;
     }
-    delete newSpacecraft; // TODO just testing that it deletes properly currently
+    spacecraft.push_back(playerSpacecraft);
+    //delete playerSpacecraft; // TODO just testing that it deletes properly currently
 
     state = stateLowOrbit;
 
@@ -110,13 +111,13 @@ void KSP2D::addNewSpacecraft() {
         pd->setVisible(true);
     }
 
-    //TODO ground moves away immediately by a certain amount (different each time)? PATCHED BUT AWFULLY SEE REPOSSPACECRAFT
-    playerSpacecraft = new BasicSpacecraft(this, "basicRocket_0",
-                                           planets[1]->getPositionOnSurface(1.56835, 30),
-                                           planets[1]->body->velocity, 10000, orbitViewCentre);
-    spacecraft.push_back(playerSpacecraft);
+//    playerSpacecraft = new BasicSpacecraft(this, "basicRocket_0",
+//                                           planets[1]->getPositionOnSurface(1.56835, 30),
+//                                           planets[1]->body->velocity, 10000, orbitViewCentre);
+    //spacecraft.push_back(playerSpacecraft);
 
     //playerSpacecraft->body->accuTimeSlice = planets[1]->body->accuTimeSlice;
+    //TODO ground moves away immediately by a certain amount (different each time)? PATCHED BUT AWFULLY SEE REPOSSPACECRAFT
     reposSpacecraft = true;
 
     m_vecDisplayableObjects.insert(m_vecDisplayableObjects.begin(), playerSpacecraft);
@@ -234,9 +235,9 @@ void KSP2D::checkKeyInputs() {
 
         if (playerSpacecraft && timeModifier < 4) {
             if (isKeyPressed(SDLK_a)) {
-                playerSpacecraft->rotate(1);
+                playerSpacecraft->rotate(0.001, timeModifier);
             } else if (isKeyPressed(SDLK_d)) {
-                playerSpacecraft->rotate(-1);
+                playerSpacecraft->rotate(-0.001, timeModifier);
             }
         }
 
@@ -354,7 +355,7 @@ void KSP2D::virtMainLoopPostUpdate() {
     if (reposSpacecraft) {
         // currently this is used to reposition a new spacecraft on the surface of Kerbine
         playerSpacecraft->body->position = planets[1]->getPositionOnSurface(1.56835, 30);
-        playerSpacecraft->rotate(-1.56835 * 1000);
+        playerSpacecraft->body->rotate(-1.56835);
         reposSpacecraft = false;
     }
 }

@@ -10,12 +10,12 @@
 
 class SpacecraftControls {
 public:
-    SpacecraftControls(KSP2D* pEngine, BasicSpacecraft* _spacecraft);
+    SpacecraftControls(KSP2D* pEngine, Spacecraft* _spacecraft);
 
     ~SpacecraftControls();
 
     KSP2D* engine;
-    BasicSpacecraft* spacecraft;
+    Spacecraft* spacecraft;
     GUISlider<double>* thrustSlider;
     GUISlider<long double> *orbitTimeSlider, *orbitDistSlider;
     SimpleImage spacecraftHUD;

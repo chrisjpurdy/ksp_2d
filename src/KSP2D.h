@@ -58,9 +58,9 @@ public:
     State state;
     std::vector<CelestialBody*> planets;
     std::vector<PlanetObject*> planetDecorations;
-    std::vector<BasicSpacecraft*> spacecraft;
+    std::vector<Spacecraft*> spacecraft;
 
-    BasicSpacecraft* playerSpacecraft = nullptr;
+    Spacecraft* playerSpacecraft = nullptr;
     CelestialBody* closeByBody = nullptr;
     double closeByRotation = 0;
 

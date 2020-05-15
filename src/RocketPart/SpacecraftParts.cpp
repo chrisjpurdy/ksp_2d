@@ -70,14 +70,21 @@ bool SpacecraftParts::checkSpacecraftValid() {
  *
  * @return  the newly generated spacecraft
  */
-Spacecraft* SpacecraftParts::generateSpacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, long double mass, Vec2D* origin) {
+Spacecraft* SpacecraftParts::generateSpacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel,
+                                                long double mass, int width, int height, Vec2D* origin) {
     if (parts.empty()) {
         return nullptr;
     }
-    return new Spacecraft(pEngine, initalPos, initialVel, mass, origin, parts);
+    return new Spacecraft(pEngine, initalPos, initialVel, mass, width, height, origin, parts);
 }
 
-RocketPart* SpacecraftParts::getDraggedPart() {
+/**
+ * Gets the part being dragged on the ship, and deletes parts that it was attached to which aren't
+ * attached to the root part in some way
+ *
+ * @return      the part being dragged off of the ship, if there is one (nullptr otherwise)
+ */
+RocketPart* SpacecraftParts::getDraggedPart(std::vector<RocketPart*>& sideMostParts) {
 
     RocketPart* retPart = nullptr;
 
@@ -92,20 +99,132 @@ RocketPart* SpacecraftParts::getDraggedPart() {
         }
     }
 
-    // second pass to remove parts which were marked to be deleted
+    int numParts = getNumParts();
+    int initAvX = 0, initAvY = 0;
+
+    // second pass to remove parts which were still marked to be deleted
     if (partsWereDeleted) {
+
         std::vector<RocketPart *> newPartsVec;
-        for (auto *part : parts) {
+        for (auto* part : parts) {
+            initAvX += part->sprite->getXCentre();
+            initAvY += part->sprite->getYCentre();
             if (!part->toBeRemoved) {
                 newPartsVec.push_back(part);
             } else {
                 delete part;
             }
         }
+        initAvX /= numParts;
+        initAvY /= numParts;
         parts = newPartsVec;
     }
 
+    if (retPart) {
+        if (partsWereDeleted) {
+            //refresh the side most parts completely
+            for (int i=0; i<4; i++) {
+                sideMostParts[i] = nullptr;
+                findMostSideMost(RocketPart::Side(i), sideMostParts);
+            }
+            // recalc the centre of the ship and repos parts based on previous centre
+            numParts = getNumParts();
+            if (numParts > 0) {
+                int avX, avY;
+                for (auto part : parts) {
+                    avX += part->sprite->getXCentre();
+                    avY += part->sprite->getYCentre();
+                }
+                avX /= numParts;
+                avY /= numParts;
+                for (auto part : parts) {
+                    part->sprite->movePosition(initAvX - avX, initAvY - avY);
+                }
+            }
+        } else {
+            for (int i=0; i<4; i++) {
+                if (sideMostParts[i] == retPart) {
+                    sideMostParts[i] = nullptr;
+                    reposParts(retPart->sprite->getDrawWidth()/2, retPart->sprite->getDrawHeight()/2,
+                            RocketPart::oppositeSide(RocketPart::Side(i)), sideMostParts);
+                }
+                findMostSideMost(RocketPart::Side(i), sideMostParts);
+            }
+        }
+    }
+
     return retPart;
+}
+
+bool SpacecraftParts::isMoreSideMost(RocketPart* newPart, RocketPart::Side side, std::vector<RocketPart*>& sideMostParts) {
+
+    RocketPart* sideMost = sideMostParts[side];
+    int sideMostX = sideMost->sprite->getXCentre();
+    int sideMostY = sideMost->sprite->getYCentre();
+    int newPartX = newPart->sprite->getXCentre();
+    int newPartY = newPart->sprite->getYCentre();
+
+    sideMost->modifyCentreToAnchorPoint(sideMostX, sideMostY, side);
+    newPart->modifyCentreToAnchorPoint(newPartX, newPartY, side);
+
+    switch (side) {
+        case RocketPart::Side::left:
+            if (newPartX < sideMostX) return true;
+            break;
+        case RocketPart::Side::top:
+            if (newPartY < sideMostY) return true;
+            break;
+        case RocketPart::Side::right:
+            if (newPartX > sideMostX) return true;
+            break;
+        case RocketPart::Side::bottom:
+            if (newPartY > sideMostY) return true;
+            break;
+    }
+    return false;
+}
+
+void SpacecraftParts::findMostSideMost(RocketPart::Side side, std::vector<RocketPart*>& sideMostParts) {
+
+    if (parts.empty()) {
+        for (int i=0; i<4; i++) sideMostParts[i] = nullptr;
+        return;
+    }
+
+    sideMostParts[side] = parts[0];
+    for (auto part : parts) {
+        if (part != parts[0]) {
+            if (isMoreSideMost(part, side, sideMostParts)) sideMostParts[side] = part;
+        }
+    }
+}
+
+void SpacecraftParts::reposParts(int xChangeAbs, int yChangeAbs, RocketPart::Side side, std::vector<RocketPart*>& sideMostParts) {
+
+    maskReposWithSide(xChangeAbs, yChangeAbs, side);
+
+    for (auto part : parts) {
+        if (part) part->sprite->movePosition(xChangeAbs, yChangeAbs);
+    }
+}
+
+void SpacecraftParts::maskReposWithSide(int& x, int& y, RocketPart::Side side) {
+    switch (side) {
+        case RocketPart::Side::left:
+            y = 0;
+            break;
+        case RocketPart::Side::top:
+            x = 0;
+            break;
+        case RocketPart::Side::right:
+            x *= -1;
+            y = 0;
+            break;
+        case RocketPart::Side::bottom:
+            y *= -1;
+            x = 0;
+            break;
+    }
 }
 
 int SpacecraftParts::getNumParts() {

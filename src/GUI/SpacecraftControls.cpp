@@ -4,7 +4,7 @@
 
 #include "SpacecraftControls.h"
 
-SpacecraftControls::SpacecraftControls(KSP2D* pEngine, BasicSpacecraft *_spacecraft) : engine(pEngine), spacecraft(_spacecraft), closeAnim(0), closeAmount(189),
+SpacecraftControls::SpacecraftControls(KSP2D* pEngine, Spacecraft* _spacecraft) : engine(pEngine), spacecraft(_spacecraft), closeAnim(0), closeAmount(189),
                         spacecraftHUD(ImageManager::get()->getImagebyURL("spacecraftHUD.png", true, false)), objectsAdded(false) {
     thrustSlider = new GUISlider<double>(engine, 550, 750, 160, spacecraft->thrustPercent, 0, 1,
                                                                  nullptr, 0x555500, false);

@@ -12,7 +12,7 @@
  */
 struct SpacecraftStateMod {
     Vec2D thrustMod;
-    Vec2D rotThrustMod;
+    Vec2D rotationMod;
     uint8_t fuelMod;
     uint8_t elecMod;
     uint8_t scienceMod;

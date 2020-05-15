@@ -37,6 +37,8 @@ public:
     bool isBeingDragged();
 
     void drawOnSurface(DrawingSurface *surface);
+
+    void movePosition(int i, int i1);
 };
 
 

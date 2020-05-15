@@ -30,6 +30,8 @@ public:
     GUIButton* loadShipButton;
     GUIButton* saveShipButton;
 
+    unsigned int shipOffsetCommandNotification;
+
     void setVisible(bool visible);
 
     Spacecraft *makeShip(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, Vec2D *origin);

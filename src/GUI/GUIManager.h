@@ -37,7 +37,7 @@ public:
     void fadeTextAlert(const char* text);
     void showFadePlanetLabels();
 
-    void setupSpacecraftControls(BasicSpacecraft* spacecraft);
+    void setupSpacecraftControls(Spacecraft* spacecraft);
     void openSpacecraftHUD();
     void closeSpacecraftHUD();
     void setSpacecraftDistHUDSliderMin();
