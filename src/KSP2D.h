@@ -16,8 +16,6 @@
 #include "../sdl2_framework/DrawingFilters.h"
 #include "PlanetObjects/PlanetObject.h"
 
-class BasicSpacecraft;
-
 class KSP2D : public BaseEngine {
 public:
 
@@ -62,26 +60,25 @@ public:
 
     Spacecraft* playerSpacecraft = nullptr;
     CelestialBody* closeByBody = nullptr;
+    bool bgCleared;
     double closeByRotation = 0;
 
     long double maxDistanceMod = 10000000000;
     long double minDistanceMod = 1;
-    long double maxTimeMod = 10000000;
+    long double maxTimeMod = 1000000;
 
     // New shape drawing functions
     void drawForegroundEllipse(long int centerX, long int centerY, long int radiusX, long int radiusY, unsigned int uiColour);
     void plot4EllipsePoints(long int centerX, long int centerY, long int x, long int y, unsigned int uiColour);
     void drawForegroundArrow(int x, int y, Vec2D vec, int length, unsigned int uiColour);
 
-//    template<typename T>
-//    void addAnimation(AnimationHandler<T> *animHandler);
-//    template<typename T>
-//    void addAnimation(T &var, T init, T end, int length, bool loop);
     void buildPlayerSpacecraft();
     void addNewSpacecraft();
     SimpleImage factoryBg;
 
     bool isKeyListener;
+
+    void changeSkyColour(double x);
 };
 
 #endif //KSP_2D_CW4_KSP2D_H

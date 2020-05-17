@@ -61,7 +61,7 @@ void Spacecraft::virtDraw() {
 
 Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, int width, int height, Vec2D* origin, std::vector<RocketPart*>& _parts)
         : DisplayableObject(pEngine), PhysObject(origin), surface(pEngine), partsSurface(pEngine),
-          spacecraftZoomFilter(nullptr, &screenPosition, &spacecraftBoundsFilter),
+          spacecraftZoomFilter(nullptr, &screenPosition, &spacecraftFillFilter),
           spacecraftRotateFilter(nullptr, &screenPosition, &spacecraftZoomFilter),
           thrustSprite("flame.png", 5, 5), shipWidth(width), shipHeight(height) {
 
@@ -75,6 +75,7 @@ Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& init
     body->orient = 0;
     body->orientMatrix = Mat22(body->orient);
     screenOrient = 0;
+    shipToSurfaceDist = -1;
     screenOrientOffset = 0;
     body->mass_data.inertia = 0.5;
     body->mass_data.inverse_inertia = 1.0/body->mass_data.inertia;
@@ -89,7 +90,7 @@ Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& init
     isChanged = true;
     thrustSwitchedOff = true;
     thrustPercent = 0;
-    thrustStrength = 500000; // whats a good value??? - 12MN at sea level for a massive rocket apparently, 2950 tones for saturn 5
+    // whats a good value for thrust??? - 12MN at sea level for a massive rocket apparently, 2950 tones for saturn 5
 
     surface.createSurface(screenDimensions.x, screenDimensions.y);
     surface.addBoundsCheck(0, screenDimensions.x,0, screenDimensions.y);
@@ -119,6 +120,9 @@ KSP2D* Spacecraft::getKSPEngine() {
 void Spacecraft::virtDoUpdate(int iCurrentTime) {
     applySpacecraftMod();
     checkSurfaceCollision(getKSPEngine()->closeByBody);
+    if (getKSPEngine()->closeByBody) {
+        getKSPEngine()->changeSkyColour(10000.0 / (10000.0 + ((distMult/4.0) * ((shipToSurfaceDist/8.5)+100))));
+    }
     tick(iCurrentTime);
     // TODO only redraw if craft is not the center (i.e. being controlled), hasn't rotated and doesn't need scaling
 }
@@ -140,10 +144,13 @@ bool Spacecraft::checkProximityChange(CelestialBody* planet) {
     long double xyDiff = abs(posDiff.x) + abs(posDiff.y);
 
     // if x diff plus y diff is more than 1.5 times the max amount I'm comparing the actual distance against, don't bother calculating
-    if (xyDiff > reinterpret_cast<Circle*>(planet->shape)->radius * 3) return false;
+    if (xyDiff > reinterpret_cast<Circle*>(planet->shape)->radius * 3) {
+        shipToSurfaceDist = -1;
+        return false;
+    }
 
     long double otherDistance = posDiff.magnitude();
-    long double shipToSurfaceDist = otherDistance - reinterpret_cast<Circle*>(planet->shape)->radius;
+    shipToSurfaceDist = otherDistance - reinterpret_cast<Circle*>(planet->shape)->radius;
     planet->screenDistShipToSurface = shipToSurfaceDist / distMult;
     if (shipToSurfaceDist / reinterpret_cast<Circle*>(planet->shape)->radius < stateChangeAltitudeRadiusMult) {
         getKSPEngine()->closeByBody = planet;
@@ -189,7 +196,12 @@ bool Spacecraft::checkProximityChange(CelestialBody* planet) {
 
 void Spacecraft::checkSurfaceCollision(CelestialBody* planet) {
 
-    if (!planet) return;
+    if (!planet) {
+        relativeVelocity = body->velocity;
+        return;
+    }
+
+    relativeVelocity = (body->velocity - planet->body->velocity) + planet->gravityAtSurface;
 
     Vec2D posDiff = body->position - planet->body->position;
     long double xyDiff = abs(posDiff.x) + abs(posDiff.y); // Manhattan distance heuristic
@@ -242,13 +254,9 @@ void Spacecraft::calcAeroProfile() {
         }
     }
     /* now average the values for each side depending on how many parts were considered */
-    //std::cout << "Aero profile: " << std::endl;
     for (int i=0; i<4; i++) {
-        //std::cout << i << std::endl;
         aeroProfile[i].scaleFactor /= partsConsideredPerSide[i];
-        //std::cout << aeroProfile[i].scaleFactor << std::endl;
         aeroProfile[i].rating /= partsConsideredPerSide[i];
-        //std::cout << aeroProfile[i].rating << std::endl;
     }
 
 
@@ -274,6 +282,8 @@ void Spacecraft::applySpacecraftMod() {
     }
     if (stateMod.rotationMod != 0) {
         body->applyRotation(stateMod.rotationMod);
+    }
+    if (body->angularVelocity != 0) {
         updateScreenOrient();
         isChanged = true;
     }

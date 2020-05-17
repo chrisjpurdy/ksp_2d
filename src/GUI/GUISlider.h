@@ -19,7 +19,7 @@ public:
             logMax = ::log(maxVal);
             logMaxMinusMin = logMax - logMin;
         }
-        m_iCurrentScreenX = (xMin - halfWidth) + (length/2);
+        m_iCurrentScreenX = (xMin - halfWidth) + (length/2.0);
         doDragRedraw();
     }
 
@@ -72,8 +72,7 @@ public:
         else value = minVal + (maxMinusMin * sliderPercent);
         changeCheckVal = value;
         // now perform callback with updated value
-        if (callback)
-            callback(value);
+        if (callback) callback(value);
     }
 
     void updateMin(T minNew) {
@@ -111,17 +110,16 @@ public:
 
         m_iCurrentScreenX = xMin + sliderPercent*(xMax - xMin);
         //doDragRedraw();
-        if (callback)
-            callback(value);
+        if (callback) callback(value);
     }
 
     inline void lock() { locked = true; }
     inline void unlock() { locked = false; }
 
-    int xMin, xMax;
-    int yStatic;
+    double xMin, xMax;
+    double yStatic;
     unsigned int colour;
-    int halfWidth, halfHeight;
+    double halfWidth, halfHeight;
 
     // slightly poor practice, but these are here to use if the slider is a logarithmic scale
     bool logarithmic;

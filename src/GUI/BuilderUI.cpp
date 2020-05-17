@@ -125,8 +125,11 @@ void BuilderUI::saveShip() {
 
     std::ofstream fp;
     fp.open("ship.json");
-    fp << stringifyPartData(partCatalogue->spacecraftParts->parts[0]->partData, 0);
+    fp << "{\n\"shipName\":" << "\"" << shipNameTextbox->value << "\",\n";
+    fp << "\"ship\":" << stringifyPartData(partCatalogue->spacecraftParts->parts[0]->partData, 0) << "\n}";
     fp.close();
+
+    GUIManager::get()->fadeTextAlert("Saved ship to file");
 
 }
 
@@ -152,7 +155,13 @@ std::string BuilderUI::stringifyPartData(PartData* data, int sideToIgnore = -1) 
 }
 
 void BuilderUI::loadShip() {
+
     FILE* fp = fopen("ship.json", "r");
+
+    if (fp == nullptr) {
+        GUIManager::get()->fadeTextAlert("Error loading ship - file doesn't exist");
+        return;
+    }
 
     char readBuffer[65536];
     rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
@@ -162,7 +171,7 @@ void BuilderUI::loadShip() {
 
     fclose(fp);
 
-    auto* newPartSprite = new PartSprite(json["name"].GetString(), engine, 0, 0);
+    auto* newPartSprite = new PartSprite(json["ship"]["name"].GetString(), engine, 0, 0);
     engine->appendObjectToArray(newPartSprite);
     auto* rootPart = new RocketPart(newPartSprite);
     std::vector<RocketPart*> sideMostParts;
@@ -173,13 +182,13 @@ void BuilderUI::loadShip() {
     auto* spacecraftParts = new SpacecraftParts(screenCenter.x, screenCenter.y, rootPart);
 
     bool ret = true;
-    for (auto& connectedPart : json["connectedParts"].GetArray()) {
+    for (auto& connectedPart : json["ship"]["connectedParts"].GetArray()) {
         ret = ret && recursivelyAddParts(connectedPart["part"], RocketPart::Side(connectedPart["side"].GetInt()), rootPart,
                             spacecraftParts, sideMostParts);
     }
 
     if (!ret) {
-        GUIManager::get()->fadeTextAlert("Error loading ship from file");
+        GUIManager::get()->fadeTextAlert("Error loading ship - corrupted save file");
     } else {
         if (partCatalogue->spacecraftParts) {
             for (auto* part : partCatalogue->spacecraftParts->parts) {
@@ -189,6 +198,8 @@ void BuilderUI::loadShip() {
         }
         partCatalogue->spacecraftParts = spacecraftParts;
         partCatalogue->sideMostParts = sideMostParts;
+        shipNameTextbox->value = json["shipName"].GetString();
+        GUIManager::get()->fadeTextAlert("Loaded ship from file");
     }
 }
 

@@ -370,6 +370,12 @@ utility
 ../KSP2D.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
 
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.cpp
+GUIManager.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.h
+BuilderUI.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/BuilderUI.h
+
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.h
 ../../sdl2_framework/header.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/header.h
@@ -408,6 +414,10 @@ GUIManager.h
 ../KSP.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP.h
 
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/SpacecraftControls.cpp
+SpacecraftControls.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/SpacecraftControls.h
+
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/SpacecraftControls.h
 ../Spacecraft/BasicSpacecraft.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/BasicSpacecraft.h
@@ -417,6 +427,14 @@ GUISlider.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP.h
 PhysUtils/Vec2D.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/PhysUtils/Vec2D.h
+
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.cpp
+KSP2D.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
+Spacecraft/BasicSpacecraft.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/BasicSpacecraft.h
+GUI/GUIManager.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.h
 
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
 ../sdl2_framework/header.h
@@ -616,6 +634,12 @@ RocketPart.h
 ../../sdl2_framework/ImageManager.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/ImageManager.h
 
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/BasicSpacecraft.cpp
+BasicSpacecraft.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/BasicSpacecraft.h
+../GUI/GUIManager.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.h
+
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/BasicSpacecraft.h
 ../../sdl2_framework/SimpleImage.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleImage.h
@@ -627,6 +651,12 @@ RocketPart.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
 AnimatedSprite.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
+
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/Spacecraft.cpp
+Spacecraft.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/Spacecraft.h
+../GUI/GUIManager.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.h
 
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/Spacecraft.h
 ../RocketPart/RocketPart.h

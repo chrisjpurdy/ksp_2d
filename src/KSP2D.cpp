@@ -14,6 +14,7 @@ void KSP2D::virtSetupBackgroundBuffer() {
 
 int KSP2D::virtInitialise() {
     isKeyListener = true;
+    bgCleared = false;
     notifyObjectsAboutMouse(true);
     notifyObjectsAboutKeys(true);
     factoryBg = ImageManager::get()->loadImage("factory.png");
@@ -38,7 +39,7 @@ int KSP2D::virtInitialiseObjects() {
     planets.push_back(new Planet(this, "Mayers", "14.png", "ground.png", 3389500, 604171000000000000000000.0, 227939200000.0, 0, orbitViewCentre, 0.0934, 59400000.0, 0.8, planets[0]));
     planets.push_back(new Planet(this, "Haley's Comet", "mune.png", "moonground.png", 5500, 220000000000000.0, 2667928430000.0, 0, orbitViewCentre, 0.96714, 2400000000.0, 2.1, planets[0]));
 
-    // TODO when the Moon is the view center and time is sped up, drawing of orbits seems to break a lot (!!!)
+    // TODO when the Moon is the view center and time is sped up, drawing of orbits seems to break occasionally
     for (auto* p : planets) {
         p->body->updatePosition(1);
         p->recalcShape();
@@ -129,7 +130,7 @@ void KSP2D::addNewSpacecraft() {
     minDistanceMod = 1;
     GUIManager::get()->setSpacecraftDistHUDSliderMin();
     distModifier = 1;
-    GUIManager::get()->fadeTextAlert("Spacecraft: Ethos 1");
+    GUIManager::get()->fadeTextAlert(("Spacecraft: " + playerSpacecraft->shipName).c_str());
     setPlanetScale(distModifier, orbitViewCentre);
 
     playerSpacecraft->thrustPercent = 0;
@@ -185,6 +186,7 @@ void KSP2D::setPlanetScale(long double distMod, Vec2D* origin) {
         s->setScreenOrigin(origin);
         s->isChanged = true;
     }
+    bgCleared = false;
 }
 
 void KSP2D::virtMouseDown(int iButton, int x, int y) {
@@ -225,7 +227,7 @@ void KSP2D::checkKeyInputs() {
                 minDistanceMod = 1;
                 GUIManager::get()->setSpacecraftDistHUDSliderMin();
                 distModifier = 1.3;
-                GUIManager::get()->fadeTextAlert("Spacecraft: Ethos 1");
+                GUIManager::get()->fadeTextAlert(("Spacecraft: " + playerSpacecraft->shipName).c_str());
                 setPlanetScale(distModifier, orbitViewCentre);
                 changeOriginLock = true;
             }
@@ -267,8 +269,14 @@ void KSP2D::virtPostDraw() {
         if (s != playerSpacecraft)
             m_pForegroundSurface->copyRectangleFrom(&s->surface, 0, 0, 1300, 800);
     }
+
     if (playerSpacecraft) m_pForegroundSurface->copyRectangleFrom(&playerSpacecraft->surface, 0, 0, 1300, 800);
     GUIManager::get()->draw(getRawTime(), state);
+
+    if (!bgCleared && gravObjViewCenter != -1) {
+        fillBackground(0x02020d);
+        bgCleared = true;
+    }
 }
 
 void KSP2D::virtCleanUp() {
@@ -360,4 +368,12 @@ void KSP2D::virtMainLoopPostUpdate() {
         playerSpacecraft->body->rotate(-1.56835);
         reposSpacecraft = false;
     }
+}
+
+void KSP2D::changeSkyColour(double x) {
+    double mixPercentage = pow(x,4);
+    uint32_t r = 135 * mixPercentage, g = 206 * mixPercentage, b = 235 * mixPercentage;
+    uint32_t colour = b + (g << 8u) + (r << 16u);
+    fillBackground((colour - 0x02020d) + 0x02020d);
+    bgCleared = false;
 }

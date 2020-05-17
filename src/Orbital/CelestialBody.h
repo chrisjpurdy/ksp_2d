@@ -28,6 +28,7 @@ public:
 
     DrawState drawState;
     bool isCloseByBody;
+    double gravityAtSurface;
     long double circumference;
     long double screenDistShipToSurface; // the distance from the ship to the surface of the body in pixels on the screen
 

@@ -29,7 +29,6 @@ public:
     std::string shipName;
 
     double thrustPercent;
-    double thrustStrength;
     bool thrustSwitchedOff;
 
     void virtDoUpdate(int iCurrentTime) override;
@@ -40,13 +39,12 @@ public:
 
     // TODO use weak pointers to store Gadget shared pointers contained in the rocket parts - means when the rocket
     //  parts are deleted the gadgets weak pointers expire
-    void accumulateGadgets();
     void applyGadgets();
 
     DrawingSurface surface;
     DrawingSurface partsSurface;
     FilterPointsRotate spacecraftRotateFilter;
-    FilterPointsWithinSurfaceBounds spacecraftBoundsFilter;
+    FilterPointsFillIn spacecraftFillFilter;
     FilterPointsZoom spacecraftZoomFilter;
 
     bool checkProximityChange(CelestialBody *planet);
@@ -56,6 +54,9 @@ public:
     std::vector<RocketPart*> parts;
     AeroBehaviour aeroProfile[4]{};
     AnimatedSprite thrustSprite;
+
+    Vec2D relativeVelocity;
+    long double shipToSurfaceDist;
 
     SpacecraftStateMod stateMod{};
 

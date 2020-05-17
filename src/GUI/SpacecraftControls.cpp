@@ -45,7 +45,7 @@ void SpacecraftControls::draw(int iCurrentTime) {
 
     if (closeAmount < 188) {
 
-        auto shipVel = std::to_string((int)spacecraft->body->velocity.magnitude());
+        auto shipVel = std::to_string((int)spacecraft->relativeVelocity.magnitude());
 
         engine->drawForegroundString(460, 740 + closeAmount, "Thrust", 0xffffff, engine->getFont("kenpixel.ttf", 16));
         thrustSlider->yStatic = 750 + closeAmount;
@@ -60,12 +60,19 @@ void SpacecraftControls::draw(int iCurrentTime) {
                                      engine->getFont("kenpixel.ttf", 16));
         engine->drawForegroundEllipse(650, 674 + closeAmount, 24, 24, 0xffffff);
 
+        std::string relativeMovementTo = engine->closeByBody ? engine->closeByBody->name : "Sol";
+        engine->drawForegroundString(750, 740 + closeAmount, ("Relative to: " + relativeMovementTo).c_str(), 0xffffff, engine->getFont("kenpixel.ttf", 16));
+
+        std::string altitude = spacecraft->shipToSurfaceDist > -1 ? std::to_string(spacecraft->shipToSurfaceDist/1000) : "N/A";
+        engine->drawForegroundString(750, 760 + closeAmount, ("Altitude: " + altitude + "km").c_str(), 0xffffff, engine->getFont("kenpixel.ttf", 16));
+
+
         if (engine->state == KSP2D::State::stateLowOrbit) {
-            engine->drawForegroundArrow(650, 674 + closeAmount, spacecraft->screenOrientOffsetMatrix * spacecraft->body->velocity, 30, 0xffffff);
+            engine->drawForegroundArrow(650, 674 + closeAmount, spacecraft->screenOrientOffsetMatrix * spacecraft->relativeVelocity, 30, 0xffffff);
             engine->drawForegroundArrow(650, 674 + closeAmount, spacecraft->screenOrientMatrix * Vec2D(0, -1), 30,
                                         0xdd0000);
         } else {
-            engine->drawForegroundArrow(650, 674 + closeAmount, spacecraft->body->velocity, 30, 0xffffff);
+            engine->drawForegroundArrow(650, 674 + closeAmount, spacecraft->relativeVelocity, 30, 0xffffff);
             engine->drawForegroundArrow(650, 674 + closeAmount, spacecraft->body->orientMatrix * Vec2D(0, -1), 30,
                                         0xdd0000);
         }
@@ -86,7 +93,7 @@ void SpacecraftControls::addObjectsToEngine() {
 }
 
 void SpacecraftControls::testLock() {
-    if (engine->timeModifier > 5) {
+    if (engine->timeModifier > 4) {
         thrustSlider->value = 0;
         thrustSlider->lock();
     } else {

@@ -103,6 +103,7 @@ bool CelestialBody::isOnScreen(Vec2D& screenPos, long double screenRadius) {
 
 void CelestialBody::setCloseByBody(bool b) {
     isCloseByBody = b;
+    gravityAtSurface = PhysBody::G * (body->mass_data.mass / (reinterpret_cast<Circle*>(shape)->radius * reinterpret_cast<Circle*>(shape)->radius));
     body->closeByBody = b;
 }
 

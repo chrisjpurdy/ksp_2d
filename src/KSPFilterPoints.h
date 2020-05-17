@@ -9,23 +9,32 @@
 #include "../sdl2_framework/SimpleTrig.h"
 #include "PhysUtils/FastVec2D.h"
 
-class FilterPointsRemoveBackground : public FilterPoints {
+class FilterPointsFillIn : public FilterPoints {
 public:
-    FilterPointsRemoveBackground(unsigned int _bgColour, FilterPoints* _nextFilter) : bgColour(_bgColour), nextFilter(_nextFilter) {};
+    explicit FilterPointsFillIn(FilterPoints* _nextFilter) : nextFilter(_nextFilter) {
+    }
+
+    FilterPointsFillIn() : nextFilter(nullptr) {
+    }
 
     bool filter(DrawingSurface* surface, int& xVirtual, int& yVirtual, unsigned int& uiColour) override {
-        if (uiColour == bgColour) return false;
-        if (nextFilter) return nextFilter->filter(surface, xVirtual, yVirtual, uiColour); // delegate to next filter
-        return true;
+        transform(surface, xVirtual, yVirtual, uiColour);
+        return false;
     }
 
-    inline void setBgColour(unsigned int newBgColour) {
-        bgColour = newBgColour;
-    }
-
-private:
-    unsigned int bgColour;
     FilterPoints* nextFilter;
+
+    void transform(DrawingSurface* surface, int& xVirtual, int& yVirtual, unsigned int& uiColour) {
+
+        if ((nextFilter == nullptr) || nextFilter->filter(surface, xVirtual, yVirtual, uiColour)) {
+            surface->rawSetPixel(xVirtual, yVirtual, uiColour);
+            surface->rawSetPixel(xVirtual + 1, yVirtual + 1, uiColour);
+            surface->rawSetPixel(xVirtual + 1, yVirtual - 1, uiColour);
+            surface->rawSetPixel(xVirtual - 1, yVirtual + 1, uiColour);
+            surface->rawSetPixel(xVirtual - 1, yVirtual - 1, uiColour);
+        }
+    }
+
 };
 
 class FilterPointsRotate : public FilterPoints {

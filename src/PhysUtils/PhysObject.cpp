@@ -15,11 +15,7 @@ void PhysObject::setDistModifier(const long double& dist) {
 }
 
 void PhysObject::setTimeModifier(const long double& time) {
-    if (timeMult >= 1) {
-        timeMult = time;
-    } else {
-        timeMult = 1;
-    }
+    timeMult = time;
 }
 
 void PhysObject::updateScreenOrient() {

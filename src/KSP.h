@@ -11,7 +11,6 @@ const Vec2D screenDimensions = Vec2D(1300,800);
 const Vec2D screenCenter = Vec2D(650,400);
 const double screenViewRadius = sqrt(pow(401,2) + pow(651,2));
 
-//const Vec2D lowOrbitShipViewCenter = Vec2D(650,200);
 const Vec2D rotationNormalAxis = Vec2D(0, -1);
 const double rotationNormalAxisMag = rotationNormalAxis.magnitude(); // this is just 1
 const double stateChangeAltitudeRadiusMult = 1;
