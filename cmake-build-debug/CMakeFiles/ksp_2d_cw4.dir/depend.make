@@ -714,6 +714,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/Gadget/Mono
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o: ../src/RocketPart/SpacecraftParts.h
@@ -838,6 +839,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/Gadget/Mon
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o: ../src/RocketPart/SpacecraftParts.h
@@ -956,6 +958,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/RocketPart/Ga
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/Spacecraft/AnimatedSprite.h
@@ -1074,6 +1077,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/RocketPart/Gadget/MonopropThru
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/Spacecraft/AnimatedSprite.h
@@ -1189,6 +1193,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/RocketPart/Gad
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/Spacecraft/AnimatedSprite.h
@@ -1310,6 +1315,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/RocketPar
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/Spacecraft/AnimatedSprite.h
@@ -1404,6 +1410,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: ../src/RocketPart
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: ../src/RocketPart/KSPMetaManager.cpp
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: /usr/local/include/SDL2/SDL.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: /usr/local/include/SDL2/SDL2_rotozoom.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: /usr/local/include/SDL2/SDL_assert.h
@@ -1490,6 +1497,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: ../sdl2_framework/Sim
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: ../sdl2_framework/header.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: ../src/RocketPart/PartSprite.cpp
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: ../src/RocketPart/PartSprite.h
+CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: ../src/Spacecraft/AnimatedSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: /usr/local/include/SDL2/SDL.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: /usr/local/include/SDL2/SDL2_rotozoom.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: /usr/local/include/SDL2/SDL_assert.h
@@ -1587,9 +1595,11 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/Gad
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/RocketPart.cpp
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/RocketPart.h
+CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/Spacecraft/AnimatedSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: /usr/local/include/SDL2/SDL.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: /usr/local/include/SDL2/SDL2_rotozoom.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: /usr/local/include/SDL2/SDL_assert.h
@@ -1699,6 +1709,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPar
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/SpacecraftParts.cpp
@@ -1817,6 +1828,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/RocketPar
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/Spacecraft/AnimatedSprite.h
@@ -1935,6 +1947,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/RocketPart/Gad
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/Spacecraft/AnimatedSprite.h
@@ -2051,6 +2064,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/RocketPart/Gadget/MonopropThrus
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/RocketPart/Gadget/ReactionWheelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/RocketPart/Gadget/SolarPanelGadget.h
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/RocketPart/KSPMetaManager.h
+CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/RocketPart/PartInfoStructs.h
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/RocketPart/PartSprite.h
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/RocketPart/RocketPart.h
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/Spacecraft/AnimatedSprite.h

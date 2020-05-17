@@ -252,6 +252,9 @@
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h">
 			<Option target="ksp_2d_cw4"/>
 		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h">
+			<Option target="ksp_2d_cw4"/>
+		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.cpp">
 			<Option target="ksp_2d_cw4"/>
 		</Unit>

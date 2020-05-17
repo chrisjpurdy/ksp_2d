@@ -3,8 +3,6 @@
 //
 
 #include "Spacecraft.h"
-
-#include <utility>
 #include "../GUI/GUIManager.h"
 
 void Spacecraft::virtDraw() {
@@ -44,12 +42,8 @@ void Spacecraft::virtDraw() {
     if (screenWidth > 2 && screenHeight > 2) {
         if(!isChanged) return; // don't draw if the spacecraft hasn't been modified (scaled or rotated)
 
-        if (thrustPercent > 0) {
-            thrustSprite.draw(getEngine(), &surface, screenPosition.x - thrustSprite.spriteSheet.getWidth()/10.0, screenPosition.y + (shipHeight/2.0) - 15);
-        }
-
         for (auto part : parts) {
-            part->sprite->drawOnSurface(&surface);
+            part->drawOnSurface(getEngine(), &surface, &thrustSprite);
         }
 
         //surface.copyRectangleFrom(&partsSurface,0,0,partsSurface.getSurfaceWidth(),partsSurface.getSurfaceHeight());
@@ -65,14 +59,19 @@ void Spacecraft::virtDraw() {
 
 }
 
-Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, long double mass, int width, int height, Vec2D* origin, std::vector<RocketPart*>& _parts)
+Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, int width, int height, Vec2D* origin, std::vector<RocketPart*>& _parts)
         : DisplayableObject(pEngine), PhysObject(origin), surface(pEngine), partsSurface(pEngine),
           spacecraftZoomFilter(nullptr, &screenPosition, &spacecraftBoundsFilter),
           spacecraftRotateFilter(nullptr, &screenPosition, &spacecraftZoomFilter),
           thrustSprite("flame.png", 5, 5), shipWidth(width), shipHeight(height) {
 
-    for (auto* part : _parts) parts.push_back(part);
-    body = new PhysBody(this, mass, initalPos, initialVel);
+    long double mass = 0;
+    for (auto* part : _parts) {
+        parts.push_back(part);
+        mass += part->partData->mass;
+    }
+
+    body = new PhysBody(this, mass*1000, initalPos, initialVel);
     body->orient = 0;
     body->orientMatrix = Mat22(body->orient);
     screenOrient = 0;
@@ -118,6 +117,7 @@ KSP2D* Spacecraft::getKSPEngine() {
 }
 
 void Spacecraft::virtDoUpdate(int iCurrentTime) {
+    applySpacecraftMod();
     checkSurfaceCollision(getKSPEngine()->closeByBody);
     tick(iCurrentTime);
     // TODO only redraw if craft is not the center (i.e. being controlled), hasn't rotated and doesn't need scaling
@@ -128,16 +128,10 @@ bool Spacecraft::isOnScreen(Vec2D& screenPos, long double screenWidth, long doub
            && screenPos.y - screenHeight / 2.0 < screenDimensions.y && screenPos.y + screenHeight / 2.0 > 0;
 }
 
-void Spacecraft::rotate(double angle, long double timeMod) {
-    body->applyRotation(angle * timeMod);
-    updateScreenOrient();
-    //std::cout << "Body orient: " << body->orient << ", screen orient: " << screenOrient << std::endl;
-    isChanged = true;
-}
-
-void Spacecraft::applyThrust() {
-    if (thrustPercent > 0)
-        body->applyForceFromDir( body->orientMatrix, -thrustPercent * thrustStrength);
+void Spacecraft::rotate(int direction) {
+    for (auto part : parts) {
+        part->setReactionWheelDirection(direction);
+    }
 }
 
 bool Spacecraft::checkProximityChange(CelestialBody* planet) {
@@ -226,7 +220,7 @@ void Spacecraft::redrawParts() {
     partsSurface.fillSurface(0x000000);
     partsSurface.setAlpha(0);
     for (auto part : parts) {
-        part->sprite->drawOnSurface(&partsSurface);
+        part->drawOnSurface(getEngine(), &partsSurface, &thrustSprite);
     }
 }
 
@@ -263,5 +257,30 @@ void Spacecraft::calcAeroProfile() {
 Spacecraft::~Spacecraft() {
     for (auto part : parts) {
         delete part;
+    }
+}
+
+void Spacecraft::applyGadgets() {
+    /* reset the state mod */
+    memset(&stateMod, 0, sizeof(SpacecraftStateMod));
+    for (auto part : parts) {
+        part->modifySpacecraftState(stateMod, 1);
+    }
+}
+
+void Spacecraft::applySpacecraftMod() {
+    if (stateMod.thrustMod != 0) {
+        body->applyForce(body->orientMatrix * Vec2D(0,1) * -stateMod.thrustMod);
+    }
+    if (stateMod.rotationMod != 0) {
+        body->applyRotation(stateMod.rotationMod);
+        updateScreenOrient();
+        isChanged = true;
+    }
+}
+
+void Spacecraft::updateThrusters() {
+    for (auto part : parts) {
+        part->setThrusterPercent(thrustPercent);
     }
 }

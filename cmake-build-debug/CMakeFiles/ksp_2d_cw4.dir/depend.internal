@@ -715,6 +715,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.h
@@ -839,6 +840,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.h
@@ -957,6 +959,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
@@ -1075,6 +1078,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
@@ -1190,6 +1194,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
@@ -1311,6 +1316,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
@@ -1405,6 +1411,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.cpp
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /usr/local/include/SDL2/SDL.h
  /usr/local/include/SDL2/SDL2_rotozoom.h
  /usr/local/include/SDL2/SDL_assert.h
@@ -1491,6 +1498,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/header.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.cpp
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
  /usr/local/include/SDL2/SDL.h
  /usr/local/include/SDL2/SDL2_rotozoom.h
  /usr/local/include/SDL2/SDL_assert.h
@@ -1588,9 +1596,11 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.cpp
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
  /usr/local/include/SDL2/SDL.h
  /usr/local/include/SDL2/SDL2_rotozoom.h
  /usr/local/include/SDL2/SDL_assert.h
@@ -1700,6 +1710,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.cpp
@@ -1818,6 +1829,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
@@ -1936,6 +1948,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h
@@ -2052,6 +2065,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/ReactionWheelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/Gadget/SolarPanelGadget.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
+ /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartInfoStructs.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.h
  /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/AnimatedSprite.h

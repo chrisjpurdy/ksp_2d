@@ -18,7 +18,7 @@ public:
     void draw(BaseEngine* pEngine, DrawingSurface* surface, int x, int y) {
         spriteSheet.renderImageWithMask(surface,
                             ((animationCounter/countPerFrame) % frames) * (spriteSheet.getWidth()/frames), 0,
-                            x, y,
+                            x - (spriteSheet.getWidth()/frames)/2.0, y - (spriteSheet.getHeight()/frames)/2.0,
                             spriteSheet.getWidth()/frames, spriteSheet.getHeight());
         ++animationCounter;
     }

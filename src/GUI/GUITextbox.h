@@ -143,5 +143,4 @@ public:
     SimpleImage inputBar;
 };
 
-
 #endif //KSP_2D_CW4_GUITEXTBOX_H

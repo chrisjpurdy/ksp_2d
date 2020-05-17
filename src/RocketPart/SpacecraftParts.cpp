@@ -71,11 +71,11 @@ bool SpacecraftParts::checkSpacecraftValid() {
  * @return  the newly generated spacecraft
  */
 Spacecraft* SpacecraftParts::generateSpacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel,
-                                                long double mass, int width, int height, Vec2D* origin) {
+                                                int width, int height, Vec2D* origin) {
     if (parts.empty()) {
         return nullptr;
     }
-    return new Spacecraft(pEngine, initalPos, initialVel, mass, width, height, origin, parts);
+    return new Spacecraft(pEngine, initalPos, initialVel, width, height, origin, parts);
 }
 
 /**
@@ -99,11 +99,14 @@ RocketPart* SpacecraftParts::getDraggedPart(std::vector<RocketPart*>& sideMostPa
         }
     }
 
-    int numParts = getNumParts();
-    int initAvX = 0, initAvY = 0;
+    int numParts = getNumParts() + 1;
+    int initAvX, initAvY;
 
     // second pass to remove parts which were still marked to be deleted
     if (partsWereDeleted) {
+        // make sure to take into account the removed part
+        initAvX = retPart->sprite->getXCentre();
+        initAvY = retPart->sprite->getYCentre();
 
         std::vector<RocketPart *> newPartsVec;
         for (auto* part : parts) {
@@ -230,3 +233,5 @@ void SpacecraftParts::maskReposWithSide(int& x, int& y, RocketPart::Side side) {
 int SpacecraftParts::getNumParts() {
     return parts.size();
 }
+
+SpacecraftParts::~SpacecraftParts() = default;

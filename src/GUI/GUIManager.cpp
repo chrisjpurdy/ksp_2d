@@ -111,8 +111,8 @@ void GUIManager::drawBuilderGUI(int time) {
         builderUI->draw(time);
 }
 
-Spacecraft* GUIManager::closeBuilder(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, long double mass, Vec2D* origin) {
-    Spacecraft* spacecraft = builderUI->makeShip(pEngine, initalPos, initialVel, mass, origin);
+Spacecraft* GUIManager::closeBuilder(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, Vec2D* origin) {
+    Spacecraft* spacecraft = builderUI->makeShip(pEngine, initalPos, initialVel, origin);
     if (spacecraft) {
         delete builderUI;
         builderUI = nullptr;

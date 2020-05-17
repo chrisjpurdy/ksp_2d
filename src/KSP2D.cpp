@@ -92,7 +92,7 @@ void KSP2D::addNewSpacecraft() {
     if (playerSpacecraft) return;
 
     playerSpacecraft = GUIManager::get()->closeBuilder(this, planets[1]->getPositionOnSurface(1.56835, 30),
-            planets[1]->body->velocity, 10000, orbitViewCentre);
+            planets[1]->body->velocity, orbitViewCentre);
     if (!playerSpacecraft) {
         GUIManager::get()->fadeTextAlert("Please create a valid craft");
         return;
@@ -152,8 +152,8 @@ void KSP2D::virtMainLoopPreUpdate() {
     for (auto* s : spacecraft) {
         for (auto* p : planets) {
             s->body->applyGravity(p->body);
+            s->applyGadgets();
         }
-        s->applyThrust();
         s->body->recalcForce = false;
     }
 
@@ -235,9 +235,11 @@ void KSP2D::checkKeyInputs() {
 
         if (playerSpacecraft && timeModifier < 4) {
             if (isKeyPressed(SDLK_a)) {
-                playerSpacecraft->rotate(0.001, timeModifier);
+                playerSpacecraft->rotate(1);
             } else if (isKeyPressed(SDLK_d)) {
-                playerSpacecraft->rotate(-0.001, timeModifier);
+                playerSpacecraft->rotate(-1);
+            } else {
+                playerSpacecraft->rotate(0);
             }
         }
 

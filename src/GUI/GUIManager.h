@@ -43,7 +43,7 @@ public:
     void setSpacecraftDistHUDSliderMin();
     void setSpacecraftTimeHUDSliderMax();
 
-    Spacecraft *closeBuilder(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, Vec2D *origin);
+    Spacecraft *closeBuilder(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, Vec2D *origin);
 
 private:
     explicit GUIManager(KSP2D* pEngine);

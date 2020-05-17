@@ -19,6 +19,7 @@ class SpacecraftParts {
 public:
 
     SpacecraftParts(int screenX, int screenY, RocketPart* initialPart);
+    ~SpacecraftParts();
 
     /**
      * Connects a new part to the given part
@@ -40,7 +41,7 @@ public:
      *
      * @return  the newly generated spacecraft
      */
-    Spacecraft* generateSpacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass,
+    Spacecraft* generateSpacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel,
                                    int width, int height, Vec2D *origin);
 
     std::vector<RocketPart*> parts;

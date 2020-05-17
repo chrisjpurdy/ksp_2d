@@ -3,6 +3,7 @@
 //
 
 #include "PartSprite.h"
+#include "../Spacecraft/AnimatedSprite.h"
 #include <utility>
 
 uint32_t PartSprite::idCount = 0;
@@ -22,7 +23,7 @@ void PartSprite::virtDraw() {
     }
 }
 
-void PartSprite::drawOnSurface(DrawingSurface* surface) {
+void PartSprite::drawOnSurface(DrawingSurface *surface) {
     image.renderImageWithMask(surface, 0,0, m_iCurrentScreenX, m_iCurrentScreenY, data->width, data->height, 0x000000);
     /*image.renderImageBlit(getEngine(), surface,
                           m_iCurrentScreenX, m_iCurrentScreenY,

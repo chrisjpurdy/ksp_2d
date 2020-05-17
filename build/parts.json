@@ -2,6 +2,7 @@
   {
     "name": "Basic nose cone",
     "sprite": "noseCone_0",
+    "mass": 0.7,
     "health": 1000,
     "max_temp": 10000,
     "anchors": [{
@@ -53,6 +54,7 @@
   {
     "name": "Basic reaction wheel nose cone",
     "sprite": "noseCone_1",
+    "mass": 0.9,
     "health": 1000,
     "max_temp": 10000,
     "anchors": [{
@@ -104,6 +106,7 @@
   {
     "name": "Advanced nose cone",
     "sprite": "noseCone_2",
+    "mass": 0.9,
     "health": 1000,
     "max_temp": 10000,
     "anchors": [{
@@ -155,6 +158,7 @@
   {
     "name": "Basic fuel thruster",
     "sprite": "thruster_0",
+    "mass": 0.19,
     "health": 1000,
     "max_temp": 15000,
     "anchors": [{
@@ -206,6 +210,7 @@
   {
     "name": "Basic ion thruster",
     "sprite": "thruster_1",
+    "mass": 0.19,
     "health": 1000,
     "max_temp": 15000,
     "anchors": [{
@@ -257,6 +262,7 @@
   {
     "name": "Gimbal thruster",
     "sprite": "thruster_2",
+    "mass": 0.25,
     "health": 1000,
     "max_temp": 16000,
     "anchors": [{
@@ -308,6 +314,7 @@
   {
     "name": "Advanced thruster",
     "sprite": "thruster_3",
+    "mass": 0.28,
     "health": 1000,
     "max_temp": 17000,
     "anchors": [{
@@ -359,6 +366,7 @@
   {
     "name": "Even more advanced thruster",
     "sprite": "thruster_4",
+    "mass": 0.3,
     "health": 1000,
     "max_temp": 18000,
     "anchors": [{
@@ -410,6 +418,7 @@
   {
     "name": "Basic side thruster",
     "sprite": "sideThruster_0",
+    "mass": 0.21,
     "health": 1000,
     "max_temp": 18000,
     "anchors": [{
@@ -461,6 +470,7 @@
   {
     "name": "Basic ion side thruster",
     "sprite": "sideThruster_1",
+    "mass": 0.21,
     "health": 1000,
     "max_temp": 18000,
     "anchors": [{
@@ -512,6 +522,7 @@
   {
     "name": "Advanced side thruster",
     "sprite": "sideThruster_2",
+    "mass": 0.25,
     "health": 1000,
     "max_temp": 20000,
     "anchors": [{
@@ -563,6 +574,7 @@
   {
     "name": "Super special side thruster",
     "sprite": "sideThruster_3",
+    "mass": 0.3,
     "health": 1000,
     "max_temp": 22000,
     "anchors": [{
@@ -614,8 +626,9 @@
   {
     "name": "Small fuel tank",
     "sprite": "bodypart_0",
+    "mass": 0.2,
     "health": 1000,
-    "max_temp": 8000,
+    "max_temp": 2000,
     "anchors": [{
       "block": true,
       "radial": true,
@@ -665,8 +678,9 @@
   {
     "name": "Small monoprop tank",
     "sprite": "bodypart_1",
+    "mass": 0.2,
     "health": 1000,
-    "max_temp": 8000,
+    "max_temp": 2000,
     "anchors": [{
       "block": true,
       "radial": true,
@@ -716,6 +730,7 @@
   {
     "name": "Basic command pod",
     "sprite": "bodypart_2",
+    "mass": 0.66,
     "health": 1000,
     "max_temp": 10000,
     "anchors": [{
@@ -767,8 +782,9 @@
   {
     "name": "Small electric battery",
     "sprite": "bodypart_3",
+    "mass": 0.71,
     "health": 1000,
-    "max_temp": 8000,
+    "max_temp": 2000,
     "anchors": [{
       "block": true,
       "radial": true,
@@ -818,6 +834,7 @@
   {
     "name": "Basic drone controller",
     "sprite": "bodypart_4",
+    "mass": 0.8,
     "health": 1000,
     "max_temp": 10000,
     "anchors": [{
@@ -869,6 +886,7 @@
   {
     "name": "Basic decoupler",
     "sprite": "decoupler_0",
+    "mass": 0.16,
     "health": 1000,
     "max_temp": 8000,
     "anchors": [{

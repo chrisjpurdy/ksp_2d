@@ -1,0 +1,32 @@
+{
+"name": "bodypart_4",
+"connectedParts": [
+{
+"side": 2,
+"part": {
+"name": "noseCone_0",
+"connectedParts": [
+]}
+},
+{
+"side": 3,
+"part": {
+"name": "bodypart_0",
+"connectedParts": [
+{
+"side": 3,
+"part": {
+"name": "bodypart_0",
+"connectedParts": [
+{
+"side": 3,
+"part": {
+"name": "thruster_0",
+"connectedParts": [
+]}
+}
+]}
+}
+]}
+}
+]}

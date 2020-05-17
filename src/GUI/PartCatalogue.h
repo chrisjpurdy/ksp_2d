@@ -60,6 +60,9 @@ public:
 
         hoverBackground = new SimpleImage(ImageManager::get()->getSpriteFromImg(ImageManager::get()->getSpriteData("panel_0")));
         hoverBackground->setTransparencyColour(0x000000);
+
+        spacecraftXOff = 0.1;
+        spacecraftYOff = 0.1;
     }
 
     ~PartCatalogue() override {
@@ -236,8 +239,8 @@ public:
             part->sprite->movePosition(-spacecraftXOff, -spacecraftYOff);
         }
 
-        spacecraftXOff = 0;
-        spacecraftYOff = 0;
+        spacecraftXOff = 0.1;
+        spacecraftYOff = 0.1;
     }
 
     void virtMouseUp(int iButton, int x, int y) override {
@@ -330,35 +333,38 @@ public:
                         0, 0, hoverBackground->getWidth(), hoverBackground->getHeight());
 
                 pSurface->drawFastString(topX + 22, topY + 20, hoverPartInfo->partName.c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
-                pSurface->drawFastString(topX + 22, topY + 45, (std::string("Max temperature: ") + std::to_string(hoverPartInfo->maxTemperature)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
-                pSurface->drawFastString(topX + 22, topY + 70, "Resources: ", 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
-                pSurface->drawFastString(topX + 32, topY + 95, (std::string("- Fuel: ") + std::to_string(hoverPartInfo->resources.maxFuel)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
-                pSurface->drawFastString(topX + 32, topY + 120, (std::string("- Monopropellant: ") + std::to_string(hoverPartInfo->resources.maxMonoprop)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
-                pSurface->drawFastString(topX + 32, topY + 145, (std::string("- Electricity: ") + std::to_string(hoverPartInfo->resources.maxElectricity)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
-                pSurface->drawFastString(topX + 22, topY + 170, "Gadgets:", 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                pSurface->drawFastString(topX + 22, topY + 45, (std::string("Mass (t): ") + std::to_string(hoverPartInfo->mass)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                pSurface->drawFastString(topX + 22, topY + 70, (std::string("Max temperature: ") + std::to_string(hoverPartInfo->maxTemperature)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                pSurface->drawFastString(topX + 22, topY + 95, "Resources: ", 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                pSurface->drawFastString(topX + 32, topY + 120, (std::string("- Fuel: ") + std::to_string(hoverPartInfo->resources.maxFuel)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                pSurface->drawFastString(topX + 32, topY + 145, (std::string("- Monopropellant: ") + std::to_string(hoverPartInfo->resources.maxMonoprop)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                pSurface->drawFastString(topX + 32, topY + 170, (std::string("- Electricity: ") + std::to_string(hoverPartInfo->resources.maxElectricity)).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                pSurface->drawFastString(topX + 22, topY + 195, "Gadgets:", 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
                 for (int i=0; i<hoverPartInfo->gadgets->size(); i++) {
-                    pSurface->drawFastString(topX + 32, topY + 195 + i*25, (std::string("- ") + hoverPartInfo->gadgets->at(i)->gadgetName).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                    pSurface->drawFastString(topX + 32, topY + 220 + i*25, (std::string("- ") + hoverPartInfo->gadgets->at(i)->gadgetName).c_str(), 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
                 }
                 if (hoverPartInfo->gadgets->empty()) {
-                    pSurface->drawFastString(topX + 32, topY + 195, "- none", 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
+                    pSurface->drawFastString(topX + 32, topY + 220, "- none", 0xffffff, pEngine->getFont("kenpixel.ttf", 16));
                 }
             }
         }
     }
 
-    Spacecraft* makeShip(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, Vec2D *origin) {
+    Spacecraft* makeShip(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, Vec2D *origin) {
         if (!spacecraftParts) return nullptr;
         // first centre spacecraft parts and the offset x by the root parts distance from the x centre
         resetShipOffset();
         int xOff = screenCenter.x - spacecraftParts->parts[0]->sprite->getXCentre();
-        if (abs(xOff) > 1) offsetShip(xOff, 0);
+        int yOff = screenCenter.y - ((sideMostParts[RocketPart::Side::top]->sprite->getYCentre() - sideMostParts[RocketPart::Side::top]->sprite->getDrawHeight()/2) +
+                (sideMostParts[RocketPart::Side::bottom]->sprite->getYCentre() + sideMostParts[RocketPart::Side::bottom]->sprite->getDrawHeight()/2))/2;
+        if (abs(xOff) > 1) offsetShip(xOff, yOff);
 
         int width = (sideMostParts[RocketPart::Side::right]->sprite->getXCentre() + sideMostParts[RocketPart::Side::right]->sprite->getDrawWidth()/2)
                     - (sideMostParts[RocketPart::Side::left]->sprite->getXCentre() - sideMostParts[RocketPart::Side::left]->sprite->getDrawWidth()/2);
         int height = (sideMostParts[RocketPart::Side::bottom]->sprite->getYCentre() + sideMostParts[RocketPart::Side::bottom]->sprite->getDrawHeight()/2)
                      - (sideMostParts[RocketPart::Side::top]->sprite->getYCentre() - sideMostParts[RocketPart::Side::top]->sprite->getDrawHeight()/2);
 
-        return spacecraftParts->generateSpacecraft(pEngine, initalPos, initialVel, mass, width, height, origin);
+        return spacecraftParts->generateSpacecraft(pEngine, initalPos, initialVel, width, height, origin);
     }
 
     void draw(int iCurrentTime) {

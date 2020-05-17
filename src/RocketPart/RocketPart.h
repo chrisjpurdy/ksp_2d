@@ -86,7 +86,17 @@ public:
 
     bool checkAvaliableToAttatch(RocketPart *attachee, Side fromSide);
 
-    bool isDecoupler();
+    SpacecraftStateMod &modifySpacecraftState(SpacecraftStateMod &state, long double seconds);
+
+    void setThrusterPercent(double thrustPercent);
+
+    bool hasGadget(std::string gadgetName);
+
+    bool isThrusterActivated();
+
+    void drawOnSurface(BaseEngine* engine, DrawingSurface *pSurface, AnimatedSprite *pSprite);
+
+    void setReactionWheelDirection(int direction);
 };
 
 

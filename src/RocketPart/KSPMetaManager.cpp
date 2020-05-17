@@ -35,7 +35,9 @@ std::shared_ptr<PartData> KSPMetaManager::getPartData(const std::string& spriteN
             //std::cout << "\t\t-*- Found part data for sprite: " << spriteName << std::endl;
             auto* pd = new PartData;
             pd->partName = v["name"].GetString();
+            pd->spriteName = v["sprite"].GetString();
             pd->health = v["health"].GetUint();
+            pd->mass = v["mass"].GetFloat();
             pd->maxHealth = v["health"].GetUint();
             pd->maxTemperature = v["max_temp"].GetUint();
             pd->resources.fuel = pd->resources.maxFuel = v["resources"]["fuel"].GetUint();

@@ -190,8 +190,11 @@ public:
     }
 
     void applyForceFromDir(Mat22 rotMatrix, double magnitude) {
-
+        // TODO DONT KNOW IF APPLYING THE THRUST OR NOT AAAAAA
         if (!recalcForce || mass_data.mass == 0) return;
+        //if (mass_data.mass == 0) return;
+
+        std::cout << "APPLYING FORCE" << std::endl;
 
         Vec2D r = rotMatrix * Vec2D(0,1);
 

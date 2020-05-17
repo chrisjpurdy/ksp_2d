@@ -7,6 +7,7 @@
 
 #include "../../sdl2_framework/header.h"
 #include "../../sdl2_framework/DragableObject.h"
+#include "../Spacecraft/AnimatedSprite.h"
 
 class PartSprite : public DragableObject {
 

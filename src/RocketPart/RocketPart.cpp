@@ -41,7 +41,7 @@ bool RocketPart::checkAvaliableToAttatch(RocketPart* attachee, Side fromSide) {
     if ((attachee->partData->anchorPoints[attacheeSnapPoint].block && partData->anchorPoints[fromSide].block) ||
         (attachee->partData->anchorPoints[attacheeSnapPoint].radial && partData->anchorPoints[fromSide].radial) ||
         (attachee->partData->anchorPoints[attacheeSnapPoint].cover && partData->anchorPoints[fromSide].cover) ||
-        (attachee->partData->anchorPoints[attacheeSnapPoint].decoupler && partData->anchorPoints[fromSide].decoupler && (attachee->isDecoupler() || isDecoupler()))) {
+        (attachee->partData->anchorPoints[attacheeSnapPoint].decoupler && partData->anchorPoints[fromSide].decoupler && (attachee->hasGadget("decoupler") || hasGadget("decoupler")))) {
 
         // if the part doesn't already have a connected part at this point
         if (!partData->anchorPoints[fromSide].connectedPart) {
@@ -128,9 +128,9 @@ RocketPart::~RocketPart() {
     delete sprite;
 }
 
-bool RocketPart::isDecoupler() {
+bool RocketPart::hasGadget(std::string gadgetName) {
     for (auto gadget : *partData->gadgets) {
-        if (gadget->gadgetName == "decoupler") return true;
+        if (gadget->gadgetName == gadgetName) return true;
     }
     return false;
 }
@@ -148,5 +148,57 @@ bool RocketPart::checkIfConnectedToRoot(RocketPart* prev) {
     return false;
 }
 
+SpacecraftStateMod& RocketPart::modifySpacecraftState(SpacecraftStateMod& state, long double seconds) {
+    for (auto gadget : *partData->gadgets) {
+        if (gadget->activated) gadget->modifySpacecraftState(state, seconds);
+    }
+    return state;
+};
 
+void RocketPart::setThrusterPercent(double thrustPercent) {
+    for (auto gadget : *partData->gadgets) {
+        if (gadget->gadgetName == "fuelThruster") {
+            ((FuelThrusterGadget*)gadget)->setThrustPercent(thrustPercent);
+        } else if (gadget->gadgetName == "ionThruster") {
+            ((IonThrusterGadget*)gadget)->setThrustPercent(thrustPercent);
+        } else if (gadget->gadgetName == "monopropThruster") {
+            ((MonopropThrusterGadget*)gadget)->setThrustPercent(thrustPercent);
+        } else {
+            continue;
+        }
+        if (thrustPercent <= 0) {
+            gadget->disable();
+        } else {
+            gadget->activate();
+        }
+    }
+}
 
+void RocketPart::setReactionWheelDirection(int direction) {
+    for (auto gadget : *partData->gadgets) {
+        if (gadget->gadgetName == "reactionWheel") {
+            ((ReactionWheelGadget*)gadget)->setRotateDirection(direction);
+            if (direction == 0) {
+                gadget->disable();
+            } else {
+                gadget->activate();
+            }
+        }
+    }
+}
+
+bool RocketPart::isThrusterActivated() {
+    for (auto gadget : *partData->gadgets) {
+        if (gadget->gadgetName == "fuelThruster" || gadget->gadgetName == "ionThruster" || gadget->gadgetName == "monopropThruster") {
+            if (gadget->activated) return true;
+        }
+    }
+    return false;
+}
+
+void RocketPart::drawOnSurface(BaseEngine* engine, DrawingSurface *pSurface, AnimatedSprite *pSprite) {
+    if (isThrusterActivated()) {
+        pSprite->draw(engine, pSurface, sprite->getXCentre(), sprite->getYCentre() + sprite->getDrawHeight()/2.0);
+    }
+    sprite->drawOnSurface(pSurface);
+}

@@ -6,16 +6,17 @@
 #define KSP_2D_CW4_GADGET_H
 
 #include "../../PhysUtils/Vec2D.h"
+#include "../PartInfoStructs.h"
 
 /**
  * this gets passed around the rocket parts to accumulate changes to the spacecraft's state
  */
 struct SpacecraftStateMod {
-    Vec2D thrustMod;
-    Vec2D rotationMod;
-    uint8_t fuelMod;
-    uint8_t elecMod;
-    uint8_t scienceMod;
+    double thrustMod;
+    double rotationMod;
+    double fuel;
+    double monoprop;
+    double elec;
 };
 
 class Gadget {
@@ -25,14 +26,20 @@ public:
      *
      * @return  whether the part was activated
      */
-    virtual bool activate() { return false; };
+    virtual bool activate() {
+        activated = true;
+        return true;
+    };
 
     /**
      * Deactivates the gadget (for example stops a fuel based thruster)
      *
      * @return  whether the part was deactivated
      */
-    virtual bool disable() { return false; };
+    virtual bool disable() {
+        activated = false;
+        return true;
+    };
 
     /**
      * Checks whether the gadget is a gadget which is inside a part which can act as a basis for a spacecraft (a drone core or a command pod)
@@ -48,7 +55,7 @@ public:
      * @param   state
      * @return  the same state object but modified
      */
-    virtual SpacecraftStateMod& modifySpacecraftState(SpacecraftStateMod& state) {
+    virtual SpacecraftStateMod& modifySpacecraftState(SpacecraftStateMod& state, long double timeSlice) {
         return state;
     };
 

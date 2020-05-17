@@ -9,6 +9,8 @@
 #include "GUITextbox.h"
 #include "PartCatalogue.h"
 #include "GUIButton.h"
+#include <sstream>
+#include <fstream>
 
 class BuilderUI {
 public:
@@ -30,11 +32,24 @@ public:
     GUIButton* loadShipButton;
     GUIButton* saveShipButton;
 
+    SimpleImage* shipInfoPanel;
+
     unsigned int shipOffsetCommandNotification;
 
     void setVisible(bool visible);
 
-    Spacecraft *makeShip(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, Vec2D *origin);
+    Spacecraft *makeShip(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, Vec2D *origin);
+
+    void drawShipInfo(DrawingSurface *pSurface);
+
+    void saveShip();
+
+    void loadShip();
+
+    std::string stringifyPartData(PartData *data, int sideToIgnore);
+
+    bool recursivelyAddParts(rapidjson::Value &part, RocketPart::Side side, RocketPart *parentPart,
+                             SpacecraftParts *spacecraftParts, std::vector<RocketPart *>& sideMostParts);
 };
 
 

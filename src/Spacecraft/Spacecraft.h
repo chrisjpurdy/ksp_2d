@@ -17,7 +17,7 @@ class KSP2D;
 class Spacecraft : public DisplayableObject, public PhysObject {
 public:
 
-    Spacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, long double mass, int width, int height, Vec2D *origin, std::vector<RocketPart*>& _parts);
+    Spacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, int width, int height, Vec2D *origin, std::vector<RocketPart*>& _parts);
     ~Spacecraft() override;
 
     KSP2D* getKSPEngine();
@@ -26,6 +26,7 @@ public:
     bool isChanged;
 
     int shipWidth, shipHeight;
+    std::string shipName;
 
     double thrustPercent;
     double thrustStrength;
@@ -37,12 +38,10 @@ public:
 
     static bool isOnScreen(Vec2D &screenPos, long double screenWidth, long double screenHeight);
 
-    void rotate(double angle, long double timeMod);
-
     // TODO use weak pointers to store Gadget shared pointers contained in the rocket parts - means when the rocket
     //  parts are deleted the gadgets weak pointers expire
     void accumulateGadgets();
-    SpacecraftStateMod applyGagets();
+    void applyGadgets();
 
     DrawingSurface surface;
     DrawingSurface partsSurface;
@@ -58,11 +57,17 @@ public:
     AeroBehaviour aeroProfile[4]{};
     AnimatedSprite thrustSprite;
 
+    SpacecraftStateMod stateMod{};
+
     void redrawParts();
 
     void calcAeroProfile();
 
-    void applyThrust();
+    void updateThrusters();
+
+    void applySpacecraftMod();
+
+    void rotate(int direction);
 };
 
 
