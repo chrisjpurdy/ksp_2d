@@ -11,6 +11,9 @@
 #include "../KSP2D.h"
 #include "AnimatedSprite.h"
 
+/**
+ * DEPRECATED - now using Spacecraft since the spacecraft builder works
+ */
 class BasicSpacecraft : public DisplayableObject, public PhysObject {
 public:
     BasicSpacecraft(KSP2D *pEngine, std::string spriteName, const Vec2D &initalPos, const Vec2D &initialVel,

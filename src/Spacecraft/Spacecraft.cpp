@@ -220,11 +220,10 @@ void Spacecraft::checkAtmosphericForces(CelestialBody* planet) {
 
     if (!planet) return;
 
-    Vec2D posDiff = body->position - planet->body->position;
-    long double xyDiff = abs(posDiff.x) + abs(posDiff.y); // Manhattan distance heuristic
-    if (xyDiff > reinterpret_cast<Circle*>(planet->shape)->radius * 3) return;
-
-
+    /* allows "atmosphere" for each planetary body to extend a quarter of their radius from the surface */
+    if (shipToSurfaceDist < reinterpret_cast<Circle*>(planet->shape)->radius / 4) {
+        std::cout << "yeah" << std::endl;
+    }
 
 }
 
