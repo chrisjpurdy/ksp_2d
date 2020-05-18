@@ -7,6 +7,10 @@
 
 #include "PhysUtils/Vec2D.h"
 
+#ifndef M_PI
+#define M_PI 3.14159265
+#endif
+
 const Vec2D screenDimensions = Vec2D(1300,800);
 const Vec2D screenCenter = Vec2D(650,400);
 const double screenViewRadius = sqrt(pow(401,2) + pow(651,2));

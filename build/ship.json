@@ -1,20 +1,25 @@
 {
-"shipName":"christhespoon",
+"shipName":"SHIP NAME",
 "ship":{
 "name": "bodypart_4",
 "connectedParts": [
 {
-"side": 1,
-"part": {
-"name": "bodypart_3",
-"connectedParts": [
-{
 "side": 2,
 "part": {
-"name": "noseCone_2",
+"name": "noseCone_1",
 "connectedParts": [
 ]}
 },
+{
+"side": 3,
+"part": {
+"name": "bodypart_0",
+"connectedParts": [
+{
+"side": 3,
+"part": {
+"name": "bodypart_0",
+"connectedParts": [
 {
 "side": 3,
 "part": {
@@ -22,46 +27,6 @@
 "connectedParts": [
 ]}
 }
-]}
-},
-{
-"side": 2,
-"part": {
-"name": "noseCone_0",
-"connectedParts": [
-]}
-},
-{
-"side": 3,
-"part": {
-"name": "bodypart_1",
-"connectedParts": [
-{
-"side": 0,
-"part": {
-"name": "bodypart_3",
-"connectedParts": [
-{
-"side": 2,
-"part": {
-"name": "noseCone_2",
-"connectedParts": [
-]}
-},
-{
-"side": 3,
-"part": {
-"name": "thruster_0",
-"connectedParts": [
-]}
-}
-]}
-},
-{
-"side": 3,
-"part": {
-"name": "thruster_0",
-"connectedParts": [
 ]}
 }
 ]}

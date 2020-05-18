@@ -10,6 +10,7 @@ GUIManager* GUIManager::singleton = nullptr;
 GUIManager::GUIManager(KSP2D *pEngine) : fadeText(""), spacecraftControls(nullptr) {
     engine = pEngine;
     fadeTextTimer = 0; fadeTextMaxTimer = 400;
+    titleFadeTextTimer = 0; titleFadeTextMaxTimer = 600;
     planetLabelsTimer = 0; planetLabelsMaxTimer = 300;
     builderUI = new BuilderUI(engine);
 }
@@ -21,6 +22,7 @@ GUIManager::~GUIManager() {
 
 void GUIManager::draw(int time, KSP2D::State state) {
     drawFadeText();
+    drawTitleFadeText();
     drawOrbitGUI();
     if (state == KSP2D::State::stateFlight || state == KSP2D::State::stateLowOrbit ||
                 state == KSP2D::State::stateReentry || state == KSP2D::State::stateTakeoff || state == KSP2D::State::stateOrbit) {
@@ -59,6 +61,27 @@ void GUIManager::drawFadeText() {
         --fadeTextTimer;
 
         free(fadeCStr);
+    }
+}
+
+/* Title fade text functions */
+
+void GUIManager::titleFadeTextAlert(const char* text) {
+    titleFadeText = text;
+    titleFadeTextTimer = titleFadeTextMaxTimer;
+}
+
+void GUIManager::drawTitleFadeText() {
+    if(titleFadeTextTimer > 0) {
+        char* titleFadeCStr = new char[titleFadeText.size() + 1];
+        memcpy(titleFadeCStr, (void *) titleFadeText.c_str(), titleFadeText.size() + 1);
+
+        titleFadeCStr[std::min((int)titleFadeText.size(),(int)((titleFadeText.size() * 2) * (1 - abs((titleFadeTextMaxTimer * 0.5) - titleFadeTextTimer)/(titleFadeTextMaxTimer * 0.5))))] = '\0';
+
+        engine->getForegroundSurface()->drawFastString(305, 360, titleFadeCStr, 0xffffff, engine->getFont("kenpixel.ttf", 50));
+        --titleFadeTextTimer;
+
+        free(titleFadeCStr);
     }
 }
 
@@ -118,4 +141,11 @@ Spacecraft* GUIManager::closeBuilder(KSP2D* pEngine, const Vec2D& initalPos, con
         builderUI = nullptr;
     }
     return spacecraft;
+}
+
+void GUIManager::spacecraftDestroyed() {
+    builderUI = new BuilderUI(engine);
+    builderUI->addObjectsToEngine();
+    delete spacecraftControls;
+    spacecraftControls = nullptr;
 }

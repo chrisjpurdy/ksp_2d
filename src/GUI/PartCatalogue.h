@@ -354,17 +354,26 @@ public:
         if (!spacecraftParts) return nullptr;
         // first centre spacecraft parts and the offset x by the root parts distance from the x centre
         resetShipOffset();
-        int xOff = screenCenter.x - spacecraftParts->parts[0]->sprite->getXCentre();
-        int yOff = screenCenter.y - ((sideMostParts[RocketPart::Side::top]->sprite->getYCentre() - sideMostParts[RocketPart::Side::top]->sprite->getDrawHeight()/2) +
-                (sideMostParts[RocketPart::Side::bottom]->sprite->getYCentre() + sideMostParts[RocketPart::Side::bottom]->sprite->getDrawHeight()/2))/2;
-        if (abs(xOff) > 1) offsetShip(xOff, yOff);
+
+        double xCent = spacecraftParts->parts[0]->sprite->getXCentre();
+        double yCent = ((sideMostParts[RocketPart::Side::top]->sprite->getYCentre() - sideMostParts[RocketPart::Side::top]->sprite->getDrawHeight()/2.0) +
+                        (sideMostParts[RocketPart::Side::bottom]->sprite->getYCentre() + sideMostParts[RocketPart::Side::bottom]->sprite->getDrawHeight()/2.0))/2.0;
+
+        Vec2D tl(xCent - (sideMostParts[RocketPart::Side::left]->sprite->getXCentre() - sideMostParts[RocketPart::Side::left]->sprite->getDrawWidth()/2.0),
+                 yCent - (sideMostParts[RocketPart::Side::top]->sprite->getYCentre() - sideMostParts[RocketPart::Side::top]->sprite->getDrawHeight()/2.0));
+        Vec2D br(xCent - (sideMostParts[RocketPart::Side::right]->sprite->getXCentre() + sideMostParts[RocketPart::Side::right]->sprite->getDrawWidth()/2.0),
+                 yCent - (sideMostParts[RocketPart::Side::bottom]->sprite->getYCentre() + sideMostParts[RocketPart::Side::bottom]->sprite->getDrawHeight()/2.0));
+
+        int xOff = screenCenter.x - xCent + 0.01;
+        int yOff = screenCenter.y - yCent + 0.01;
+        offsetShip(xOff, yOff);
 
         int width = (sideMostParts[RocketPart::Side::right]->sprite->getXCentre() + sideMostParts[RocketPart::Side::right]->sprite->getDrawWidth()/2)
                     - (sideMostParts[RocketPart::Side::left]->sprite->getXCentre() - sideMostParts[RocketPart::Side::left]->sprite->getDrawWidth()/2);
         int height = (sideMostParts[RocketPart::Side::bottom]->sprite->getYCentre() + sideMostParts[RocketPart::Side::bottom]->sprite->getDrawHeight()/2)
                      - (sideMostParts[RocketPart::Side::top]->sprite->getYCentre() - sideMostParts[RocketPart::Side::top]->sprite->getDrawHeight()/2);
 
-        return spacecraftParts->generateSpacecraft(pEngine, initalPos, initialVel, width, height, origin);
+        return spacecraftParts->generateSpacecraft(pEngine, initalPos, initialVel, width, height, origin, tl, br);
     }
 
     void draw(int iCurrentTime) {

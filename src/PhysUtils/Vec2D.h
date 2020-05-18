@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <algorithm>
 
 class Vec2D {
 public:
@@ -117,6 +118,28 @@ public:
         this->y = y / mag;
         return *this;
     }
+
+    Vec2D normaliseCopy()
+    {
+        return Vec2D(x ,y).normalise();
+    }
+
+//    float Q_rsqrt( float number )
+//    {
+//        long i;
+//        float x2, a;
+//        const float threehalfs = 1.5F;
+//
+//        x2 = number * 0.5F;
+//        a  = number;
+//        i  = * ( long * ) &a;
+//        i  = 0x5f3759df - ( i >> 1 );
+//        a  = * ( float * ) &i;
+//        a  = a * ( threehalfs - ( x2 * a * a ) );   // 1st iteration
+//        //  y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration,
+//
+//        return a;
+//    }
 
     // return vector perpendicular to this one (rotated clockwise)
     Vec2D perpendicularClockwise() const

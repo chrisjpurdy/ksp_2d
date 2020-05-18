@@ -114,3 +114,7 @@ Vec2D CelestialBody::getPositionOnSurface(double radians, long double heightAbov
     radiusLine.rotate(radians);
     return body->position + radiusLine;
 }
+
+CelestialBody::~CelestialBody() {
+    getEngine()->removeDisplayableObject(this);
+}

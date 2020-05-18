@@ -108,7 +108,7 @@ public:
         if (logarithmic) sliderPercent = (::log(value) - logMin) / logMaxMinusMin;
         else sliderPercent = (value - minVal) / maxMinusMin;
 
-        m_iCurrentScreenX = xMin + sliderPercent*(xMax - xMin);
+        m_iCurrentScreenX = (xMin + sliderPercent*(xMax - xMin)) - m_iDrawWidth/2;
         //doDragRedraw();
         if (callback) callback(value);
     }

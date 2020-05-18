@@ -38,20 +38,21 @@ public:
 
 class OBB : public CollisionShape {
 public:
-    OBB(const Vec2D& tl, const Vec2D& bl, const Vec2D& center, const Mat22& rot) {
-        // TODO need to set these with respect to rotation (for now all OBBs assumed to start with 0 rotation)
-        centerToTopLeft = tl - center;
-        centerToBottomLeft = bl - center;
+    OBB(const Vec2D& tl, const Vec2D& br, const Vec2D& center, const Mat22& rot) {
+        centerToTopLeft = (tl - center).rotate(M_PI);
+        centerToBottomRight = (br - center).rotate(M_PI);
+        centerToTopRight = (Vec2D(br.x, tl.y) - center).rotate(M_PI);
+        centerToBottomLeft = (Vec2D(tl.x, br.y) - center).rotate(M_PI);
         updateShape(center, rot);
         //std::cout << "Cent to tl: " << centerToTopLeft.to_string() << ", cent to br: " << centerToBottomRight.to_string() << std::endl;
     }
 
     void updateShape(const Vec2D& pos, const Mat22& rot) override {
         rotation = rot;
-        inverseRotation = rot.inverted();
+        //inverseRotation = rot.inverted();
         topLeft = pos + (rotation * centerToTopLeft);
-        bottomRight = pos + (rotation * -centerToTopLeft);
-        topRight = pos + (rotation * -centerToBottomLeft);
+        bottomRight = pos + (rotation * centerToBottomRight);
+        topRight = pos + (rotation * centerToTopRight);
         bottomLeft = pos + (rotation * centerToBottomLeft);
 //        std::cout << "tl: " << topLeft.to_string() << std::endl;
 //        std::cout << "br: " << bottomRight.to_string() << std::endl;
@@ -66,6 +67,8 @@ public:
 
     Vec2D centerToTopLeft;
     Vec2D centerToBottomLeft;
+    Vec2D centerToTopRight;
+    Vec2D centerToBottomRight;
 };
 
 class Circle : public CollisionShape {

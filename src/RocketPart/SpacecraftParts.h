@@ -42,7 +42,7 @@ public:
      * @return  the newly generated spacecraft
      */
     Spacecraft* generateSpacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel,
-                                   int width, int height, Vec2D *origin);
+                                   int width, int height, Vec2D *origin, const Vec2D& tl, const Vec2D& br);
 
     std::vector<RocketPart*> parts;
 

@@ -59,7 +59,8 @@ void Spacecraft::virtDraw() {
 
 }
 
-Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, int width, int height, Vec2D* origin, std::vector<RocketPart*>& _parts)
+Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel, int width, int height, Vec2D* origin,
+                        std::vector<RocketPart*>& _parts, Vec2D topleftrelative, Vec2D bottomrightrelative)
         : DisplayableObject(pEngine), PhysObject(origin), surface(pEngine), partsSurface(pEngine),
           spacecraftZoomFilter(nullptr, &screenPosition, &spacecraftFillFilter),
           spacecraftRotateFilter(nullptr, &screenPosition, &spacecraftZoomFilter),
@@ -79,12 +80,10 @@ Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& init
     screenOrientOffset = 0;
     body->mass_data.inertia = 0.5;
     body->mass_data.inverse_inertia = 1.0/body->mass_data.inertia;
-    // TODO setup the ships physics object so that it is properly to scale with the system? (is currently 300m tall or something stupid)
-//    Vec2D tl(initalPos.x - data->width/4.0, initalPos.y - data->height/2.0);
-    Vec2D tl(initalPos.x - width/2.0, initalPos.y - height/2.0);
-//    Vec2D bl(initalPos.x - data->width/4.0, initalPos.y + data->height/2.0);
-    Vec2D bl(initalPos.x - width/2.0, initalPos.y + height/2.0);
-    shape = new OBB(tl, bl, body->position, body->orientMatrix);
+    // TODO setup the ships physics object so that it is properly to scale with the system? (is currently 300m tall)
+    Vec2D tl(initalPos.x + topleftrelative.x, initalPos.y + topleftrelative.y);
+    Vec2D br(initalPos.x + bottomrightrelative.x, initalPos.y + bottomrightrelative.y);
+    shape = new OBB(tl, br, body->position, body->orientMatrix);
 
     zoomAmount = 0;
     isChanged = true;
@@ -113,18 +112,29 @@ Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& init
     spacecraftZoomFilter.bindZoom(&zoomAmount);
 }
 
+Spacecraft::~Spacecraft() {
+    getEngine()->removeDisplayableObject(this);
+    for (auto* part : parts) {
+        delete part;
+    }
+}
+
 KSP2D* Spacecraft::getKSPEngine() {
     return (KSP2D*)m_pEngine;
 }
 
 void Spacecraft::virtDoUpdate(int iCurrentTime) {
-    applySpacecraftMod();
-    checkSurfaceCollision(getKSPEngine()->closeByBody);
-    if (getKSPEngine()->closeByBody) {
-        getKSPEngine()->changeSkyColour(10000.0 / (10000.0 + ((distMult/4.0) * ((shipToSurfaceDist/8.5)+100))));
+    // if the ship hasn't blown up
+    if (checkSurfaceCollision(getKSPEngine()->closeByBody)) {
+        if (getKSPEngine()->closeByBody) {
+            getKSPEngine()->changeSkyColour(10000.0 / (10000.0 + ((distMult/4.0) * ((shipToSurfaceDist/8.5)+100))));
+        }
+        tick(iCurrentTime);
+        if (body->recalcForce) {
+            applySpacecraftMod();
+            checkAtmosphericForces(getKSPEngine()->closeByBody);
+        }
     }
-    tick(iCurrentTime);
-    // TODO only redraw if craft is not the center (i.e. being controlled), hasn't rotated and doesn't need scaling
 }
 
 bool Spacecraft::isOnScreen(Vec2D& screenPos, long double screenWidth, long double screenHeight) {
@@ -180,7 +190,7 @@ bool Spacecraft::checkProximityChange(CelestialBody* planet) {
         }
         return true;
     } else {
-        getKSPEngine()->maxTimeMod = 100000000;
+        getKSPEngine()->maxTimeMod = 1000000;
         GUIManager::get()->setSpacecraftTimeHUDSliderMax();
         planet->setCloseByBody(false);
         updateScreenOrient(0);
@@ -194,11 +204,11 @@ bool Spacecraft::checkProximityChange(CelestialBody* planet) {
     }
 }
 
-void Spacecraft::checkSurfaceCollision(CelestialBody* planet) {
+bool Spacecraft::checkSurfaceCollision(CelestialBody* planet) {
 
     if (!planet) {
         relativeVelocity = body->velocity;
-        return;
+        return true;
     }
 
     relativeVelocity = (body->velocity - planet->body->velocity) + planet->gravityAtSurface;
@@ -206,13 +216,21 @@ void Spacecraft::checkSurfaceCollision(CelestialBody* planet) {
     Vec2D posDiff = body->position - planet->body->position;
     long double xyDiff = abs(posDiff.x) + abs(posDiff.y); // Manhattan distance heuristic
     // if x diff plus y diff is more than 1.5 times the max amount I'm comparing the actual distance against, don't bother calculating
-    if (xyDiff > reinterpret_cast<Circle*>(planet->shape)->radius * 3) return;
+    if (xyDiff > reinterpret_cast<Circle*>(planet->shape)->radius * 3) return true;
 
     CollisionManifold manifold(this, planet);
 
     // resolve collision if colliding
-    if(PhysBody::OBBCircleCollision(manifold))
-        PhysBody::resolveCollision(manifold);
+    if(PhysBody::OBBCircleCollision(manifold)) {
+        // if the spacecraft is hitting the surface at more than 300 m/s
+        if (relativeVelocity.magnitudeSquared() > 90000) {
+            getKSPEngine()->spacecraftDestroyed();
+            return false;
+        } else {
+            PhysBody::resolveCollision(manifold);
+        }
+    }
+    return true;
 
 }
 
@@ -221,8 +239,37 @@ void Spacecraft::checkAtmosphericForces(CelestialBody* planet) {
     if (!planet) return;
 
     /* allows "atmosphere" for each planetary body to extend a quarter of their radius from the surface */
-    if (shipToSurfaceDist < reinterpret_cast<Circle*>(planet->shape)->radius / 4) {
-        std::cout << "yeah" << std::endl;
+    double atmospherePercent = shipToSurfaceDist / (reinterpret_cast<Circle*>(planet->shape)->radius / 4);
+    if (atmospherePercent < 1) {
+        // then calculate aerodynamic forces
+        /* air density is prop to atmospherePercent
+         */
+        Vec2D normalisedVel = relativeVelocity.normaliseCopy();
+        float movementToHeadingTop = normalisedVel.dotproduct(body->orientMatrix * Vec2D(0,1));
+        normalisedVel = normalisedVel.perpendicularClockwise();
+        float movementToHeadingLeft = normalisedVel.dotproduct(body->orientMatrix * Vec2D(0,1));
+
+        /* movementToHeadingTop: 0 if on side, -1 hitting nosecone, 1 if on bottom */
+        /* movementToHeadingBottom: 0 on top or bottom, 1 is left side, -1 is right side */
+
+        double leftCoeff = std::max(movementToHeadingLeft,0.f);
+        double rightCoeff = std::max(-movementToHeadingLeft,0.f);
+        double topCoeff = std::max(-movementToHeadingTop,0.f);
+        double botCoeff = std::max(movementToHeadingTop,0.f);
+
+        Vec2D totalDrag(0,0);
+        /* using the ships height as an approximation to lift amount */
+        //Vec2D totalLift(0,0);
+
+        totalDrag += body->orientMatrix * Vec2D(1,0) * (1.0/aeroProfile[0].rating) * leftCoeff;
+        totalDrag += body->orientMatrix * Vec2D(-1,0) * (1.0/aeroProfile[1].rating) * rightCoeff;
+        totalDrag += body->orientMatrix * Vec2D(0,1) * (1.0/aeroProfile[2].rating) * topCoeff;
+        totalDrag += body->orientMatrix * Vec2D(0,-1) * (1.0/aeroProfile[3].rating) * botCoeff;
+
+        totalDrag *= relativeVelocity.magnitudeSquared() * atmospherePercent;
+        //std::cout << "Drag amount: " << totalDrag.to_string() << std::endl;
+        body->applyForce(totalDrag);
+
     }
 
 }
@@ -259,12 +306,6 @@ void Spacecraft::calcAeroProfile() {
     }
 
 
-}
-
-Spacecraft::~Spacecraft() {
-    for (auto part : parts) {
-        delete part;
-    }
 }
 
 void Spacecraft::applyGadgets() {

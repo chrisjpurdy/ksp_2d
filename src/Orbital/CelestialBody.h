@@ -17,6 +17,8 @@ class CelestialBody : public DisplayableObject, public PhysObject {
 public:
     CelestialBody(BaseEngine *pEngine, long double x, long double y, const char *_name, const char* imgPath, const char* groundImgPath, long double _radius, Vec2D* origin);
 
+    ~CelestialBody() override;
+
     enum DrawState {closeBy, farOff, none};
 
     void virtDraw() override;

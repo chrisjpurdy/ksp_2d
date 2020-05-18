@@ -18,6 +18,12 @@ SpacecraftControls::SpacecraftControls(KSP2D* pEngine, Spacecraft* _spacecraft) 
 }
 
 SpacecraftControls::~SpacecraftControls() {
+    engine->removeDisplayableObject(thrustSlider);
+    engine->removeDisplayableObject(orbitDistSlider);
+    engine->removeDisplayableObject(orbitTimeSlider);
+    delete thrustSlider;
+    delete orbitTimeSlider;
+    delete orbitDistSlider;
 }
 
 void SpacecraftControls::update(int iCurrentTime) {

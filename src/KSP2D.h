@@ -79,6 +79,8 @@ public:
     bool isKeyListener;
 
     void changeSkyColour(double x);
+
+    void spacecraftDestroyed();
 };
 
 #endif //KSP_2D_CW4_KSP2D_H

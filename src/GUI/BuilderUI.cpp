@@ -80,25 +80,27 @@ void BuilderUI::update(int iCurrentTime) {
 
     if (engine->state != KSP2D::State::stateBuilder) return;
 
-    // should handle any GUI animations etc
-    if (engine->isKeyPressed(SDLK_LEFT)) {
-        partCatalogue->offsetShip(-0.01, 0);
-        shipOffsetCommandNotification |= 2;
-    }
-    if (engine->isKeyPressed(SDLK_DOWN)) {
-        partCatalogue->offsetShip(0, 0.01);
-        shipOffsetCommandNotification |= 2;
-    }
-    if (engine->isKeyPressed(SDLK_UP)) {
-        partCatalogue->offsetShip(0, -0.01);
-        shipOffsetCommandNotification |= 2;
-    }
-    if (engine->isKeyPressed(SDLK_RIGHT)) {
-        partCatalogue->offsetShip(0.01, 0);
-        shipOffsetCommandNotification |= 2;
-    }
-    if (engine->isKeyPressed(SDLK_SPACE)) {
-        partCatalogue->resetShipOffset();
+    if (engine->isKeyListener) {
+        // should handle any GUI animations etc
+        if (engine->isKeyPressed(SDLK_LEFT)) {
+            partCatalogue->offsetShip(-0.01, 0);
+            shipOffsetCommandNotification |= 2;
+        }
+        if (engine->isKeyPressed(SDLK_DOWN)) {
+            partCatalogue->offsetShip(0, 0.01);
+            shipOffsetCommandNotification |= 2;
+        }
+        if (engine->isKeyPressed(SDLK_UP)) {
+            partCatalogue->offsetShip(0, -0.01);
+            shipOffsetCommandNotification |= 2;
+        }
+        if (engine->isKeyPressed(SDLK_RIGHT)) {
+            partCatalogue->offsetShip(0.01, 0);
+            shipOffsetCommandNotification |= 2;
+        }
+        if (engine->isKeyPressed(SDLK_SPACE)) {
+            partCatalogue->resetShipOffset();
+        }
     }
 
     if (!(shipOffsetCommandNotification & 1)) {

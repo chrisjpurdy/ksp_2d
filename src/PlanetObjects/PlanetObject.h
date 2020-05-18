@@ -22,6 +22,8 @@ public:
     PlanetObject(BaseEngine *pEngine, CelestialBody *_planet, double _positionOnSurface, std::string spriteName,
                  long double widthMult, long double heightMult, long double _groundSlop);
 
+    ~PlanetObject() override;
+
     void virtDraw() override;
 
     double positionOnSurface;

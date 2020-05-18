@@ -37,3 +37,7 @@ void PlanetObject::virtDraw() {
                           screenCenter.y + planet->screenDistShipToSurface + (groundSlop/planet->distMult - screenHeight), screenWidth, screenHeight,
             0, 0, data->width, data->height);
 }
+
+PlanetObject::~PlanetObject() {
+    getEngine()->removeDisplayableObject(this);
+}

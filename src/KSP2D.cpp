@@ -39,7 +39,7 @@ int KSP2D::virtInitialiseObjects() {
     planets.push_back(new Planet(this, "Mayers", "14.png", "ground.png", 3389500, 604171000000000000000000.0, 227939200000.0, 0, orbitViewCentre, 0.0934, 59400000.0, 0.8, planets[0]));
     planets.push_back(new Planet(this, "Haley's Comet", "mune.png", "moonground.png", 5500, 220000000000000.0, 2667928430000.0, 0, orbitViewCentre, 0.96714, 2400000000.0, 2.1, planets[0]));
 
-    // TODO when the Moon is the view center and time is sped up, drawing of orbits seems to break occasionally
+    // TODO when the Moon is the view center and time is sped up a lot, drawing of orbits seems to go weird
     for (auto* p : planets) {
         p->body->updatePosition(1);
         p->recalcShape();
@@ -67,12 +67,15 @@ int KSP2D::virtInitialiseObjects() {
     GUIManager::get()->addObjectsToEngine();
 
     timeModifier = 1;
+    GUIManager::get()->titleFadeTextAlert("Gerbil Space Program");
     GUIManager::get()->fadeTextAlert("Press b to create a spacecraft");
 
     return 0;
 }
 
 void KSP2D::buildPlayerSpacecraft() {
+
+    GUIManager::get()->titleFadeTextAlert("");
 
     state = stateBuilder;
     //fillBackground(0x888880);
@@ -99,7 +102,6 @@ void KSP2D::addNewSpacecraft() {
         return;
     }
     spacecraft.push_back(playerSpacecraft);
-    //delete playerSpacecraft; // TODO just testing that it deletes properly currently
 
     state = stateLowOrbit;
 
@@ -112,13 +114,7 @@ void KSP2D::addNewSpacecraft() {
         pd->setVisible(true);
     }
 
-//    playerSpacecraft = new BasicSpacecraft(this, "basicRocket_0",
-//                                           planets[1]->getPositionOnSurface(1.56835, 30),
-//                                           planets[1]->body->velocity, 10000, orbitViewCentre);
-    //spacecraft.push_back(playerSpacecraft);
-
-    //playerSpacecraft->body->accuTimeSlice = planets[1]->body->accuTimeSlice;
-    //TODO ground moves away immediately by a certain amount (different each time)? PATCHED BUT AWFULLY SEE REPOSSPACECRAFT
+    //TODO ground moves away immediately by a certain amount (different each time)? - patched but not sufficiently imo
     reposSpacecraft = true;
 
     m_vecDisplayableObjects.insert(m_vecDisplayableObjects.begin(), playerSpacecraft);
@@ -208,6 +204,7 @@ void KSP2D::checkKeyInputs() {
                 GUIManager::get()->fadeTextAlert(planets.at(gravObjViewCenter)->name.c_str());
                 setPlanetScale(distModifier, orbitViewCentre);
                 changeOriginLock = true;
+                bgCleared = false;
             }
         } else if (isKeyPressed(SDLK_x)) {
             if (!changeOriginLock) {
@@ -219,6 +216,7 @@ void KSP2D::checkKeyInputs() {
                 GUIManager::get()->fadeTextAlert(planets.at(gravObjViewCenter)->name.c_str());
                 setPlanetScale(distModifier, orbitViewCentre);
                 changeOriginLock = true;
+                bgCleared = false;
             }
         } else if (isKeyPressed(SDLK_s)) {
             if (!changeOriginLock && playerSpacecraft) {
@@ -277,6 +275,31 @@ void KSP2D::virtPostDraw() {
         fillBackground(0x02020d);
         bgCleared = true;
     }
+}
+
+void KSP2D::spacecraftDestroyed() {
+    for (int i=0; i<spacecraft.size(); i++) {
+        if (spacecraft[i] == playerSpacecraft) spacecraft.erase(spacecraft.begin()+i);
+    }
+    removeDisplayableObject(playerSpacecraft);
+    delete playerSpacecraft;
+    playerSpacecraft = nullptr;
+    reposSpacecraft = false;
+    state = stateOrbit;
+
+    GUIManager::get()->spacecraftDestroyed();
+
+    gravObjViewCenter = 1;
+    orbitViewCentre = &(planets.at(gravObjViewCenter)->body->position);
+    minDistanceMod = reinterpret_cast<Circle*>(planets.at(gravObjViewCenter)->shape)->radius / 400.0;
+    GUIManager::get()->setSpacecraftDistHUDSliderMin();
+    distModifier = reinterpret_cast<Circle*>(planets.at(gravObjViewCenter)->shape)->radius / 250.0;
+    GUIManager::get()->fadeTextAlert(planets.at(gravObjViewCenter)->name.c_str());
+    setPlanetScale(distModifier, orbitViewCentre);
+
+    timeModifier = 1;
+    GUIManager::get()->titleFadeTextAlert("You hit the floor hard");
+    GUIManager::get()->fadeTextAlert("Press b to create a spacecraft");
 }
 
 void KSP2D::virtCleanUp() {

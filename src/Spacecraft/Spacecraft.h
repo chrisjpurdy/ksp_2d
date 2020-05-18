@@ -17,7 +17,8 @@ class KSP2D;
 class Spacecraft : public DisplayableObject, public PhysObject {
 public:
 
-    Spacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, int width, int height, Vec2D *origin, std::vector<RocketPart*>& _parts);
+    Spacecraft(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, int width, int height, Vec2D *origin,
+            std::vector<RocketPart*>& _parts, Vec2D topleft, Vec2D bottomright);
     ~Spacecraft() override;
 
     KSP2D* getKSPEngine();
@@ -37,8 +38,6 @@ public:
 
     static bool isOnScreen(Vec2D &screenPos, long double screenWidth, long double screenHeight);
 
-    // TODO use weak pointers to store Gadget shared pointers contained in the rocket parts - means when the rocket
-    //  parts are deleted the gadgets weak pointers expire
     void applyGadgets();
 
     DrawingSurface surface;
@@ -48,7 +47,7 @@ public:
     FilterPointsZoom spacecraftZoomFilter;
 
     bool checkProximityChange(CelestialBody *planet);
-    void checkSurfaceCollision(CelestialBody *planet);
+    bool checkSurfaceCollision(CelestialBody *planet);
     void checkAtmosphericForces(CelestialBody *planet);
 
     std::vector<RocketPart*> parts;

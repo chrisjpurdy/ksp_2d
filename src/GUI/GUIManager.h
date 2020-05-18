@@ -35,6 +35,7 @@ public:
     void update(int time);
 
     void fadeTextAlert(const char* text);
+    void titleFadeTextAlert(const char *text);
     void showFadePlanetLabels();
 
     void setupSpacecraftControls(Spacecraft* spacecraft);
@@ -44,6 +45,8 @@ public:
     void setSpacecraftTimeHUDSliderMax();
 
     Spacecraft *closeBuilder(KSP2D *pEngine, const Vec2D &initalPos, const Vec2D &initialVel, Vec2D *origin);
+
+    void spacecraftDestroyed();
 
 private:
     explicit GUIManager(KSP2D* pEngine);
@@ -55,6 +58,10 @@ private:
     int fadeTextMaxTimer;
     std::string fadeText;
 
+    int titleFadeTextTimer;
+    int titleFadeTextMaxTimer;
+    std::string titleFadeText;
+
     int planetLabelsTimer;
     int planetLabelsMaxTimer;
 
@@ -65,6 +72,9 @@ private:
     void drawOrbitGUI();
     void drawSpacecraftGUI(int time);
     void drawBuilderGUI(int time);
+
+    void drawTitleFadeText();
+
 };
 
 #endif //KSP_2D_CW4_GUIMANAGER_H

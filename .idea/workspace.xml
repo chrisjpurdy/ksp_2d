@@ -13,8 +13,31 @@
   <component name="ChangeListManager">
     <list default="true" id="027b177d-ae44-4f98-ab9d-7ce0dc930739" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spacecraft/BasicSpacecraft.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spacecraft/BasicSpacecraft.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ksp_2d_cw4" beforeDir="false" afterPath="$PROJECT_DIR$/build/ksp_2d_cw4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ship.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ship.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/BuilderUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BuilderUI.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUIManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUIManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUISlider.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUISlider.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/PartCatalogue.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PartCatalogue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/SpacecraftControls.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SpacecraftControls.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KSP.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/KSP.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KSP2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/KSP2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KSP2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/KSP2D.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orbital/CelestialBody.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orbital/CelestialBody.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orbital/CelestialBody.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orbital/CelestialBody.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhysUtils/PhysObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysUtils/PhysObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhysUtils/Vec2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysUtils/Vec2D.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +159,7 @@
       <workItem from="1588283397099" duration="1268000" />
       <workItem from="1588862049854" duration="220000" />
       <workItem from="1589388071439" duration="75547000" />
-      <workItem from="1589792414346" duration="936000" />
+      <workItem from="1589792414346" duration="14854000" />
     </task>
     <task id="LOCAL-00001" summary="Spaceship builder screen and ship movement patch - should not longer segfault">
       <created>1589574068209</created>
@@ -159,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589755828169</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Started aerodynamics">
+      <created>1589810786285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589810786285</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +214,7 @@
     <MESSAGE value="Spaceship builder screen and ship movement patch - should not longer segfault" />
     <MESSAGE value="Spaceship builder saving and loading spacecraft - fully works" />
     <MESSAGE value="Sky changes colour while going above planet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sky changes colour while going above planet" />
+    <MESSAGE value="Started aerodynamics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started aerodynamics" />
   </component>
 </project>

@@ -71,11 +71,11 @@ bool SpacecraftParts::checkSpacecraftValid() {
  * @return  the newly generated spacecraft
  */
 Spacecraft* SpacecraftParts::generateSpacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& initialVel,
-                                                int width, int height, Vec2D* origin) {
+                                                int width, int height, Vec2D* origin, const Vec2D& tl, const Vec2D& br) {
     if (parts.empty()) {
         return nullptr;
     }
-    return new Spacecraft(pEngine, initalPos, initialVel, width, height, origin, parts);
+    return new Spacecraft(pEngine, initalPos, initialVel, width, height, origin, parts, tl, br);
 }
 
 /**
