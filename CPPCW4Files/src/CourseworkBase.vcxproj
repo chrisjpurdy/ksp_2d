@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{63F64093-23C3-4181-8554-C22C5AE2DDAC}</ProjectGuid>
+    <RootNamespace>Coursework3Game</RootNamespace>
+    <ProjectName>CourseworkBase2020</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)/$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)/$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BrowseInformation>true</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>_DEBUG</PreprocessorDefinitions>
+      <WarningLevel>Level2</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SDL\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>
+      </AssemblyDebug>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>map</MapFileName>
+      <MapExports>false</MapExports>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_NDEBUG</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SDL\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ksp2d_src\GUI\BuilderUI.h" />
+    <ClInclude Include="..\ksp2d_src\GUI\GUIButton.h" />
+    <ClInclude Include="..\ksp2d_src\GUI\GUIManager.h" />
+    <ClInclude Include="..\ksp2d_src\GUI\GUISlider.h" />
+    <ClInclude Include="..\ksp2d_src\GUI\GUITextbox.h" />
+    <ClInclude Include="..\ksp2d_src\GUI\PartCatalogue.h" />
+    <ClInclude Include="..\ksp2d_src\GUI\SpacecraftControls.h" />
+    <ClInclude Include="..\ksp2d_src\KSP.h" />
+    <ClInclude Include="..\ksp2d_src\KSP2D.h" />
+    <ClInclude Include="..\ksp2d_src\KSPFilterPoints.h" />
+    <ClInclude Include="..\ksp2d_src\Orbital\CelestialBody.h" />
+    <ClInclude Include="..\ksp2d_src\Orbital\Planet.h" />
+    <ClInclude Include="..\ksp2d_src\Orbital\Sun.h" />
+    <ClInclude Include="..\ksp2d_src\PhysUtils\FastVec2D.h" />
+    <ClInclude Include="..\ksp2d_src\PhysUtils\Mat22.h" />
+    <ClInclude Include="..\ksp2d_src\PhysUtils\PhysObject.h" />
+    <ClInclude Include="..\ksp2d_src\PhysUtils\Projection.h" />
+    <ClInclude Include="..\ksp2d_src\PhysUtils\Vec2D.h" />
+    <ClInclude Include="..\ksp2d_src\PlanetObjects\PlanetObject.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\AntennaGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\ControllerGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\CrewContainerGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\DecouplerGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\FuelThrusterGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\Gadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\Gadgets.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\IonThrusterGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\MonopropThrusterGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\ReactionWheelGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\Gadget\SolarPanelGadget.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\KSPMetaManager.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\PartSprite.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\RocketPart.h" />
+    <ClInclude Include="..\ksp2d_src\RocketPart\SpacecraftParts.h" />
+    <ClInclude Include="..\ksp2d_src\Spacecraft\AnimatedSprite.h" />
+    <ClInclude Include="..\ksp2d_src\Spacecraft\BasicSpacecraft.h" />
+    <ClInclude Include="..\ksp2d_src\Spacecraft\Spacecraft.h" />
+    <ClInclude Include="..\rapidjson\allocators.h" />
+    <ClInclude Include="..\rapidjson\cursorstreamwrapper.h" />
+    <ClInclude Include="..\rapidjson\document.h" />
+    <ClInclude Include="..\rapidjson\encodedstream.h" />
+    <ClInclude Include="..\rapidjson\encodings.h" />
+    <ClInclude Include="..\rapidjson\error\en.h" />
+    <ClInclude Include="..\rapidjson\error\error.h" />
+    <ClInclude Include="..\rapidjson\filereadstream.h" />
+    <ClInclude Include="..\rapidjson\filewritestream.h" />
+    <ClInclude Include="..\rapidjson\fwd.h" />
+    <ClInclude Include="..\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="..\rapidjson\internal\clzll.h" />
+    <ClInclude Include="..\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="..\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="..\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="..\rapidjson\internal\itoa.h" />
+    <ClInclude Include="..\rapidjson\internal\meta.h" />
+    <ClInclude Include="..\rapidjson\internal\pow10.h" />
+    <ClInclude Include="..\rapidjson\internal\regex.h" />
+    <ClInclude Include="..\rapidjson\internal\stack.h" />
+    <ClInclude Include="..\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="..\rapidjson\internal\strtod.h" />
+    <ClInclude Include="..\rapidjson\internal\swap.h" />
+    <ClInclude Include="..\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="..\rapidjson\memorybuffer.h" />
+    <ClInclude Include="..\rapidjson\memorystream.h" />
+    <ClInclude Include="..\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="..\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="..\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="..\rapidjson\pointer.h" />
+    <ClInclude Include="..\rapidjson\prettywriter.h" />
+    <ClInclude Include="..\rapidjson\rapidjson.h" />
+    <ClInclude Include="..\rapidjson\reader.h" />
+    <ClInclude Include="..\rapidjson\schema.h" />
+    <ClInclude Include="..\rapidjson\stream.h" />
+    <ClInclude Include="..\rapidjson\stringbuffer.h" />
+    <ClInclude Include="..\rapidjson\writer.h" />
+    <ClInclude Include="..\SDL2_gfx\include\SDL2_framerate.h" />
+    <ClInclude Include="..\SDL2_gfx\include\SDL2_gfxPrimitives.h" />
+    <ClInclude Include="..\SDL2_gfx\include\SDL2_gfxPrimitives_font.h" />
+    <ClInclude Include="..\SDL2_gfx\include\SDL2_imageFilter.h" />
+    <ClInclude Include="..\SDL2_gfx\include\SDL2_rotozoom.h" />
+    <ClInclude Include="CollisionDetection.h" />
+    <ClInclude Include="DisplayableObjectContainer.h" />
+    <ClInclude Include="DragableImageObject.h" />
+    <ClInclude Include="DragableObject.h" />
+    <ClInclude Include="DragAlignment.h" />
+    <ClInclude Include="DrawingFilters.h" />
+    <ClInclude Include="DrawingSurface.h" />
+    <ClInclude Include="FilterPoints.h" />
+    <ClInclude Include="header.h" />
+    <ClInclude Include="BaseEngine.h" />
+    <ClInclude Include="DisplayableObject.h" />
+    <ClInclude Include="FontManager.h" />
+    <ClInclude Include="CoordinateMapping.h" />
+    <ClInclude Include="ImageManager.h" />
+    <ClInclude Include="MappableImageObject.h" />
+    <ClInclude Include="SimpleFlashingDragableImageObject.h" />
+    <ClInclude Include="SimpleImage.h" />
+    <ClInclude Include="MovementPosition.h" />
+    <ClInclude Include="ImageObject.h" />
+    <ClInclude Include="RawImage.h" />
+    <ClInclude Include="SimpleTrig.h" />
+    <ClInclude Include="templates.h" />
+    <ClInclude Include="TileManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DragableBaseClassObject.h" />
+    <ClCompile Include="..\ksp2d_src\GUI\BuilderUI.cpp" />
+    <ClCompile Include="..\ksp2d_src\GUI\GUIManager.cpp" />
+    <ClCompile Include="..\ksp2d_src\GUI\SpacecraftControls.cpp" />
+    <ClCompile Include="..\ksp2d_src\KSP2D.cpp" />
+    <ClCompile Include="..\ksp2d_src\main.cpp" />
+    <ClCompile Include="..\ksp2d_src\Orbital\CelestialBody.cpp" />
+    <ClCompile Include="..\ksp2d_src\PhysUtils\PhysObject.cpp" />
+    <ClCompile Include="..\ksp2d_src\PlanetObjects\PlanetObject.cpp" />
+    <ClCompile Include="..\ksp2d_src\RocketPart\KSPMetaManager.cpp" />
+    <ClCompile Include="..\ksp2d_src\RocketPart\PartSprite.cpp" />
+    <ClCompile Include="..\ksp2d_src\RocketPart\RocketPart.cpp" />
+    <ClCompile Include="..\ksp2d_src\RocketPart\SpacecraftParts.cpp" />
+    <ClCompile Include="..\ksp2d_src\Spacecraft\BasicSpacecraft.cpp" />
+    <ClCompile Include="..\ksp2d_src\Spacecraft\Spacecraft.cpp" />
+    <ClCompile Include="..\SDL2_gfx\SDL2_framerate.c" />
+    <ClCompile Include="..\SDL2_gfx\SDL2_gfxPrimitives.c" />
+    <ClCompile Include="..\SDL2_gfx\SDL2_imageFilter.c" />
+    <ClCompile Include="..\SDL2_gfx\SDL2_rotozoom.c" />
+    <ClCompile Include="DrawingSurface.cpp" />
+    <ClCompile Include="BaseEngine.cpp" />
+    <ClCompile Include="DisplayableObject.cpp" />
+    <ClCompile Include="FontManager.cpp" />
+    <ClCompile Include="SimpleImage.cpp" />
+    <ClCompile Include="RawImage.cpp" />
+    <ClCompile Include="TileManager.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

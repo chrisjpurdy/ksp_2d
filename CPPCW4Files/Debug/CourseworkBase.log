@@ -1,0 +1,9 @@
+﻿  SDL2_framerate.c
+  SDL2_gfxPrimitives.c
+  Generating Code...
+  Compiling...
+  SDL2_imageFilter.c
+  SDL2_rotozoom.c
+  Generating Code...
+LINK : warning LNK4081: insufficient disk space; linking nonincrementally
+LINK : fatal error LNK1201: error writing to program database 'C:\Users\psycjpu\Desktop\CPPCW4Files\Debug\CourseworkBase2020.pdb'; check for insufficient disk space, invalid path, or insufficient privilege

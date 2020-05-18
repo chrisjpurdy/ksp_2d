@@ -1,0 +1,66 @@
+version 101
+
+Fixes/changes from version 100:
+
+Key message: it's worth you taking the files from the src directory and copying them into your own src directory, overwriting the old versions. It fixes some issues with the demos, and avoids you copying the problems into your own programs.
+
+A list of changes follows:
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Added function to BaseEngine.h:
+	/*
+	Just a wrapper for a call to virtSetupBackgroundBuffer(), but it will lock the background surface first, and redraw it afterwards.
+	*/
+	void lockAndSetupBackground()
+	{
+		lockBackgroundForDrawing();
+		virtSetupBackgroundBuffer();
+		unlockBackgroundForDrawing();
+		// Tell screen to redraw it now we set it up
+		redrawDisplay();
+	}
+
+This is just a useful function you can use if you wish. I found that there were a lot of cases in the demos where I needed to lock the background before calling virtSetupBackgroundBuffer(), and unlock it afterwards, so I added a single function you can use to do this.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+I changed the following demos to use the new function above, because in some cases the code had not locked the background before drawing to it. Doing this may cause problems on Mac/Linux so I added debug text to tell the user that it was not locked. The amount of debug text in these cases was problematic and basically caused the program to pause for quite a while when redrawing the background.
+BouncingBallMain.cpp
+ImageObjectDemo.cpp
+JasonsDemoA.cpp
+MazeDemoMain.cpp
+PlayingCardsDemo.cpp
+SimpleDemo.cpp
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Also someone found a bug in startfield demo if it is left to run for a long time, because it scrolls off the top of the screen and messes up the image.
+I changed
+	++m_iOffset;
+to:
+	m_iOffset = (m_iOffset+1) % getWindowHeight(); // Fix for problems when off the end of the surface
+Which still increments, but wraps around to window height if it goes higher than the window height.
+I have included the corrected StarfieldDemo.cpp in this file.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+JigsawDemo.cpp was not included in the makefiles/cmake, which meant that you could not run JigsawDemo on Linux/Mac unless you included it.
+I have updates the cmakelists.txt file and the 'hack' makefiles to add this file. 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Nottingham.cloud now allows you to compile and run the code on it. I did some testing and it SEEMS to work. Use it at your own risk though, but it seems like some people wanted this so I requested it.
+
+Important: for some reason CMake does not change to C++11 despite the cmake file telling it to (in the two liens below):
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+If you compile on nottingham.cloud please add the following two lines to the cmakelists.txt file, below the above two lines.
+set(CMAKE_CXX_EXTENSIONS OFF)
+add_definitions(-std=c++11)
+
+I added these lines to the CMakeLists.txt file, but think that they should not really need to be there, since the set already asks it to use C++11. If you have any problems with this, the original has been renamed as CMakeLists_original.txt so you can rename it back again if you wish.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Someone pointed out that the readme.md file says to add SDL2 but doesn't explicitly say to also add SDL2 ttf and image. To avoid confusion I added the text "***Repeat this for the SDL2 ttf and image packages.***" so that people don't miss it.
