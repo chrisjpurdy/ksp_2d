@@ -9,14 +9,11 @@ void Spacecraft::virtDraw() {
 
     if (!isVisible()) return;
 
-//    long double screenWidth = data->width / distMult;
     long double screenWidth = shipWidth / distMult;
-//    long double screenHeight = data->height / distMult;;
     long double screenHeight = shipHeight / distMult;
     setSize(screenWidth, screenHeight);
     setPosition(screenPosition.x, screenPosition.y);
 
-//    zoomAmount = screenWidth / data->width;
     zoomAmount = screenWidth / shipWidth;
 
     if (thrustPercent > 0) {
@@ -91,20 +88,20 @@ Spacecraft::Spacecraft(KSP2D* pEngine, const Vec2D& initalPos, const Vec2D& init
     thrustPercent = 0;
     // whats a good value for thrust??? - 12MN at sea level for a massive rocket apparently, 2950 tones for saturn 5
 
-    surface.createSurface(screenDimensions.x, screenDimensions.y);
-    surface.addBoundsCheck(0, screenDimensions.x,0, screenDimensions.y);
+    surface.createSurface(screenDimensions.x * 2, screenDimensions.y * 2);
+    surface.addBoundsCheck(0, screenDimensions.x * 2 - 1,0, screenDimensions.y * 2 - 1);
     surface.fillSurface(0x000000);
     surface.setAlpha(0);
     // background filter chains onto the rotation filter
     surface.setDrawPointsFilter(&spacecraftRotateFilter);
 
-    partsSurface.createSurface(screenDimensions.x, screenDimensions.y);
-    partsSurface.addBoundsCheck(0, screenDimensions.x,0, screenDimensions.y);
+    //partsSurface.createSurface(screenDimensions.x, screenDimensions.y);
+    //partsSurface.addBoundsCheck(0, screenDimensions.x-1,0, screenDimensions.y-1);
 
     for (auto part : parts) {
         getEngine()->removeDisplayableObject(part->sprite);
     }
-    redrawParts();
+    //redrawParts();
     calcAeroProfile();
 
     spacecraftRotateFilter.bindRotMatrix(&screenOrientMatrix);
@@ -142,12 +139,23 @@ bool Spacecraft::isOnScreen(Vec2D& screenPos, long double screenWidth, long doub
            && screenPos.y - screenHeight / 2.0 < screenDimensions.y && screenPos.y + screenHeight / 2.0 > 0;
 }
 
+/**
+ * Forwards the signal to rotate to any reaction wheel gadgets in the rocket
+ *
+ * @param direction  1 for anticlock, 0 for none, -1 for clock
+ */
 void Spacecraft::rotate(int direction) {
     for (auto part : parts) {
         part->setReactionWheelDirection(direction);
     }
 }
 
+/**
+ * Changes the state of things based on the ships proximity to a given planet
+ *
+ * @param planet    celestial body to check whether the ship has come into contact with
+ * @return          true if the ship has entered low orbit of the given planet, false otherwise
+ */
 bool Spacecraft::checkProximityChange(CelestialBody* planet) {
 
     Vec2D posDiff = body->position - planet->body->position;
@@ -222,7 +230,7 @@ bool Spacecraft::checkSurfaceCollision(CelestialBody* planet) {
 
     // resolve collision if colliding
     if(PhysBody::OBBCircleCollision(manifold)) {
-        // if the spacecraft is hitting the surface at more than 300 m/s
+        // if the spacecraft is hitting the surface at more than 300 m/s, then destroy it
         if (relativeVelocity.magnitudeSquared() > 90000) {
             getKSPEngine()->spacecraftDestroyed();
             return false;
@@ -238,6 +246,8 @@ void Spacecraft::checkAtmosphericForces(CelestialBody* planet) {
 
     if (!planet) return;
 
+    if (!planet->hasAtmosphere) return;
+
     /* allows "atmosphere" for each planetary body to extend a quarter of their radius from the surface */
     double atmospherePercent = shipToSurfaceDist / (reinterpret_cast<Circle*>(planet->shape)->radius / 4);
     if (atmospherePercent < 1) {
@@ -252,10 +262,10 @@ void Spacecraft::checkAtmosphericForces(CelestialBody* planet) {
         /* movementToHeadingTop: 0 if on side, -1 hitting nosecone, 1 if on bottom */
         /* movementToHeadingBottom: 0 on top or bottom, 1 is left side, -1 is right side */
 
-        double leftCoeff = std::max(movementToHeadingLeft,0.f);
-        double rightCoeff = std::max(-movementToHeadingLeft,0.f);
-        double topCoeff = std::max(-movementToHeadingTop,0.f);
-        double botCoeff = std::max(movementToHeadingTop,0.f);
+        double leftCoeff = std::max(movementToHeadingLeft, 0.f);
+        double rightCoeff = std::max(-movementToHeadingLeft, 0.f);
+        double topCoeff = std::max(-movementToHeadingTop, 0.f);
+        double botCoeff = std::max(movementToHeadingTop, 0.f);
 
         Vec2D totalDrag(0,0);
         /* using the ships height as an approximation to lift amount */
@@ -266,7 +276,7 @@ void Spacecraft::checkAtmosphericForces(CelestialBody* planet) {
         totalDrag += body->orientMatrix * Vec2D(0,1) * (1.0/aeroProfile[2].rating) * topCoeff;
         totalDrag += body->orientMatrix * Vec2D(0,-1) * (1.0/aeroProfile[3].rating) * botCoeff;
 
-        totalDrag *= relativeVelocity.magnitudeSquared() * atmospherePercent;
+        totalDrag *= relativeVelocity.magnitudeSquared() * (1 - atmospherePercent);
         //std::cout << "Drag amount: " << totalDrag.to_string() << std::endl;
         body->applyForce(totalDrag);
 
@@ -274,6 +284,9 @@ void Spacecraft::checkAtmosphericForces(CelestialBody* planet) {
 
 }
 
+/**
+ * DEPRECATED - not in use at the moment
+ */
 void Spacecraft::redrawParts() {
     partsSurface.fillSurface(0x000000);
     partsSurface.setAlpha(0);

@@ -187,9 +187,22 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.cpp -o CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.s
 
+CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
+CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o: ../src/GUI/PartCatalogue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.cpp
+
+CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.cpp > CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.i
+
+CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.cpp -o CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.s
+
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o: ../src/GUI/SpacecraftControls.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/SpacecraftControls.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o: ../src/KSP2D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.i: cmake_force
@@ -215,7 +228,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o: ../src/Orbital/CelestialBody.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Orbital/CelestialBody.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.i: cmake_force
@@ -228,7 +241,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.o: ../src/PhysUtils/PhysObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/PhysUtils/PhysObject.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.i: cmake_force
@@ -241,7 +254,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o: ../src/PlanetObjects/PlanetObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/PlanetObjects/PlanetObject.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o: ../src/RocketPart/KSPMetaManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/KSPMetaManager.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o: ../src/RocketPart/PartSprite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/PartSprite.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/PartSprite.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o: ../src/RocketPart/RocketPart.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/RocketPart.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.i: cmake_force
@@ -293,7 +306,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/RocketPart.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o: ../src/RocketPart/SpacecraftParts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.i: cmake_force
@@ -306,7 +319,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o: ../src/Spacecraft/BasicSpacecraft.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/BasicSpacecraft.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.i: cmake_force
@@ -319,7 +332,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o: ../src/Spacecraft/Spacecraft.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/Spacecraft.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.i: cmake_force
@@ -332,7 +345,7 @@ CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.s: cmake_force
 
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: CMakeFiles/ksp_2d_cw4.dir/flags.make
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o -c /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/main.cpp
 
 CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.i: cmake_force
@@ -355,6 +368,7 @@ ksp_2d_cw4_OBJECTS = \
 "CMakeFiles/ksp_2d_cw4.dir/sdl2_framework/TileManager.cpp.o" \
 "CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o" \
 "CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o" \
+"CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o" \
 "CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o" \
 "CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o" \
 "CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o" \
@@ -381,6 +395,7 @@ ksp_2d_cw4_EXTERNAL_OBJECTS =
 ../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/sdl2_framework/TileManager.cpp.o
 ../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o
 ../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o
+../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o
 ../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o
 ../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o
 ../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o
@@ -399,7 +414,7 @@ ksp_2d_cw4_EXTERNAL_OBJECTS =
 ../build/ksp_2d_cw4: /usr/local/lib/libSDL2_gfx.dylib
 ../build/ksp_2d_cw4: /usr/local/lib/libSDL2.dylib
 ../build/ksp_2d_cw4: CMakeFiles/ksp_2d_cw4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable ../build/ksp_2d_cw4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable ../build/ksp_2d_cw4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ksp_2d_cw4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

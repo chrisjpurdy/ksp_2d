@@ -393,6 +393,33 @@ src/GUI/GUIManager.cpp.s:
 	$(MAKE) -f CMakeFiles/ksp_2d_cw4.dir/build.make CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.s
 .PHONY : src/GUI/GUIManager.cpp.s
 
+src/GUI/PartCatalogue.o: src/GUI/PartCatalogue.cpp.o
+
+.PHONY : src/GUI/PartCatalogue.o
+
+# target to build an object file
+src/GUI/PartCatalogue.cpp.o:
+	$(MAKE) -f CMakeFiles/ksp_2d_cw4.dir/build.make CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o
+.PHONY : src/GUI/PartCatalogue.cpp.o
+
+src/GUI/PartCatalogue.i: src/GUI/PartCatalogue.cpp.i
+
+.PHONY : src/GUI/PartCatalogue.i
+
+# target to preprocess a source file
+src/GUI/PartCatalogue.cpp.i:
+	$(MAKE) -f CMakeFiles/ksp_2d_cw4.dir/build.make CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.i
+.PHONY : src/GUI/PartCatalogue.cpp.i
+
+src/GUI/PartCatalogue.s: src/GUI/PartCatalogue.cpp.s
+
+.PHONY : src/GUI/PartCatalogue.s
+
+# target to generate assembly for a file
+src/GUI/PartCatalogue.cpp.s:
+	$(MAKE) -f CMakeFiles/ksp_2d_cw4.dir/build.make CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.s
+.PHONY : src/GUI/PartCatalogue.cpp.s
+
 src/GUI/SpacecraftControls.o: src/GUI/SpacecraftControls.cpp.o
 
 .PHONY : src/GUI/SpacecraftControls.o
@@ -756,6 +783,9 @@ help:
 	@echo "... src/GUI/GUIManager.o"
 	@echo "... src/GUI/GUIManager.i"
 	@echo "... src/GUI/GUIManager.s"
+	@echo "... src/GUI/PartCatalogue.o"
+	@echo "... src/GUI/PartCatalogue.i"
+	@echo "... src/GUI/PartCatalogue.s"
 	@echo "... src/GUI/SpacecraftControls.o"
 	@echo "... src/GUI/SpacecraftControls.i"
 	@echo "... src/GUI/SpacecraftControls.s"

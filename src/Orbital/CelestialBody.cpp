@@ -5,8 +5,8 @@
 #include "CelestialBody.h"
 #include "../KSP2D.h"
 
-CelestialBody::CelestialBody(BaseEngine* pEngine, long double x, long double y, const char* _name, const char* imgPath, const char* groundImgPath, long double radius, Vec2D* origin)
-        : DisplayableObject(pEngine), PhysObject(origin), name(_name), drawState(DrawState::farOff), isCloseByBody(false), screenDistShipToSurface(10000) {
+CelestialBody::CelestialBody(BaseEngine* pEngine, long double x, long double y, const char* _name, const char* imgPath, const char* groundImgPath, long double radius, bool _hasAtmosphere, Vec2D* origin)
+        : DisplayableObject(pEngine), PhysObject(origin), name(_name), drawState(DrawState::farOff), isCloseByBody(false), screenDistShipToSurface(10000), hasAtmosphere(_hasAtmosphere) {
     image = ImageManager::get()->getImagebyURL(imgPath, true, false);
     image.setTransparencyColour(0x000000);
     groundImage = ImageManager::get()->getImagebyURL(groundImgPath, true, false);
@@ -82,6 +82,7 @@ void CelestialBody::virtDraw() {
             }
         } else {
             // this is very memory expensive, but a bit less so thanks to the sdl2 gfx rotozoom function
+            // renders the planet rotated on screen
             image.renderImageBlitRoatated(getEngine(), getEngine()->getForegroundSurface(), shipSurfaceAngle * radToDeg,
                                   0, screenCenter.y + screenDistShipToSurface,
                                   screenDimensions.x, screenDimensions.y/2.0,image.getWidth()*(widthOvershootPercentage/2), 0,

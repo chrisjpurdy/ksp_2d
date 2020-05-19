@@ -346,6 +346,8 @@ iostream
 string
 -
 
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/templates.h
+
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/BuilderUI.cpp
 BuilderUI.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/BuilderUI.h
@@ -400,9 +402,11 @@ utility
 ../KSP2D.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
 
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.cpp
+PartCatalogue.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.h
-../../sdl2_framework/TileManager.h
-/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/TileManager.h
+
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.h
 GUIManager.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.h
 ../RocketPart/RocketPart.h
@@ -413,6 +417,8 @@ GUIManager.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.h
 ../KSP.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP.h
+../../sdl2_framework/TileManager.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/TileManager.h
 
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/SpacecraftControls.cpp
 SpacecraftControls.h
@@ -431,8 +437,6 @@ PhysUtils/Vec2D.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.cpp
 KSP2D.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
-Spacecraft/BasicSpacecraft.h
-/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/BasicSpacecraft.h
 GUI/GUIManager.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUIManager.h
 
@@ -465,6 +469,12 @@ PlanetObjects/PlanetObject.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/SimpleTrig.h
 PhysUtils/FastVec2D.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/PhysUtils/FastVec2D.h
+
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Orbital/CelestialBody.cpp
+CelestialBody.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Orbital/CelestialBody.h
+../KSP2D.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
 
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Orbital/CelestialBody.h
 string
@@ -519,6 +529,16 @@ string
 -
 cmath
 -
+algorithm
+-
+
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/PlanetObjects/PlanetObject.cpp
+PlanetObject.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/PlanetObjects/PlanetObject.h
+utility
+-
+../KSP2D.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
 
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/PlanetObjects/PlanetObject.h
 utility
@@ -618,6 +638,12 @@ PartSprite.h
 KSPMetaManager.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/KSPMetaManager.h
 
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.cpp
+SpacecraftParts.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.h
+../Spacecraft/Spacecraft.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Spacecraft/Spacecraft.h
+
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/RocketPart/SpacecraftParts.h
 vector
 -
@@ -671,6 +697,16 @@ AnimatedSprite.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/DrawingFilters.h
 ../Orbital/CelestialBody.h
 /Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/Orbital/CelestialBody.h
+
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/main.cpp
+../sdl2_framework/header.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/header.h
+../sdl2_framework/templates.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/sdl2_framework/templates.h
+KSP2D.h
+/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/KSP2D.h
+ctime
+-
 
 /usr/local/include/SDL2/SDL.h
 SDL_main.h

@@ -196,9 +196,7 @@ bool PhysBody::OBBCircleCollision(CollisionManifold& manifold) {
 
         // deal with containment
         if (shadowA.contains(shadowB) || shadowB.contains(shadowA)) {
-            //std::cout << "Containing" << std::endl;
             // get the overlap plus the distance from the minimum end points
-            // TODO this doesnt work fully as intended, stutters a lot, might not calculate it properly (seems fine now?)
             long double mins = abs(shadowA.minPoint - shadowB.minPoint);
             long double maxs = abs(shadowA.maxPoint - shadowB.maxPoint);
             if (mins < maxs) {
@@ -232,6 +230,8 @@ PhysBody::PhysBody(PhysObject* _object, long double mass, const Vec2D& initialPo
 /* ----- RailedPhysBody ----- */
 
 void RailedPhysBody::updatePosition(long double timeSlice) {
+
+    if (!parent) return;
 
     accuTimeSlice += timeSlice;
 

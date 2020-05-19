@@ -156,6 +156,9 @@
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/GUITextbox.h">
 			<Option target="ksp_2d_cw4"/>
 		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.cpp">
+			<Option target="ksp_2d_cw4"/>
+		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/src/GUI/PartCatalogue.h">
 			<Option target="ksp_2d_cw4"/>
 		</Unit>
@@ -297,19 +300,7 @@
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/.DS_Store">
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
-		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/14.png">
-			<Option virtualFolder="CMake Files\resources\img\"/>
-		</Unit>
-		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/19.png">
-			<Option virtualFolder="CMake Files\resources\img\"/>
-		</Unit>
-		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/9.png">
-			<Option virtualFolder="CMake Files\resources\img\"/>
-		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/blueSheet.png">
-			<Option virtualFolder="CMake Files\resources\img\"/>
-		</Unit>
-		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/blueSheet.xml">
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/building_spritesheet.png">
@@ -324,9 +315,6 @@
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/greySheet.png">
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
-		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/greySheet.xml">
-			<Option virtualFolder="CMake Files\resources\img\"/>
-		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/ground.png">
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
@@ -334,6 +322,12 @@
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/kerbin.png">
+			<Option virtualFolder="CMake Files\resources\img\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/mayers.png">
+			<Option virtualFolder="CMake Files\resources\img\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/mercurio.png">
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/moonground.png">
@@ -364,6 +358,9 @@
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/uipackSpace_sheet.png">
+			<Option virtualFolder="CMake Files\resources\img\"/>
+		</Unit>
+		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/veenous.png">
 			<Option virtualFolder="CMake Files\resources\img\"/>
 		</Unit>
 		<Unit filename="/Users/chrispy/Desktop/UoN_Compsci/Coursework/CPP/CW3_4/ksp_2d_cw4/resources/img/vegetation_spritesheet.png">

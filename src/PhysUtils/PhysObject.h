@@ -36,6 +36,10 @@ public:
     virtual void updateShape(const Vec2D& pos, const Mat22& rot){};
 };
 
+/**
+ * A class representing an oriented bounding box - however does also allow for checking rotated collisions using a change of
+ * reference frame
+ */
 class OBB : public CollisionShape {
 public:
     OBB(const Vec2D& tl, const Vec2D& br, const Vec2D& center, const Mat22& rot) {
@@ -85,7 +89,8 @@ public:
 
 class PhysBody;
 
-/* Contains a physics body, and wraps it in values to contain screen positional values
+/**
+ * Contains a physics body, and wraps it in values to contain screen positional values
  * also contains a collision shape to define its collision boundary
  */
 class PhysObject {
@@ -127,7 +132,8 @@ public:
     void recalcShape();
 };
 
-/* Used to store data about a collision
+/**
+ * Used to store data about a collision
  * the physics objects store the shape used to calculate the penetration and normal
  */
 struct CollisionManifold
@@ -142,7 +148,9 @@ struct CollisionManifold
 
 };
 
-// Contains all values and logic for physics calculations
+/**
+ * Contains all values and logic for physics calculations
+ */
 class PhysBody {
 public:
 
@@ -174,17 +182,18 @@ public:
     bool recalcForce;
 
     void applyForce(const Vec2D &f) {
+        if (unmoveableBody) return;
         force += f;
     }
 
     void applyRotation(long double amt) {
+        if (unmoveableBody) return;
         angularForce += amt;
-        //std::cout << angularForce << std::endl;
     }
 
     void applyForceFromDir(double angle, double magnitude) {
 
-        if (!recalcForce || mass_data.mass == 0) return;
+        if (!recalcForce || unmoveableBody) return;
 
         Vec2D r = Vec2D(0,1);
         r.rotate(angle);
@@ -194,7 +203,7 @@ public:
 
     void applyForceFromDir(Mat22 rotMatrix, double magnitude) {
 
-        if (!recalcForce || mass_data.mass == 0) return;
+        if (!recalcForce || unmoveableBody) return;
 
         Vec2D r = rotMatrix * Vec2D(0,1);
 
@@ -204,7 +213,7 @@ public:
     void applyGravity(PhysBody *other) {
 
         // if force isn't yet used or object is static
-        if (!recalcForce || mass_data.mass == 0) return;
+        if (!recalcForce || unmoveableBody) return;
 
         Vec2D r = (other->position - position);
         // F = G(m1*m2)/(r^2), F1=m1a1 -> a1 = G(m2)/(r^2)
@@ -222,13 +231,14 @@ public:
     }
 
     // application of impulse taking into account rotation
-//    void applyImpulse(const Vec2D& impulse, const Vec2D& contactVector)
-//    {
-//        velocity += impulse * mass_data.inv_mass;
-//        angularVelocity += contactVector.crossproduct(impulse) * mass_data.inverse_inertia;
-//    }
+    void applyImpulse(const Vec2D& impulse, const Vec2D& contactVector)
+    {
+        velocity += impulse * mass_data.inv_mass;
+        angularVelocity += contactVector.crossproduct(impulse) * mass_data.inverse_inertia;
+    }
 
     void applyImpulse(long double timeSlice) {
+        if (unmoveableBody) return;
         velocity += force * timeSlice * mass_data.inv_mass;
         angularVelocity += angularForce * timeSlice;
     }
@@ -248,13 +258,10 @@ public:
         orientMatrix = Mat22(orient);
         object->updateScreenOrient();
     }
-//    void setOrientMatrix(const Mat22& rotMatrix) {
-//        orientMatrix = rotMatrix;
-//        object->updateScreenOrient();
-//    }
 
     // Overridden to change how the position is changed on each tick
     virtual void updatePosition(long double timeSlice) {
+        if (unmoveableBody) return;
         accuTimeSlice += timeSlice;
         applyImpulse(accuTimeSlice);
         position += velocity * accuTimeSlice;
@@ -262,7 +269,7 @@ public:
         accuTimeSlice = 0;
     }
 
-    /* ---- Static functions that act on two bodies etc. ---- */
+    /* ---- Static functions that act on two bodies in a possible collision ---- */
 
     static void resolveCollision(const CollisionManifold& manifold);
 

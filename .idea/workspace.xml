@@ -12,32 +12,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="027b177d-ae44-4f98-ab9d-7ce0dc930739" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/img/mayers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/mercurio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/veenous.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/PartCatalogue.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCW4Files/ksp2d_src/KSP2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCW4Files/ksp2d_src/KSP2D.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ksp_2d_cw4" beforeDir="false" afterPath="$PROJECT_DIR$/build/ksp_2d_cw4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/ship.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ship.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/PhysUtils/PhysObject.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/PlanetObjects/PlanetObject.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/RocketPart/SpacecraftParts.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/BasicSpacecraft.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/Spacecraft/Spacecraft.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ksp_2d_cw4.dir/src/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ksp_2d_cw4.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ksp_2d_cw4.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/mayers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/veenous.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/mercurio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/blueSheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stuff/blueSheet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/greySheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stuff/greySheet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/BuilderUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BuilderUI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUIManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUIManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUISlider.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUISlider.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/PartCatalogue.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/PartCatalogue.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/SpacecraftControls.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/SpacecraftControls.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KSP.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/KSP.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/KSP2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/KSP2D.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/KSP2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/KSP2D.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Orbital/CelestialBody.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orbital/CelestialBody.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Orbital/CelestialBody.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orbital/CelestialBody.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orbital/Planet.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orbital/Planet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orbital/Sun.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orbital/Sun.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhysUtils/PhysObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysUtils/PhysObject.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PhysUtils/PhysObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysUtils/PhysObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhysUtils/Vec2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysUtils/Vec2D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlanetObjects/PlanetObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/RocketPart/SpacecraftParts.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spacecraft/Spacecraft.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,19 +94,20 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/img" />
-      <recent name="$PROJECT_DIR$/resources/stuff" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/Spacecraft" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/PhysUtils" />
       <recent name="$PROJECT_DIR$/resources/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/stuff" />
+      <recent name="$PROJECT_DIR$/resources/img" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/Spacecraft" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -159,7 +174,7 @@
       <workItem from="1588283397099" duration="1268000" />
       <workItem from="1588862049854" duration="220000" />
       <workItem from="1589388071439" duration="75547000" />
-      <workItem from="1589792414346" duration="14854000" />
+      <workItem from="1589792414346" duration="30797000" />
     </task>
     <task id="LOCAL-00001" summary="Spaceship builder screen and ship movement patch - should not longer segfault">
       <created>1589574068209</created>
@@ -189,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589810786285</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished a basic aerodynamic model">
+      <created>1589827728358</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589827728358</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +237,7 @@
     <MESSAGE value="Spaceship builder saving and loading spacecraft - fully works" />
     <MESSAGE value="Sky changes colour while going above planet" />
     <MESSAGE value="Started aerodynamics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started aerodynamics" />
+    <MESSAGE value="Finished a basic aerodynamic model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished a basic aerodynamic model" />
   </component>
 </project>

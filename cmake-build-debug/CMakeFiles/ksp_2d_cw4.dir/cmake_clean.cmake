@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ksp_2d_cw4.dir/sdl2_framework/TileManager.cpp.o"
   "CMakeFiles/ksp_2d_cw4.dir/src/GUI/BuilderUI.cpp.o"
   "CMakeFiles/ksp_2d_cw4.dir/src/GUI/GUIManager.cpp.o"
+  "CMakeFiles/ksp_2d_cw4.dir/src/GUI/PartCatalogue.cpp.o"
   "CMakeFiles/ksp_2d_cw4.dir/src/GUI/SpacecraftControls.cpp.o"
   "CMakeFiles/ksp_2d_cw4.dir/src/KSP2D.cpp.o"
   "CMakeFiles/ksp_2d_cw4.dir/src/Orbital/CelestialBody.cpp.o"

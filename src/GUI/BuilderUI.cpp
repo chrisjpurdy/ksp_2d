@@ -119,6 +119,9 @@ Spacecraft *BuilderUI::makeShip(KSP2D* pEngine, const Vec2D& initalPos, const Ve
     return ret;
 }
 
+/**
+ * Saves the ship to a json file
+ */
 void BuilderUI::saveShip() {
 
     if (!partCatalogue->spacecraftParts) {
@@ -156,6 +159,9 @@ std::string BuilderUI::stringifyPartData(PartData* data, int sideToIgnore = -1) 
     return partDataJson.str();
 }
 
+/**
+ * Loads the ship stored in a json file
+ */
 void BuilderUI::loadShip() {
 
     FILE* fp = fopen("ship.json", "r");

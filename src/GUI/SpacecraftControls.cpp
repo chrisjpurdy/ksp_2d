@@ -7,7 +7,7 @@
 SpacecraftControls::SpacecraftControls(KSP2D* pEngine, Spacecraft* _spacecraft) : engine(pEngine), spacecraft(_spacecraft), closeAnim(0), closeAmount(189),
                         spacecraftHUD(ImageManager::get()->getImagebyURL("spacecraftHUD.png", true, false)), objectsAdded(false) {
     thrustSlider = new GUISlider<double>(engine, 550, 750, 160, spacecraft->thrustPercent, 0, 1,
-                                                                 [=](long double x){spacecraft->updateThrusters();}, 0x555500, false);
+                                                                 [=](double x){spacecraft->updateThrusters();}, 0x555500, false);
     orbitDistSlider = new GUISlider<long double>(engine, 988, 650, 160, pEngine->distModifier, pEngine->minDistanceMod, pEngine->maxDistanceMod,
                                                  [=](long double distMod){ pEngine->setPlanetScale(distMod, pEngine->orbitViewCentre); }, 0x005540, true);
     orbitTimeSlider = new GUISlider<long double>(engine, 988, 710, 160, pEngine->timeModifier, 1.0, pEngine->maxTimeMod,

@@ -15,7 +15,7 @@
 
 class CelestialBody : public DisplayableObject, public PhysObject {
 public:
-    CelestialBody(BaseEngine *pEngine, long double x, long double y, const char *_name, const char* imgPath, const char* groundImgPath, long double _radius, Vec2D* origin);
+    CelestialBody(BaseEngine *pEngine, long double x, long double y, const char *_name, const char* imgPath, const char* groundImgPath, long double _radius, bool _hasAtmosphere, Vec2D* origin);
 
     ~CelestialBody() override;
 
@@ -39,6 +39,8 @@ public:
 
     void setCloseByBody(bool b);
     Vec2D getPositionOnSurface(double radians, long double heightAbove);
+
+    bool hasAtmosphere;
 };
 
 #endif //KSP_2D_CW4_CELESTIALBODY_H

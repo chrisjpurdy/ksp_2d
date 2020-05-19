@@ -32,8 +32,6 @@ public:
     void virtMainLoopPostUpdate() override;
     void virtPostDraw() override;
     void virtMouseDown(int iButton, int x, int y) override;
-//    void virtKeyDown(int iKeyCode) override;
-//    void virtKeyUp(int iKeyCode) override;
 
     void speedUpGravObjs(long double timeMod);
 
@@ -72,15 +70,17 @@ public:
     void plot4EllipsePoints(long int centerX, long int centerY, long int x, long int y, unsigned int uiColour);
     void drawForegroundArrow(int x, int y, Vec2D vec, int length, unsigned int uiColour);
 
+    // Functions to modify the ship
     void buildPlayerSpacecraft();
     void addNewSpacecraft();
+    void spacecraftDestroyed();
+
+    void changeSkyColour(double zoomPlanetDist);
+
     SimpleImage factoryBg;
 
     bool isKeyListener;
 
-    void changeSkyColour(double x);
-
-    void spacecraftDestroyed();
 };
 
 #endif //KSP_2D_CW4_KSP2D_H

@@ -33,9 +33,9 @@ int KSP2D::virtInitialiseObjects() {
     planets.push_back(new Sun(this, "Sol", "sun.png", "sunground.png", 696340000, 1989000000000000000000000000000.0, 0.0, 0, orbitViewCentre));
     planets.push_back(new Planet(this, "Kerbine", "kerbin.png", "ground.png", 6371000, 5972000000000000000000000.0, 148890000000.0, 0, orbitViewCentre, 0.0167, 31600000.0, 0.4, planets[0]));
     planets.push_back(new Planet(this, "The Mune", "mune.png", "moonground.png", 1737000, 73476730000000000000000.0, 149270000000.0 - 148890000000.0, 0, orbitViewCentre, 0.0549, 2400000.0, 0.5, planets[1]));
-    planets.push_back(new Planet(this, "Mercurio", "9.png", "moonground.png", 4880000, 330110000000000000000000.0, 57909050000.0, 0, orbitViewCentre, 0.20563, 7600000.0, 0.3, planets[0]));
-    planets.push_back(new Planet(this, "Veenous", "19.png", "moonground.png", 6051800, 4867500000000000000000000.0, 108208000000.0, 0, orbitViewCentre, 0.006772, 19400000.0, 1.4, planets[0]));
-    planets.push_back(new Planet(this, "Mayers", "14.png", "ground.png", 3389500, 604171000000000000000000.0, 227939200000.0, 0, orbitViewCentre, 0.0934, 59400000.0, 0.8, planets[0]));
+    planets.push_back(new Planet(this, "Mercurio", "mercurio.png", "moonground.png", 4880000, 330110000000000000000000.0, 57909050000.0, 0, orbitViewCentre, 0.20563, 7600000.0, 0.3, planets[0]));
+    planets.push_back(new Planet(this, "Veenous", "veenous.png", "moonground.png", 6051800, 4867500000000000000000000.0, 108208000000.0, 0, orbitViewCentre, 0.006772, 19400000.0, 1.4, planets[0]));
+    planets.push_back(new Planet(this, "Mayers", "mayers.png", "ground.png", 3389500, 604171000000000000000000.0, 227939200000.0, 0, orbitViewCentre, 0.0934, 59400000.0, 0.8, planets[0]));
     planets.push_back(new Planet(this, "Haley's Comet", "mune.png", "moonground.png", 5500, 220000000000000.0, 2667928430000.0, 0, orbitViewCentre, 0.96714, 2400000000.0, 2.1, planets[0]));
 
     // TODO when the Moon is the view center and time is sped up, drawing of orbits seems to break a lot (!!!)
