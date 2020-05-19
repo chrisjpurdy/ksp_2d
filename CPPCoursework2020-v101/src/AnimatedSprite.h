@@ -5,8 +5,8 @@
 #ifndef KSP_2D_CW4_ANIMATEDSPRITE_H
 #define KSP_2D_CW4_ANIMATEDSPRITE_H
 
-#include "../../sdl2_framework/SimpleImage.h"
-#include "../../sdl2_framework/ImageManager.h"
+#include "SimpleImage.h"
+#include "ImageManager.h"
 
 class AnimatedSprite {
 public:

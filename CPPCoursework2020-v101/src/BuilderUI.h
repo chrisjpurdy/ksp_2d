@@ -5,7 +5,7 @@
 #ifndef KSP_2D_CW4_BUILDERUI_H
 #define KSP_2D_CW4_BUILDERUI_H
 
-#include "../KSP2D.h"
+#include "KSP2D.h"
 #include "GUITextbox.h"
 #include "PartCatalogue.h"
 #include "GUIButton.h"

@@ -25,7 +25,7 @@ const int BaseScreenHeight = 800;
 
 // This was only moved outside of main so that I can do some memory checking once it ends.
 // Main calls this then checks for errors before ending.
-int doProgram(int argc, char *argv[])
+int doProgramOLD(int argc, char *argv[])
 { 
 	int iResult = 0;
 	// Needs just one of the following lines - choose which object to create - ENSURE ONLY ONE IS CREATED.
@@ -58,12 +58,12 @@ int doProgram(int argc, char *argv[])
 
 
 /* Separate main function, so we can check for memory leaks after objects are destroyed */
-int main(int argc, char *argv[])
+int mainOLD(int argc, char *argv[])
 {
 	// Send random number generator with current time
 	::srand( (unsigned int)time(0));
 
-	int iResult = doProgram( argc, argv );
+	int iResult = doProgramOLD( argc, argv );
 		
 	// Free the cached images by destroying the image manager
 	// Ensure that you do this AFTER the main object and any other objects have been destroyed

@@ -3,7 +3,7 @@
 //
 
 #include "CelestialBody.h"
-#include "../KSP2D.h"
+#include "KSP2D.h"
 
 CelestialBody::CelestialBody(BaseEngine* pEngine, long double x, long double y, const char* _name, const char* imgPath, const char* groundImgPath, long double radius, bool _hasAtmosphere, Vec2D* origin)
         : DisplayableObject(pEngine), PhysObject(origin), name(_name), drawState(DrawState::farOff), isCloseByBody(false), screenDistShipToSurface(10000), hasAtmosphere(_hasAtmosphere) {

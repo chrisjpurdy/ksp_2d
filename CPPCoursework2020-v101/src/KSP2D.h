@@ -5,16 +5,16 @@
 #ifndef KSP_2D_CW4_KSP2D_H
 #define KSP_2D_CW4_KSP2D_H
 
-#include "../sdl2_framework/header.h"
-#include "../sdl2_framework/BaseEngine.h"
-#include "../sdl2_framework/SimpleTrig.h"
-#include "RocketPart/PartSprite.h"
-#include "Orbital/Planet.h"
-#include "Orbital/Sun.h"
-#include "Spacecraft/Spacecraft.h"
+#include "header.h"
+#include "BaseEngine.h"
+#include "SimpleTrig.h"
+#include "PartSprite.h"
+#include "Planet.h"
+#include "Sun.h"
+#include "Spacecraft.h"
 #include "KSPFilterPoints.h"
-#include "../sdl2_framework/DrawingFilters.h"
-#include "PlanetObjects/PlanetObject.h"
+#include "DrawingFilters.h"
+#include "PlanetObject.h"
 
 class KSP2D : public BaseEngine {
 public:

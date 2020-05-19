@@ -6,7 +6,7 @@
 #define KSP_2D_CW4_GUITEXTBOX_H
 
 #include <utility>
-#include "../KSP2D.h"
+#include "KSP2D.h"
 
 /**
  * A class implementing a textbox GUI object

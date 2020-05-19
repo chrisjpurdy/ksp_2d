@@ -6,8 +6,8 @@
 #define KSP_2D_CW4_KSPMETAMANAGER_H
 
 #include <vector>
-#include "../../sdl2_framework/ImageManager.h"
-#include "Gadget/Gadgets.h"
+#include "ImageManager.h"
+#include "Gadgets.h"
 #include "PartInfoStructs.h"
 
 class KSPMetaManager {

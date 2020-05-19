@@ -3,7 +3,7 @@
 //
 
 #include "Spacecraft.h"
-#include "../GUI/GUIManager.h"
+#include "GUIManager.h"
 
 void Spacecraft::virtDraw() {
 

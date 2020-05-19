@@ -5,8 +5,8 @@
 #ifndef KSP_2D_CW4_GADGET_H
 #define KSP_2D_CW4_GADGET_H
 
-#include "../../PhysUtils/Vec2D.h"
-#include "../PartInfoStructs.h"
+#include "Vec2D.h"
+#include "PartInfoStructs.h"
 
 /**
  * this gets passed around the rocket parts to accumulate changes to the spacecraft's state

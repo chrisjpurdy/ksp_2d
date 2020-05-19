@@ -3,7 +3,7 @@
 //
 
 #include "PartSprite.h"
-#include "../Spacecraft/AnimatedSprite.h"
+#include "AnimatedSprite.h"
 #include <utility>
 
 uint32_t PartSprite::idCount = 0;

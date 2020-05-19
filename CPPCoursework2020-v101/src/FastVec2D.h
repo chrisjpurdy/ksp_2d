@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include "../../sdl2_framework/SimpleTrig.h"
+#include "SimpleTrig.h"
 #include "Vec2D.h"
 
 class FastVec2D {

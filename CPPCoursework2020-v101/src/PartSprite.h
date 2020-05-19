@@ -5,9 +5,9 @@
 #ifndef KSP_2D_CW4_PARTSPRITE_H
 #define KSP_2D_CW4_PARTSPRITE_H
 
-#include "../../sdl2_framework/header.h"
-#include "../../sdl2_framework/DragableObject.h"
-#include "../Spacecraft/AnimatedSprite.h"
+#include "header.h"
+#include "DragableObject.h"
+#include "AnimatedSprite.h"
 
 class PartSprite : public DragableObject {
 

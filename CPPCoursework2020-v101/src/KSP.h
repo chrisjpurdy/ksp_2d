@@ -5,7 +5,7 @@
 #ifndef KSP_2D_CW4_KSP_H
 #define KSP_2D_CW4_KSP_H
 
-#include "PhysUtils/Vec2D.h"
+#include "Vec2D.h"
 
 #ifndef M_PI
 #define M_PI 3.14159265

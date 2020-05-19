@@ -5,7 +5,7 @@
 #include "PlanetObject.h"
 
 #include <utility>
-#include "../KSP2D.h"
+#include "KSP2D.h"
 
 PlanetObject::PlanetObject(BaseEngine* pEngine, CelestialBody* _planet, double _positionOnSurface, std::string spriteName, long double widthMult, long double heightMult, long double _groundSlop)
             : DisplayableObject(pEngine), planet(_planet), positionOnSurface(_positionOnSurface), data(ImageManager::get()->getSpriteData(std::move(spriteName))) {

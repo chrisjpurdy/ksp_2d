@@ -3,7 +3,7 @@
 //
 
 #include "BasicSpacecraft.h"
-#include "../GUI/GUIManager.h"
+#include "GUIManager.h"
 
 void BasicSpacecraft::virtDraw() {
 

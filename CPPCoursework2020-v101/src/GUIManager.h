@@ -5,11 +5,11 @@
 #ifndef KSP_2D_CW4_GUIMANAGER_H
 #define KSP_2D_CW4_GUIMANAGER_H
 
-#include "../../sdl2_framework/header.h"
-#include "../../sdl2_framework/BaseEngine.h"
+#include "header.h"
+#include "BaseEngine.h"
 #include "GUISlider.h"
 #include "SpacecraftControls.h"
-#include "../KSP2D.h"
+#include "KSP2D.h"
 
 class BuilderUI;
 

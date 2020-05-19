@@ -3,7 +3,7 @@
 //
 
 #include "KSP2D.h"
-#include "GUI/GUIManager.h"
+#include "GUIManager.h"
 
 SimpleTrig* SimpleTrig::singleton = nullptr;
 

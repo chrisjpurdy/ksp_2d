@@ -6,11 +6,11 @@
 #define KSP_2D_CW4_PARTCATALOGUE_H
 
 #include "GUIManager.h"
-#include "../RocketPart/RocketPart.h"
-#include "../RocketPart/PartSprite.h"
-#include "../RocketPart/SpacecraftParts.h"
-#include "../KSP.h"
-#include "../../sdl2_framework/TileManager.h"
+#include "RocketPart.h"
+#include "PartSprite.h"
+#include "SpacecraftParts.h"
+#include "KSP.h"
+#include "TileManager.h"
 
 class PartCatalogue : public TileManager, public DisplayableObject {
 public:

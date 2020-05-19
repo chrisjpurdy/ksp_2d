@@ -7,11 +7,11 @@
 
 
 #include <string>
-#include "../../sdl2_framework/header.h"
-#include "../../sdl2_framework/BaseEngine.h"
-#include "../../sdl2_framework/DisplayableObject.h"
-#include "../PhysUtils/Vec2D.h"
-#include "../PhysUtils/PhysObject.h"
+#include "header.h"
+#include "BaseEngine.h"
+#include "DisplayableObject.h"
+#include "Vec2D.h"
+#include "PhysObject.h"
 
 class CelestialBody : public DisplayableObject, public PhysObject {
 public:

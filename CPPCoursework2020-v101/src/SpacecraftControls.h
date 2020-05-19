@@ -5,7 +5,7 @@
 #ifndef KSP_2D_CW4_SPACECRAFTCONTROLS_H
 #define KSP_2D_CW4_SPACECRAFTCONTROLS_H
 
-#include "../Spacecraft/BasicSpacecraft.h"
+#include "BasicSpacecraft.h"
 #include "GUISlider.h"
 
 class SpacecraftControls {

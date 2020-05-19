@@ -5,12 +5,12 @@
 #ifndef KSP_2D_CW4_SPACECRAFT_H
 #define KSP_2D_CW4_SPACECRAFT_H
 
-#include "../RocketPart/RocketPart.h"
+#include "RocketPart.h"
 #include "AnimatedSprite.h"
-#include "../PhysUtils/PhysObject.h"
-#include "../KSPFilterPoints.h"
-#include "../../sdl2_framework/DrawingFilters.h"
-#include "../Orbital/CelestialBody.h"
+#include "PhysObject.h"
+#include "KSPFilterPoints.h"
+#include "DrawingFilters.h"
+#include "CelestialBody.h"
 
 class KSP2D;
 

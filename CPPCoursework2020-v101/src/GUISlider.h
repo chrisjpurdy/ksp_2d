@@ -5,8 +5,8 @@
 #ifndef KSP_2D_CW4_GUISLIDER_H
 #define KSP_2D_CW4_GUISLIDER_H
 
-#include "../../sdl2_framework/header.h"
-#include "../../sdl2_framework/DragableObject.h"
+#include "header.h"
+#include "DragableObject.h"
 
 template <typename T>
 class GUISlider : public DragableObject {

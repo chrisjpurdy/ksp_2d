@@ -1,5 +1,5 @@
-#include "../sdl2_framework/header.h"
-#include "../sdl2_framework/templates.h"
+#include "header.h"
+#include "templates.h"
 #include "KSP2D.h"
 
 #include <ctime>

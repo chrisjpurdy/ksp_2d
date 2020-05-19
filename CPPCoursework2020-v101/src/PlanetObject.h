@@ -8,8 +8,8 @@
 
 #include <utility>
 
-#include "../../sdl2_framework/DisplayableObject.h"
-#include "../Orbital/CelestialBody.h"
+#include "DisplayableObject.h"
+#include "CelestialBody.h"
 
 /**
  *  A class to abstract the concept of a static (decorative) object on a planets surface

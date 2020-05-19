@@ -3,7 +3,7 @@
 //
 
 #include "SpacecraftParts.h"
-#include "../Spacecraft/Spacecraft.h"
+#include "Spacecraft.h"
 
 SpacecraftParts::SpacecraftParts(int screenX, int screenY, RocketPart* initialPart) {
     parts.push_back(initialPart);

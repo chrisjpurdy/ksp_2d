@@ -7,7 +7,7 @@
 
 
 #include "Vec2D.h"
-#include "../KSP.h"
+#include "KSP.h"
 #include "Mat22.h"
 
 struct MassData

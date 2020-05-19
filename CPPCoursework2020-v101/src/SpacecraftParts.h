@@ -6,9 +6,9 @@
 #define KSP_2D_CW4_SPACECRAFTPARTS_H
 
 #include <vector>
-#include "../PhysUtils/FastVec2D.h"
+#include "FastVec2D.h"
 #include "RocketPart.h"
-#include "../KSP2D.h"
+#include "KSP2D.h"
 
 class Spacecraft;
 

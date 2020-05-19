@@ -5,9 +5,9 @@
 #ifndef KSP_2D_CW4_KSPFILTERPOINTS
 #define KSP_2D_CW4_KSPFILTERPOINTS
 
-#include "../sdl2_framework/FilterPoints.h"
-#include "../sdl2_framework/SimpleTrig.h"
-#include "PhysUtils/FastVec2D.h"
+#include "FilterPoints.h"
+#include "SimpleTrig.h"
+#include "FastVec2D.h"
 
 class FilterPointsFillIn : public FilterPoints {
 public:
