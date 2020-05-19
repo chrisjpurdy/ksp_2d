@@ -39,7 +39,7 @@ private:
     SimpleTrig()
     {
         for (int i = 0; i < 3600; i++) {
-            cosCache[i] = ::cos((i / 10.0) * (M_PI / 180.0));
+            cosCache[i] = ::cos((i / 10.0) * (3.14159265 / 180.0));
         }
     }
 };

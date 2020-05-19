@@ -12,7 +12,7 @@ If you need more advanced features you can come back and look at SimpleImage.
 #include <memory>
 
 #include "RawImage.h"
-#include "SDL2_rotozoom.h" // to allow for rotation when blitting
+#include "SDL2_gfx/include/SDL2_rotozoom.h" // to allow for rotation when blitting
 
 class DrawingSurface;
 class BaseEngine;

@@ -13,9 +13,9 @@ SimpleImage and ImageRenderer are front ends to the image data, specifying which
 Uses smart pointers and maps to maintain the list, so may be worth looking at for that reason?
 */
 
-#include "../sdl2_framework/ImageManager.h"
-#include "../rapidjson/filereadstream.h"
-#include "../rapidjson/document.h"
+#include "ImageManager.h"
+#include "rapidjson/filereadstream.h"
+#include "rapidjson/document.h"
 #include <cstdio>
 
 struct SpriteData {

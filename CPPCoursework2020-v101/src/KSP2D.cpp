@@ -79,9 +79,9 @@ void KSP2D::buildPlayerSpacecraft() {
     GUIManager::get()->titleFadeTextAlert("");
 
     state = stateBuilder;
-    //fillBackground(0x888880);
+	lockBackgroundForDrawing();
     factoryBg.renderImage(getBackgroundSurface(),0,0,0,0,1300,800);
-
+	unlockBackgroundForDrawing();
     for (auto planet : planets) {
         planet->setVisible(false);
     }
@@ -108,9 +108,9 @@ void KSP2D::addNewSpacecraft() {
     spacecraft.push_back(playerSpacecraft);
 
     state = stateLowOrbit;
-
+	lockBackgroundForDrawing();
     fillBackground(0x02020d);
-
+	unlockBackgroundForDrawing();
     for (auto planet : planets) {
         planet->setVisible(true);
     }
@@ -282,18 +282,18 @@ void KSP2D::checkKeyInputs() {
 }
 
 void KSP2D::virtPostDraw() {
+	lockForegroundForDrawing();
     for (auto* s : spacecraft) {
         if (s != playerSpacecraft)
             m_pForegroundSurface->copyRectangleFrom(&s->surface, 0, 0, 1300, 800);
     }
-
     if (playerSpacecraft) m_pForegroundSurface->copyRectangleFrom(&playerSpacecraft->surface, 0, 0, 1300, 800);
     GUIManager::get()->draw(getRawTime(), state);
-
     if (!bgCleared && gravObjViewCenter != -1) {
-        fillBackground(0x02020d);
+		lockBackgroundForDrawing(); fillBackground(0x02020d); unlockBackgroundForDrawing();
         bgCleared = true;
     }
+	unlockForegroundForDrawing();
 }
 
 /**
@@ -454,6 +454,8 @@ void KSP2D::changeSkyColour(double zoomPlanetDist) {
     double mixPercentage = pow(zoomPlanetDist,4);
     uint32_t r = 135 * mixPercentage, g = 206 * mixPercentage, b = 235 * mixPercentage;
     uint32_t colour = b + (g << 8u) + (r << 16u);
+	lockBackgroundForDrawing();
     fillBackground((colour - 0x02020d) + 0x02020d);
+	unlockBackgroundForDrawing();
     bgCleared = false;
 }

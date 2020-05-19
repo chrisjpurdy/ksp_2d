@@ -94,7 +94,7 @@ void ImageObjectDemo::virtDrawStringsOnTop()
 void ImageObjectDemo::virtMouseDown(int iButton, int iX, int iY)
 {
 	// Redraw the background
-	lockAndSetupBackground();
+	////lockAndSetupBackground();
 }
 
 /*

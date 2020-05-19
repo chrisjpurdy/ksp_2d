@@ -155,7 +155,7 @@ void MazeDemoMain::virtKeyDown(int iKeyCode)
 			// Go to state main
 			m_state = stateMain;
 			// Force redraw of background
-			lockAndSetupBackground();
+			//lockAndSetupBackground();
 			// Ensure objects become visible now - we hid them initially
 			setAllObjectsVisible(true);
 			// Redraw the whole screen now
@@ -167,7 +167,7 @@ void MazeDemoMain::virtKeyDown(int iKeyCode)
 			// Go to state main
 			m_state = statePaused;
 			// Force screen redraw
-			lockAndSetupBackground();
+			//lockAndSetupBackground();
 			redrawDisplay();
 			break;
 
@@ -176,7 +176,7 @@ void MazeDemoMain::virtKeyDown(int iKeyCode)
 			m_state = stateMain;
 			this->unpause();
 			// Force redraw of background
-			lockAndSetupBackground();
+			////lockAndSetupBackground();
 			// Redraw the whole screen now
 			redrawDisplay();
 			break;

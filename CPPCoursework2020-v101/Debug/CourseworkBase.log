@@ -1,9 +1,12 @@
-﻿  main.cpp
-c:\users\esther\desktop\ksp_2d\cppcoursework2020-v101\src\animatedsprite.h(21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\esther\desktop\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(69): warning C4244: 'initializing': conversion from 'long double' to 'int', possible loss of data
-c:\users\esther\desktop\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(70): warning C4244: 'initializing': conversion from 'long double' to 'int', possible loss of data
-c:\users\esther\desktop\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(108): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\esther\desktop\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(109): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  mainfunction.cpp
-  Generating Code...
-  CourseworkBase.vcxproj -> C:\Users\Esther\Desktop\ksp_2d\CPPCoursework2020-v101\/Debug\CourseworkBase2020.exe
+﻿  BuilderUI.cpp
+z:\ksp_2d\cppcoursework2020-v101\src\animatedsprite.h(21): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(69): warning C4244: 'initializing': conversion from 'long double' to 'int', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(70): warning C4244: 'initializing': conversion from 'long double' to 'int', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(108): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\kspfilterpoints.h(109): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\builderui.cpp(48): warning C4244: '+=': conversion from 'float' to 'uint32_t', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\builderui.cpp(49): warning C4244: '+=': conversion from 'float' to 'uint32_t', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\builderui.cpp(50): warning C4244: '+=': conversion from 'float' to 'uint32_t', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\builderui.cpp(190): warning C4244: 'argument': conversion from 'const long double' to 'int', possible loss of data
+z:\ksp_2d\cppcoursework2020-v101\src\rocketpart.h(51): warning C4715: 'RocketPart::oppositeSide': not all control paths return a value
+  CourseworkBase.vcxproj -> Z:\ksp_2d\CPPCoursework2020-v101\/Debug\CourseworkBase2020.exe

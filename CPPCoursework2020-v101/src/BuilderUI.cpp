@@ -154,8 +154,8 @@ std::string BuilderUI::stringifyPartData(PartData* data, int sideToIgnore = -1) 
             parts += "},";
         }
     }
-    parts.pop_back();
-    partDataJson << parts << "\n]}";
+    if (!parts.empty()) { parts.pop_back();
+    partDataJson << parts << "\n]}"; }
     return partDataJson.str();
 }
 
@@ -176,8 +176,6 @@ void BuilderUI::loadShip() {
 
     rapidjson::Document json;
     json.ParseStream(is);
-
-    fclose(fp);
 
     auto* newPartSprite = new PartSprite(json["ship"]["name"].GetString(), engine, 0, 0);
     engine->appendObjectToArray(newPartSprite);
@@ -209,6 +207,8 @@ void BuilderUI::loadShip() {
         shipNameTextbox->value = json["shipName"].GetString();
         GUIManager::get()->fadeTextAlert("Loaded ship from file");
     }
+
+	fclose(fp);
 }
 
 bool BuilderUI::recursivelyAddParts(rapidjson::Value &part, RocketPart::Side side, RocketPart *parentPart,
