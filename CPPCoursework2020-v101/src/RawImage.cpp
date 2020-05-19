@@ -68,3 +68,24 @@ RawImageData::RawImageData(int iNewWidth, int iNewHeight, const std::shared_ptr<
 		}
 }
 
+/* Creates a new image from a given image, by copying a specific portion of it */
+RawImageData::RawImageData(int xOffset, int yOffset, int width, int height, const std::shared_ptr<RawImageData>& sourceImage)
+{
+    m_iWidth = width;
+    m_iHeight = height;
+
+    int iSourceX, iSourceY;
+
+    m_pImagesurface = SDL_CreateRGBSurface( SDL_SWSURFACE, m_iWidth, m_iHeight, 32, 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000);
+    m_aiPixels = (unsigned int*)m_pImagesurface->pixels;
+
+    for (int y = 0; y < m_iHeight; y++)
+        for (int x = 0; x < m_iWidth; x++)
+        {
+            iSourceX = x + xOffset;
+            iSourceY = y + yOffset;
+            m_aiPixels[y * m_iWidth + x] = sourceImage->m_aiPixels[iSourceY * sourceImage->getWidth() + iSourceX];
+        }
+
+}
+

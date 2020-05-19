@@ -12,6 +12,21 @@ Images are loaded as RawImageData objects.
 SimpleImage and ImageRenderer are front ends to the image data, specifying which pixels to draw from that image.
 Uses smart pointers and maps to maintain the list, so may be worth looking at for that reason?
 */
+
+#include "../sdl2_framework/ImageManager.h"
+#include "../rapidjson/filereadstream.h"
+#include "../rapidjson/document.h"
+#include <cstdio>
+
+struct SpriteData {
+    std::string name;
+    std::string url;
+    int x{};
+    int y{};
+    int width{};
+    int height{};
+};
+
 class ImageManager
 {
 	// Store the data for the images, by URL loaded from
@@ -19,12 +34,16 @@ class ImageManager
 	// These images are kept permanently loaded
 	std::map<std::string, std::shared_ptr<RawImageData> > permanentlyLoadedImages;
 
+	/* KSP IMAGE MANAGER STRUCTURES */
+    // TODO need to sort out where the sprite data goes when this gets destroyed
+    std::map<std::string, std::weak_ptr<SpriteData> > spriteLookups;
+
 public:
 	// Singleton implementation, if desired, use static get() to get the singleton object.
 	static ImageManager* get()
 	{
 		if (g_pManager == nullptr)
-			g_pManager = new ImageManager();
+            g_pManager = new ImageManager();
 		return g_pManager;
 	}
 
@@ -54,12 +73,11 @@ private:
 
 public:
 
-	// Constructor - just initialise the variables
-	ImageManager()
-	{
-		resetOptions();
-	}
-
+    // Constructor - just initialise the variables
+    ImageManager()
+    {
+        resetOptions();
+    }
 
 	// Retrieve an image by its URL. If already loaded then it gets the existing one
 	std::shared_ptr<RawImageData> getImagePtrbyURL(std::string imageURL, bool loadIfNotLoaded = false, bool loadPermanently = false)
@@ -96,7 +114,7 @@ public:
 				std::weak_ptr<RawImageData> weak = newSharedPtr; // Shared to weak pointer
 				images.insert(std::pair<std::string, std::weak_ptr<RawImageData>>(imageURL, weak));
 				if (loadPermanently) // Storing shared pointer keeps it alive while array exists - forever.
-					permanentlyLoadedImages.insert(std::pair<std::string, std::shared_ptr<RawImageData>>(imageURL, newSharedPtr));
+					permanentlyLoadedImages.insert(std::pair<std::string, std::shared_ptr<RawImageData> >(imageURL, newSharedPtr));
 			}
 			else
 			{
@@ -115,7 +133,6 @@ public:
 	}
 
 
-
 	/*
 	Specify whether an image should be permanently loaded or not.
 	Keeps a shared pointer to the image data, which will keep it alive
@@ -124,7 +141,7 @@ public:
 	*/
 	bool setPermanentlyLoaded(std::string imageURL, bool makePermanent = true)
 	{
-		if (makePermanent == false)
+		if (!makePermanent)
 		{	// Take item out of permanentlyLoadedImages
 			auto iter = permanentlyLoadedImages.find(imageURL);
 			if (iter != permanentlyLoadedImages.end())
@@ -154,7 +171,7 @@ public:
 	// Load the image data into a NEW RawImageData object and return the shared pointer to it
 	std::shared_ptr<RawImageData> loadAsNew(std::string imageURL)
 	{
-		RawImageData* pData = new RawImageData(imageURL);
+		auto* pData = new RawImageData(imageURL);
 		if (pData->loadImage(imageURL, 0, cropTop, cropBottom, cropLeft, cropRight))
 		{
 			return std::shared_ptr<RawImageData>(pData);
@@ -193,7 +210,7 @@ public:
 			return SimpleImage(raw); // A new ImageData object
 		}
 		// Otherwise we need to create a new one
-		RawImageData* pNewData = new RawImageData(existingImage.getTheData(), iReductionMultiplier);
+		auto* pNewData = new RawImageData(existingImage.getTheData(), iReductionMultiplier);
 		// And store it in the array so we find it next time
 		std::shared_ptr<RawImageData> newData(pNewData);
 		std::weak_ptr<RawImageData> weak(newData);
@@ -215,7 +232,7 @@ public:
 			return SimpleImage(raw); // A new ImageData object
 		}
 		// Otherwise we need to create a new one
-		RawImageData* pNewImageData = new RawImageData(iNewWidth, iNewHeight, existingImage.getTheData());
+		auto* pNewImageData = new RawImageData(iNewWidth, iNewHeight, existingImage.getTheData());
 		// And store it in the array so we find it next time
 		std::shared_ptr<RawImageData> newPointer(pNewImageData);
 		std::weak_ptr<RawImageData> weak(newPointer); // Need to store a weak pointer so it doesn't keep it alive
@@ -223,6 +240,97 @@ public:
 		// The we return a new ImageData which wraps it
 		return SimpleImage(newPointer);
 	}
+
+	/* KSP IMAGE MANAGER FUNCTIONS */
+
+    std::shared_ptr<SpriteData> getSpriteData(std::string name) {
+
+        auto iter = spriteLookups.find(name);
+        if (iter != spriteLookups.end()) {
+            auto weak = iter->second;
+            if (weak.expired())
+            {
+                spriteLookups.erase(iter);
+            }
+            else
+            {
+                auto shared = weak.lock();
+                return shared;
+            }
+        }
+
+        //std::cout << "\t\t-+- Finding sprite URL: " << name << std::endl;
+
+        FILE* fp = fopen("sprite_loc.json", "r");
+
+        char readBuffer[65536];
+        rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
+
+        rapidjson::Document json;
+        json.ParseStream(is);
+
+        fclose(fp);
+
+        for (auto& v : json.GetArray()) {
+            if (strcmp(v["name"].GetString(), name.c_str()) == 0) {
+                //std::cout << "\t\t-+- Found sprite URL: " << name << std::endl;
+                auto* sd = new SpriteData();
+                sd->name = name;
+                sd->url = v["file"].GetString();
+                sd->x = v["x"].GetInt();
+                sd->y = v["y"].GetInt();
+                sd->width = v["width"].GetInt();
+                sd->height = v["height"].GetInt();
+
+                std::shared_ptr<SpriteData> sharedPtr(sd);
+                std::weak_ptr<SpriteData> weak(sharedPtr);
+
+                spriteLookups.insert(std::pair<std::string, std::weak_ptr<SpriteData>>(name, weak) );
+                return sharedPtr;
+            }
+        }
+        std::cout << "KSPImageManager::getPartImageURL() : Couldn't find part name " << name << std::endl;
+        return nullptr; // couldn't find the image
+
+    }
+
+    // Make a sprite from an image (presumably a spritesheet)
+    SimpleImage getSpriteFromImg(const std::string& imgUrl, std::string name, int x, int y, int width, int height) {
+
+        // Check if already created
+        std::shared_ptr<RawImageData> raw = getImagePtrbyURL(name, false);
+        if (raw != nullptr) {
+            return SimpleImage(raw);
+        }
+
+        // load permanently since it is a spritesheet
+        auto spritesheet = getImagePtrbyURL(imgUrl, true, true);
+
+        auto* newRaw = new RawImageData(x, y, width, height, spritesheet);
+        std::shared_ptr<RawImageData> newPointer(newRaw);
+        std::weak_ptr<RawImageData> weak(newPointer);
+        images.insert(std::pair<std::string, std::weak_ptr<RawImageData>>(name, weak));
+        return SimpleImage(newPointer);
+    }
+
+    // Make a sprite from an image (presumably a spritesheet)
+    SimpleImage getSpriteFromImg(std::shared_ptr<SpriteData> data) {
+
+        // Check if already created
+        std::shared_ptr<RawImageData> raw = getImagePtrbyURL(data->name, false);
+        if (raw != nullptr) {
+            return SimpleImage(raw);
+        }
+
+        // load permanently since it is a spritesheet
+        auto spritesheet = getImagePtrbyURL(data->url, true, true);
+
+        auto* newRaw = new RawImageData(data->x, data->y, data->width, data->height, spritesheet);
+        std::shared_ptr<RawImageData> newPointer(newRaw);
+        std::weak_ptr<RawImageData> weak(newPointer);
+        images.insert(std::pair<std::string, std::weak_ptr<RawImageData>>(data->name, weak));
+        return SimpleImage(newPointer);
+    }
 
 
 private:

@@ -24,7 +24,8 @@ You should not need to interact with this class - instead ask the ImageManager t
 class RawImageData
 {
 protected:
-	int m_iWidth; // Width of the loaded image
+
+    int m_iWidth; // Width of the loaded image
 	int m_iHeight; // Height of the loaded image
 	unsigned int* m_aiPixels;
 	const std::string filename;
@@ -72,6 +73,9 @@ public:
 	// Create an image by shrinking another one by a factor of three
 	// Note: deliberate reorder of parameters compared with the one above, to disambiguate
 	RawImageData(int iNewWidth, int iNewHeight, const std::shared_ptr<RawImageData>& sourceImage);
+
+    /* Creates a new image from a given image, by copying a specific portion of it */
+    RawImageData(int xOffset, int yOffset, int width, int height, const std::shared_ptr<RawImageData> &sourceImage);
 
 
 	// Ask for the width of the image

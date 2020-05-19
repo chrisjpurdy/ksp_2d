@@ -13,7 +13,9 @@ public:
 	DisplayableObject(BaseEngine* pEngine, int iWidth = 0, int iHeight = 0, bool useTopLeftFor00 = true);
 	DisplayableObject(int xStart, int yStart, BaseEngine* pEngine, int iWidth, int iHeight, bool useTopLeftFor00 = true);
 
-	// Destructor
+    DisplayableObject();
+
+    // Destructor
 	virtual ~DisplayableObject(void);
 
 	// Draw the object - override to implement the actual drawing of the correct object

@@ -12,11 +12,11 @@ If you need more advanced features you can come back and look at SimpleImage.
 #include <memory>
 
 #include "RawImage.h"
+#include "SDL2_rotozoom.h" // to allow for rotation when blitting
 
 class DrawingSurface;
 class BaseEngine;
 class CoordinateMapping;
-
 
 
 /*
@@ -67,7 +67,6 @@ public:
 		int iXTarget, int iYTarget,
 		int iWidth, int iHeight,
 		int iMaskColour = -1) const;
-
 
 
 	// Draw the image to the specified surface using a specified colour as the transparency colour and a level of transparency.
@@ -150,6 +149,14 @@ public:
 	void renderImageApplyingMapping(BaseEngine* pEngine, DrawingSurface* pTarget,
 		int iXDrawLocation, int iYDrawLocation, int iWidth, int iHeight,
 		CoordinateMapping* mapping) const;
+
+	/*
+	 * My function adding in SDL2_gfx functionality which allows for rotations when blit-ing surfaces
+	 */
+    void renderImageBlitRoatated(BaseEngine *pEngine, DrawingSurface *pTarget, double angle, int iXDrawLocation, int iYDrawLocation,
+                                 int iTargetWidth, int iTargetHeight, int iLeftInImage, int iTopInImage,
+                                 int iWidthInImage,
+                                 int iHeightInImage);
 
 
 protected:

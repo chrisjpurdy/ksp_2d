@@ -95,7 +95,8 @@ void SimpleDemo::virtDrawStringsOnTop()
 void SimpleDemo::virtMouseDown( int iButton, int iX, int iY )
 {
 	// Redraw the background
-	lockAndSetupBackground();
+	virtSetupBackgroundBuffer();
+	redrawDisplay(); // Force total redraw
 }
 
 /*

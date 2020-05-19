@@ -111,9 +111,9 @@ public:
 	void drawPolygon(int iPoints, double* pXArray, double* pYArray, unsigned int uiColour);
 
 	/* Draw a string to the supplied surface - This is faster than the scalable string version */
-	void drawFastString(int iX, int iY, const char* pText, unsigned int uiColour, Font* pFont);
+	void drawFastString(int iX, int iY, const char* pText, unsigned int uiColour, Font* pFont = NULL);
 	/* Draw a string to the supplied surface - this goes through the scaling functions so works even if display is rescaled */
-	void drawScalableString(int iX, int iY, const char* pText, unsigned int uiColour, Font* pFont);
+	void drawScalableString(int iX, int iY, const char* pText, unsigned int uiColour, Font* pFont = NULL);
 
 	/* Draw an arrow between two points, which can be shortened at either end by a number of pixels - was used to draw arcs between nodes in the past */
 	void drawShortenedArrow(int iX1, int iY1, int iX2, int iY2, int iShortenedStart, int iShortenedEnd, unsigned int uiColour, int iThickness, int iHeadSize);

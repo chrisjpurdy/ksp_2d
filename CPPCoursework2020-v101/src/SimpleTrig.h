@@ -2,18 +2,44 @@
 
 #include "math.h"
 
-
 class SimpleTrig
 {
-	double cosCache[360];
-
-	SimpleTrig()
-	{
-		for (int i = 0; i < 360; i++)
-			cosCache[i] = ::cos(i);
-	}
+public:
 
 	// Get cosine for integer angle to avoid the function call
-	double cos(int angle) { return cosCache[(angle + 720) % 360]; }
-	double sin(int angle) { return cosCache[(angle + 630) % 360]; } // cos of 90 degrees less
+	double cos(int anglex10) {
+	    if (anglex10 < 0)
+	        anglex10 = anglex10 * -1;
+	    return cosCache[(anglex10 + 7200) % 3600];
+	}
+	double sin(int anglex10) {
+        if (anglex10 < 0) {
+            anglex10 = anglex10 * -1;
+            return cosCache[(anglex10 + 6300) % 3600] * -1;
+        }
+	    return cosCache[(anglex10 + 6300) % 3600];
+	} // cos of 90 degrees less
+
+	static SimpleTrig* get() {
+	    return singleton;
+	}
+
+	static void init() {
+	    singleton = new SimpleTrig();
+	}
+
+	static void uninit() {
+	    delete singleton;
+	}
+
+private:
+    static SimpleTrig* singleton;
+    double cosCache[3600];
+
+    SimpleTrig()
+    {
+        for (int i = 0; i < 3600; i++) {
+            cosCache[i] = ::cos((i / 10.0) * (M_PI / 180.0));
+        }
+    }
 };

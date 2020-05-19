@@ -306,8 +306,39 @@ bool BaseEngine::handleEvent(SDL_Event* pEvent)
 		m_iMouseYClickedDown = m_pForegroundSurface->convertRealToVirtualYPosition(pEvent->button.y);
 		virtMouseDown(pEvent->button.button, m_iMouseXClickedDown, m_iMouseYClickedDown);
 
-		if (m_bNotifyObjectsAboutMouse)
-			std::for_each(m_vecDisplayableObjects.begin(), m_vecDisplayableObjects.end(), [=](DisplayableObject* pdo) { if (pdo == nullptr) return; pdo->virtMouseDown(pEvent->button.button, m_iMouseXClickedDown, m_iMouseYClickedDown); });
+		/**
+         * !!! I had to modify this since i was adding new objects to m_vecDisplayableObject in the mouse loop !!!
+         *
+         * The std::for_each loop doesn't reset when displayableObjectsChanged() is called, so I had to rewrite it to do so
+         * such that it doesn't crash
+         */
+		if (m_bNotifyObjectsAboutMouse) {
+		    for (auto & m_vecDisplayableObject : m_vecDisplayableObjects) {
+                if (m_vecDisplayableObject) m_vecDisplayableObject->setHasActed(false);
+            }
+
+		    bool finished = false;
+		    while (!finished) {
+		        m_bDrawableObjectsChanged = false;
+		        finished = true;
+
+		        for (auto it = m_vecDisplayableObjects.begin(); it != m_vecDisplayableObjects.end(); it++) {
+		            if (*it) {
+		                if (!(*it)->getHasActed()) {
+		                    (*it)->setHasActed(true);
+		                    (*it)->virtMouseDown(pEvent->button.button, m_iMouseXClickedDown, m_iMouseYClickedDown);
+		                }
+		                if (m_bDrawableObjectsChanged) {
+		                    finished = false;
+		                    break;
+		                }
+		            }
+		        }
+		    }
+		}
+
+//		if (m_bNotifyObjectsAboutMouse)
+//			std::for_each(m_vecDisplayableObjects.begin(), m_vecDisplayableObjects.end(), [=](DisplayableObject* pdo) { if (pdo == nullptr) return; pdo->virtMouseDown(pEvent->button.button, m_iMouseXClickedDown, m_iMouseYClickedDown); });
 
 		if (m_bNotifyBottomObjectAboutMouse)
 		{
@@ -344,8 +375,43 @@ bool BaseEngine::handleEvent(SDL_Event* pEvent)
 		m_iMouseXClickedUp = m_pForegroundSurface->convertRealToVirtualXPosition(pEvent->button.x);
 		m_iMouseYClickedUp = m_pForegroundSurface->convertRealToVirtualYPosition(pEvent->button.y);
 		virtMouseUp(pEvent->button.button, m_iMouseXClickedUp, m_iMouseYClickedUp);
-		if (m_bNotifyObjectsAboutMouse)
-			std::for_each(m_vecDisplayableObjects.begin(), m_vecDisplayableObjects.end(), [=](DisplayableObject* pdo) { if (pdo == nullptr) return; pdo->virtMouseUp(pEvent->button.button, m_iMouseXClickedUp, m_iMouseYClickedUp); });
+
+		/**
+		 * !!! I had to modify this since i was adding new objects to m_vecDisplayableObject in the mouse loop !!!
+		 *
+		 * The std::for_each loop doesn't reset when displayableObjectsChanged() is called, so I had to rewrite it to do so
+		 * such that it doesn't crash
+		 */
+		if (m_bNotifyObjectsAboutMouse) {
+            for (auto & m_vecDisplayableObject : m_vecDisplayableObjects)
+                if (m_vecDisplayableObject)
+                    m_vecDisplayableObject->setHasActed(false);
+
+            bool finished = false;
+            while (!finished)
+            {
+                m_bDrawableObjectsChanged = false;
+                finished = true;
+
+                for (auto it = m_vecDisplayableObjects.begin(); it != m_vecDisplayableObjects.end(); it++)
+                {
+                    if (*it)
+                    {
+                        if (!(*it)->getHasActed())
+                        {
+                            (*it)->setHasActed(true);
+                            (*it)->virtMouseUp(pEvent->button.button, m_iMouseXClickedUp, m_iMouseYClickedUp);
+                        }
+                        if (m_bDrawableObjectsChanged)
+                        {
+                            finished = false;
+                            break;
+                        }
+                    }
+                }
+            }
+		}
+		//std::for_each(m_vecDisplayableObjects.begin(), m_vecDisplayableObjects.end(), [=](DisplayableObject* pdo) { if (pdo == nullptr) return; pdo->virtMouseUp(pEvent->button.button, m_iMouseXClickedUp, m_iMouseYClickedUp); });
 		//redrawDisplay();
 		break;
 

@@ -298,22 +298,22 @@ void SimpleImage::renderImageBlit(BaseEngine* pEngine, DrawingSurface* pTarget,
 
 	if (iRealX1 < 0)
 	{	// Off the edge of screen
-		// std::cout << "left" << std::endl; 
+		// std::cout << "left" << std::endl;
 		return;
 	}
 	if (iRealY1 < 0)
 	{	// Off the top of screen
-		//std::cout << "top" << std::endl; 
+		//std::cout << "top" << std::endl;
 		return;
 	}
 	if (iRealX0 >= pTarget->getSurfaceWidth())
 	{	// Off the edge of screen
-		// std::cout << "right" << std::endl; 
+		// std::cout << "right" << std::endl;
 		return;
 	}
 	if (iRealY0 >= pTarget->getSurfaceHeight())
 	{	// Off the bottom of screen
-		// std::cout << "bottom" << std::endl; 
+		// std::cout << "bottom" << std::endl;
 		return;
 	}
 
@@ -365,6 +365,104 @@ void SimpleImage::renderImageBlit(BaseEngine* pEngine, DrawingSurface* pTarget,
 	::SDL_BlitSurface(src, &rectSrc, dest, &rectDest);
 	::SDL_SetClipRect(dest, nullptr);
 	pTarget->mySDLTempRelockSurface();
+#endif
+}
+
+/*
+ * BLIT-ING FUNCTION WHICH ALSO ROTATES BY AN ANGLE
+ */
+void SimpleImage::renderImageBlitRoatated(BaseEngine* pEngine, DrawingSurface* pTarget, double angle,
+                                  int iXDrawLocation, int iYDrawLocation, int iTargetWidth, int iTargetHeight,
+                                  int iLeftInImage, int iTopInImage, int iWidthInImage, int iHeightInImage)
+{
+#if AVOID_BLIT
+    renderImageWithMask( pTarget,
+		iXDrawLocation, iYDrawLocation,
+		iLeftInImage, iTopInImage,
+		iWidthInImage, iHeightInImage);
+#else
+
+    int iRealX0 = pEngine->convertVirtualPixelToClickedXPosition(iXDrawLocation);
+    int iRealY0 = pEngine->convertVirtualPixelToClickedYPosition(iYDrawLocation);
+    int iRealX1 = pEngine->convertVirtualPixelToClickedXPosition(iXDrawLocation + iTargetWidth);
+    int iRealY1 = pEngine->convertVirtualPixelToClickedYPosition(iYDrawLocation + iTargetHeight);
+
+    if (iRealX1 < 0)
+    {	// Off the edge of screen
+        // std::cout << "left" << std::endl;
+        return;
+    }
+    if (iRealY1 < 0)
+    {	// Off the top of screen
+        //std::cout << "top" << std::endl;
+        return;
+    }
+    if (iRealX0 >= pTarget->getSurfaceWidth())
+    {	// Off the edge of screen
+        // std::cout << "right" << std::endl;
+        return;
+    }
+    if (iRealY0 >= pTarget->getSurfaceHeight())
+    {	// Off the bottom of screen
+        // std::cout << "bottom" << std::endl;
+        return;
+    }
+
+    ::SDL_Rect rectSrc = { iLeftInImage, iTopInImage, iWidthInImage, iHeightInImage };
+    ::SDL_Rect rectDest = { iRealX0, iRealY0, iRealX1 - iRealX0, iRealY1 - iRealY0 };
+
+    SDL_Surface* src = getTheData()->getSurface();
+    SDL_Surface* rotatedSurface = rotozoomSurface(src, angle, 1.005, 10);
+    SDL_Surface* dest = *pTarget;
+
+    SDL_Rect rectRotatedSrc = rectSrc;
+    rectRotatedSrc.x -= src->w/2 - rotatedSurface->w/2;
+    rectRotatedSrc.y -= src->h/2 - rotatedSurface->h/2;
+    rectSrc = rectRotatedSrc;
+    src = rotatedSurface;
+
+    if ((iWidthInImage != (iRealX1 - iRealX0)) || (iHeightInImage != (iRealY1 - iRealY0)))
+    { // Need a rescale first
+        int newWidth = iRealX1 - iRealX0;
+        int newHeight = iRealY1 - iRealY0;
+        if ((m_pRescaleSurface == nullptr)
+            || (newWidth > m_pRescaleSurface->w)
+            || (newHeight > m_pRescaleSurface->h))
+        { // Need a bigger surface as this does not exist or is not big enough
+            if (m_pRescaleSurface != nullptr)
+                SDL_FreeSurface(m_pRescaleSurface);
+            m_pRescaleSurface = SDL_CreateRGBSurface(0, newWidth, newHeight, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
+        }
+        else
+        {
+            // Clear current content, including the alpha, before the copy
+            memset(m_pRescaleSurface->pixels, 0, m_pRescaleSurface->h * m_pRescaleSurface->w * 4/*32 bits*/);
+        }
+
+        ::SDL_Rect rectTemp = { 0, 0, newWidth, newHeight };
+
+        // Now copy to the resized surface before copying from that to the destination
+        ::SDL_BlitScaled(src, &rectSrc, m_pRescaleSurface, &rectTemp);
+
+        // Now set it up so that the source is the temp one
+        src = m_pRescaleSurface;
+        rectSrc = rectTemp;
+    }
+
+    int minRedrawX = pTarget->getRealRedrawMinX();
+    int maxRedrawX = pTarget->getRealRedrawMaxX();
+    int minRedrawY = pTarget->getRealRedrawMinY();
+    int maxRedrawY = pTarget->getRealRedrawMaxY();
+    //std::cout << "Redraw rect: " << minRedrawX << "," << minRedrawY << " to " << maxRedrawX << "," << maxRedrawY << std::endl;
+    ::SDL_Rect rectClip = { minRedrawX, minRedrawY, maxRedrawX - minRedrawX, maxRedrawY - minRedrawY };
+
+    // In case this was the screen surface which we will have locked, unlock it now
+    pTarget->mySDLTempUnlockSurface();
+    ::SDL_SetClipRect(dest, &rectClip);
+    CHECK_BLIT_SURFACE(pTarget);
+    ::SDL_BlitSurface(src, &rectSrc, dest, &rectDest);
+    ::SDL_SetClipRect(dest, nullptr);
+    pTarget->mySDLTempRelockSurface();
 #endif
 }
 

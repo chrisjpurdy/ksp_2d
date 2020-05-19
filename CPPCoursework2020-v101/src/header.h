@@ -32,11 +32,7 @@
 #include "SDL_image.h"
 #endif
 
-
 #endif
-
-
-
 
 #include <stdlib.h>
 #include <stdio.h>
